@@ -1146,3 +1146,23 @@ footer a{color:#f0c66b!important}
 .approval-stamp{display:inline-block;color:#b3261e;border:2px solid #b3261e;padding:5px 12px;font:700 .78rem "IBM Plex Mono",monospace;letter-spacing:.14em;transform:rotate(-5deg)}
 .screenplay-note{margin:16px 0 0;text-align:right;color:#555;font:400 .65rem "IBM Plex Mono",monospace;letter-spacing:.02em}
 @media(max-width:600px){.screenplay-body{font-size:.82rem;margin:22px 8px}.screenplay-body .sc-dialogue{width:72%}.screenplay-body .sc-character{margin-left:14%;width:72%}.screenplay-topline,.screenplay-bottom{font-size:.59rem}}
+
+
+/* Screenplay specimen refinement: black script ink, conventional page rhythm, restrained red approval mark. */
+.screenplay-insert{color:#111!important}
+.screenplay-topline,.screenplay-bottom{color:#111!important}
+.screenplay-body{color:#111!important;max-width:560px}
+.screenplay-body .sc-fade{font-weight:700;margin-bottom:28px}
+.screenplay-body .sc-scene-number{text-align:right;font-weight:700;margin:0 0 2px}
+.screenplay-body .sc-slug{margin-bottom:18px}
+.screenplay-body .sc-action{margin-bottom:18px}
+.screenplay-body .sc-character{margin-top:20px}
+.screenplay-body .sc-parenthetical{text-align:center;width:60%;margin:0 auto}
+.screenplay-body .sc-dialogue{width:62%;margin:0 auto 18px}
+.screenplay-body .sc-transition{margin:22px 0}
+.approval-stamp{color:#b3261e!important;border-color:#b3261e!important;font-weight:700;letter-spacing:.16em}
+.screenplay-note{color:#555!important}
+@media(max-width:600px){
+ .screenplay-body .sc-parenthetical{width:72%}
+ .screenplay-body .sc-dialogue{width:72%}
+}
