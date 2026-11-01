@@ -1220,3 +1220,28 @@ footer a{color:#f0c66b!important}
  .slugline::after{font-size:.5rem;margin-left:5px}
  .pz::before,.tk::before,.essay-feature::before,.worklist article::before,.work-groups>div::before,.art figure::before{font-size:.5rem}
 }
+
+
+/* Contrast correction: the generic alternating section rule was overriding the hero's dark title-page surface. */
+.hero.app-view,
+header.hero.app-view,
+#top.hero{
+ background:#171717!important;
+ color:#fff!important;
+}
+#top.hero h1,
+#top.hero .role,
+#top.hero .hero-pitch,
+#top.hero .hero-about{
+ color:#fff!important;
+}
+#top.hero .role small{color:#d0d0d0!important}
+#top.hero h1 span{color:#f0c66b!important}
+#top.hero .hero-about{color:#d0d0d0!important}
+#top.hero .wrap::after{color:#f0c66b!important;border-color:rgba(255,255,255,.28)!important}
+#top.hero[data-script]::before{background:#fff!important;color:#111!important}
+@media(max-width:760px){
+ #top.hero{background:#171717!important;color:#fff!important}
+ #top.hero .role,#top.hero .hero-pitch,#top.hero .hero-about{color:#fff!important}
+ #top.hero .role small,#top.hero .hero-about{color:#d0d0d0!important}
+}
