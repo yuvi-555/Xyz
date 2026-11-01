@@ -2,9 +2,6 @@
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,root=document.documentElement;
-/* theme */
-try{const t=localStorage.getItem("theme");if(t)root.setAttribute("data-theme",t)}catch(e){}
-$("#theme").onclick=()=>{const a=root.getAttribute("data-theme"),d=a?a==="dark":matchMedia("(prefers-color-scheme: dark)").matches,n=d?"light":"dark";root.setAttribute("data-theme",n);try{localStorage.setItem("theme",n)}catch(e){}};
 /* Static editorial hero; no rotating headline or typing animation. */
 /* spotlight */
 const hero=$("#top");if(!reduce)hero.addEventListener("pointermove",e=>{const r=hero.getBoundingClientRect();hero.style.setProperty("--mx",(e.clientX-r.left)+"px");hero.style.setProperty("--my",(e.clientY-r.top)+"px")});
