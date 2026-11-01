@@ -1129,3 +1129,20 @@ footer a{color:#f0c66b!important}
 #contact .author-portrait{width:76px;height:76px;object-fit:cover;border-radius:50%;margin-bottom:24px}
 #contact .paper{max-width:720px;margin-inline:auto}
 #contact .paper textarea{min-height:170px}
+
+
+/* Screenplay notation — added as black-ink editorial detail; existing palette and layout remain unchanged. */
+.screenplay-insert{margin-top:42px;color:#111;background:transparent;font-family:"Courier New",Courier,monospace;max-width:760px}
+.screenplay-topline,.screenplay-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;font:600 .68rem "IBM Plex Mono",monospace;letter-spacing:.12em;color:#111}
+.screenplay-topline{padding-bottom:12px;border-bottom:1px solid #111}
+.screenplay-body{max-width:560px;margin:26px auto 24px;font:400 .91rem/1.55 "Courier New",Courier,monospace;color:#111}
+.screenplay-body p{margin:0 0 18px}
+.screenplay-body .sc-slug{font-weight:700;text-transform:uppercase;margin-bottom:16px}
+.screenplay-body .sc-action{max-width:100%;margin-bottom:18px}
+.screenplay-body .sc-character{text-align:center;text-transform:uppercase;margin:22px 0 0 20%;width:60%}
+.screenplay-body .sc-dialogue{width:62%;margin:0 auto 20px}
+.screenplay-body .sc-transition{text-align:right;text-transform:uppercase;font-weight:700;margin:22px 0}
+.screenplay-bottom{padding-top:12px;border-top:1px solid #111}
+.approval-stamp{display:inline-block;color:#b3261e;border:2px solid #b3261e;padding:5px 12px;font:700 .78rem "IBM Plex Mono",monospace;letter-spacing:.14em;transform:rotate(-5deg)}
+.screenplay-note{margin:16px 0 0;text-align:right;color:#555;font:400 .65rem "IBM Plex Mono",monospace;letter-spacing:.02em}
+@media(max-width:600px){.screenplay-body{font-size:.82rem;margin:22px 8px}.screenplay-body .sc-dialogue{width:72%}.screenplay-body .sc-character{margin-left:14%;width:72%}.screenplay-topline,.screenplay-bottom{font-size:.59rem}}
