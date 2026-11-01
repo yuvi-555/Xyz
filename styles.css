@@ -1399,3 +1399,26 @@ footer a{color:#f0c66b!important}
  .top .hero-about::after{font-size:.95rem}
  .essay-feature::after{font-size:.48rem}
 }
+
+
+/* Hero-only finishing touches: visible secondary CTA and editorial yellow keyword marks. */
+#top.hero .btns .btn:not(.gold){
+ color:#171717!important;
+ border-color:#171717!important;
+ background:transparent!important;
+}
+#top.hero .btns .btn:not(.gold):hover,
+#top.hero .btns .btn:not(.gold):focus-visible{
+ color:#171717!important;
+ background:#f0c66b!important;
+ border-color:#f0c66b!important;
+}
+#top.hero .script-highlight{
+ display:inline;
+ padding:0 .13em .035em;
+ color:#171717!important;
+ background:#f0c66b!important;
+ -webkit-box-decoration-break:clone;
+ box-decoration-break:clone;
+ font-weight:600;
+}
