@@ -1122,3 +1122,10 @@ footer a{color:#f0c66b!important}
  .strip{padding:22px 12px!important}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* Remove the last decorative remnants; keep the interface deliberately quiet. */
+.hero .wrap::before,.hero .wrap::after,.hero::before,.hero::after{content:none!important;display:none!important}
+#contact .tbody,#contact #snd{display:none!important}
+#contact .author-portrait{width:76px;height:76px;object-fit:cover;border-radius:50%;margin-bottom:24px}
+#contact .paper{max-width:720px;margin-inline:auto}
+#contact .paper textarea{min-height:170px}
