@@ -25,13 +25,7 @@ $("#bl").innerHTML=B.map(b=>`<li><a href="${b[2]}" target="_blank" rel="noopener
 $("#cs").innerHTML=E.map(e=>`<div class="cs"><button aria-expanded="false"><span class="w">${esc(e.w)}</span><span class="t">${esc(e.t)}<small>${esc(e.o)}</small></span><span class="x" aria-hidden="true">+</span></button><div class="b">${e.d.length>1?"<ul>"+e.d.map(d=>`<li>${esc(d)}</li>`).join("")+"</ul>":`<p>${esc(e.d[0])}</p>`}</div></div>`).join("");
 $("#cs").addEventListener("click",ev=>{const b=ev.target.closest("button");if(!b)return;const c=b.closest(".cs"),o=c.classList.toggle("open");b.setAttribute("aria-expanded",String(o))});
 const c0=$(".cs");c0.classList.add("open");$("button",c0).setAttribute("aria-expanded","true");
-/* typewriter */
-const ks=$("#keys"),kel=[];[[9,32,106],[8,48,148]].forEach(([n,x0,y])=>{for(let i=0;i<n;i++){const c=document.createElementNS("http://www.w3.org/2000/svg","circle");c.setAttribute("cx",x0+22+i*42);c.setAttribute("cy",y-72+48);c.setAttribute("r",15);c.setAttribute("class","key");ks.appendChild(c);kel.push(c)}});
-kel.forEach((c,i)=>{c.setAttribute("cy",i<9?124:160)});
-let snd=false,ac;const ta=$("#ta");
-function click(){if(!snd)return;try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();const o=ac.createOscillator(),g=ac.createGain();o.type="square";o.frequency.value=700+Math.random()*300;g.gain.value=.05;g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+.06);o.connect(g);g.connect(ac.destination);o.start();o.stop(ac.currentTime+.07)}catch(e){}}
-ta.addEventListener("input",()=>{const k=kel[Math.floor(Math.random()*kel.length)];k.classList.add("dn");setTimeout(()=>k.classList.remove("dn"),110);click();build()});
-$("#snd").onclick=function(){snd=!snd;this.setAttribute("aria-pressed",String(snd));this.textContent="Key sound: "+(snd?"on":"off");click()};
+const ta=$("#ta");
 const picked={},needs=["Slogan","Ad script","Brand voice","Website copy","Film script","Social captions"];
 needs.forEach(n=>{const b=document.createElement("button");b.className="chip";b.textContent=n;b.setAttribute("aria-pressed","false");b.onclick=()=>{picked[n]=!picked[n];b.setAttribute("aria-pressed",String(!!picked[n]));build()};$("#needs").appendChild(b)});
 function build(){const list=needs.filter(n=>picked[n]).join(", ")||"(not chosen)";const body="Hi Yogesh,\n\nI'd like help with: "+list+"\n\n"+(ta.value||"(add a few lines)")+"\n\nThanks!";$("#send").href="mailto:yogeshkokane14@gmail.com?subject="+encodeURIComponent("Writing project: "+list)+"&body="+encodeURIComponent(body);return body}
