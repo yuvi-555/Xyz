@@ -679,7 +679,7 @@ footer{background:#101820;color:#AAB3B7}
     --red:#FF8068;--teal:#8CA2FF;--cream:#E9E6DC;--dk:#0A1117;
   }
 }
-:root[data-theme="dark]{
+:root[data-theme="dark"]{
   color-scheme:dark;--paper:#101820;--paper2:#19242C;--ink:#F3F0E8;
   --muted:#AAB4B8;--line:#34424A;--gold:#D9F45A;
   --red:#FF8068;--teal:#8CA2FF;--cream:#E9E6DC;--dk:#0A1117;
