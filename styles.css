@@ -1248,3 +1248,154 @@ footer a{color:#f0c66b!important}
 #contact{color:#fff!important}
 #contact h2,#contact h3{color:#fff!important}
 #contact .sub,#contact .ct{color:#d0d0d0!important}
+
+
+/* Tactile screenplay desk details — crop marks, pencil notes and revision marks.
+   Decorative only: no changes to the site's palette, layout, or content contrast. */
+.app-view:not(#top)>.wrap{position:relative}
+.app-view:not(#top)>.wrap::before,
+.app-view:not(#top)>.wrap::after{
+ content:"";
+ position:absolute;
+ z-index:1;
+ width:13px;
+ height:13px;
+ pointer-events:none;
+ opacity:.62;
+}
+.app-view:not(#top)>.wrap::before{
+ top:clamp(30px,4vw,48px);
+ left:22px;
+ border-top:1px solid currentColor;
+ border-left:1px solid currentColor;
+}
+.app-view:not(#top)>.wrap::after{
+ top:clamp(30px,4vw,48px);
+ right:22px;
+ width:13px;
+ height:13px;
+ border-top:1px solid currentColor;
+ border-right:1px solid currentColor;
+}
+.hero .wrap::before{
+ content:"YK / ORIGINAL DRAFT";
+ position:absolute;
+ top:-54px;
+ right:22px;
+ color:#fff;
+ font:600 .58rem "IBM Plex Mono",monospace;
+ letter-spacing:.13em;
+ opacity:.72;
+}
+.slugline::before{
+ content:"✳";
+ display:inline-block;
+ margin-right:8px;
+ color:currentColor;
+ font:600 .72rem "IBM Plex Mono",monospace;
+ transform:rotate(-12deg);
+}
+#campaigns .slugline::before{content:"✎"}
+#screen .slugline::before{content:"▧"}
+#writing .slugline::before{content:"¶"}
+#art .slugline::before{content:"✳"}
+#work .slugline::before{content:"※"}
+#contact .slugline::before{content:"✉"}
+/* Pencil-like side comments, deliberately tiny and used as marginalia rather than UI labels. */
+#campaigns .wrap::marker{content:""}
+#campaigns .sub::after{
+ content:"(hold for emphasis)";
+ display:inline-block;
+ margin-left:10px;
+ color:#171717;
+ font:600 1.05rem "Caveat",cursive;
+ transform:rotate(-3deg);
+}
+#screen .sub::after{
+ content:"one frame at a time";
+ display:inline-block;
+ margin-left:10px;
+ color:#171717;
+ font:600 1.05rem "Caveat",cursive;
+ transform:rotate(-2deg);
+}
+#writing .sub::after{
+ content:"voice over";
+ display:inline-block;
+ margin-left:10px;
+ color:#171717;
+ font:600 1.05rem "Caveat",cursive;
+ transform:rotate(-3deg);
+}
+#art .sub::after{
+ content:"visual insert →";
+ display:inline-block;
+ margin-left:10px;
+ color:#171717;
+ font:600 1.05rem "Caveat",cursive;
+ transform:rotate(-2deg);
+}
+#work .sub::after{
+ content:"credits roll";
+ display:inline-block;
+ margin-left:10px;
+ color:#171717;
+ font:600 1.05rem "Caveat",cursive;
+ transform:rotate(-3deg);
+}
+#top .hero-about::after{
+ content:"(director's note)";
+ display:block;
+ width:max-content;
+ margin:8px 0 0 2px;
+ color:#fff;
+ font:600 1.05rem "Caveat",cursive;
+ transform:rotate(-2deg);
+ opacity:.86;
+}
+.pz,.tk,.essay-feature,.worklist article,.work-groups>div,.art figure{position:relative}
+.pz::after,.tk::after,.worklist article::after,.work-groups>div::after,.art figure::after{
+ content:"";
+ position:absolute;
+ top:13px;
+ right:14px;
+ width:20px;
+ height:9px;
+ border-top:1px solid #171717;
+ border-bottom:1px solid #171717;
+ transform:rotate(-8deg);
+ opacity:.35;
+ pointer-events:none;
+}
+.pz:nth-child(2n)::after,.tk:nth-child(2n)::after{transform:rotate(7deg);width:15px}
+.fr{position:relative}
+.fr::after{
+ content:"";
+ position:absolute;
+ top:12px;
+ right:14px;
+ width:8px;
+ height:8px;
+ border:1px solid #171717;
+ border-radius:50%;
+ opacity:.45;
+}
+.essay-feature::after{
+ content:"REV. 01";
+ position:absolute;
+ top:14px;
+ right:16px;
+ color:#fff;
+ font:600 .55rem "IBM Plex Mono",monospace;
+ letter-spacing:.1em;
+ opacity:.65;
+}
+.script-end-stamp{font-family:"IBM Plex Mono",monospace}
+@media(max-width:600px){
+ .app-view:not(#top)>.wrap::before{left:18px;top:26px}
+ .app-view:not(#top)>.wrap::after{right:18px;top:26px}
+ .hero .wrap::before{right:18px;top:-48px;font-size:.5rem}
+ #campaigns .sub::after,#screen .sub::after,#writing .sub::after,#art .sub::after,#work .sub::after{display:block;margin:2px 0 0 2px}
+ .top .hero-about::after{font-size:.95rem}
+ .essay-feature::after{font-size:.48rem}
+}
