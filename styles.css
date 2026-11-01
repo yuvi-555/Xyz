@@ -653,3 +653,144 @@ footer{background:#101820;color:#AAB3B7}
 @media(prefers-reduced-motion:reduce){
  .home-project,.home-room-grid a,.pz,.art figure{transition:none!important}
 }
+
+
+/* =========================================================
+   ART DIRECTION V3 — Solapur editorial / independent studio
+   A coherent, high-contrast visual language; layout and JS
+   remain intact. Designed only for the portfolio-copy-lab.
+   ========================================================= */
+:root{
+  --paper:#F3F0E8;
+  --paper2:#E7E3D8;
+  --ink:#111820;
+  --muted:#626C72;
+  --line:#C9CEC9;
+  --gold:#D9F45A;
+  --red:#F06449;
+  --teal:#244BFF;
+  --cream:#FBF9F2;
+  --dk:#101820;
+}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#101820;--paper2:#19242C;--ink:#F3F0E8;
+    --muted:#AAB4B8;--line:#34424A;--gold:#D9F45A;
+    --red:#FF8068;--teal:#8CA2FF;--cream:#E9E6DC;--dk:#0A1117;
+  }
+}
+:root[data-theme="dark]{
+  color-scheme:dark;--paper:#101820;--paper2:#19242C;--ink:#F3F0E8;
+  --muted:#AAB4B8;--line:#34424A;--gold:#D9F45A;
+  --red:#FF8068;--teal:#8CA2FF;--cream:#E9E6DC;--dk:#0A1117;
+}
+body{font-family:"DM Sans","Mukta",system-ui,sans-serif;letter-spacing:-.018em}
+h1,h2,h3{font-family:"Space Grotesk","Fraunces",Georgia,sans-serif;letter-spacing:-.065em}
+.wrap{max-width:1200px}
+nav{background:var(--dk);border-bottom:1px solid rgba(243,240,232,.18)}
+nav .lg{font-family:"Space Grotesk",sans-serif;font-weight:700;letter-spacing:-.08em}
+nav a,nav button{border-radius:2px;font-family:"DM Sans",sans-serif;font-size:.84rem}
+nav a.on{background:var(--gold);color:var(--dk)}
+nav a.cta{border-color:var(--gold);color:var(--gold)}
+nav #theme{border-radius:2px}
+.slugline,.mono,.writes,.credits,.room-indicator,.newsletter-eyebrow,.latest-story-kicker{
+  font-family:"IBM Plex Mono","Courier Prime",monospace;letter-spacing:.11em
+}
+.slugline{font-size:.7rem;color:var(--teal)}
+h2{font-weight:700;letter-spacing:-.07em}
+h2 em{color:var(--teal)}
+section.dk h2 em{color:var(--gold)}
+.hero{background:var(--teal);color:var(--cream);padding:clamp(58px,9vw,112px) 0 0}
+.hero::before{content:"YK / INDEPENDENT CREATIVE";position:absolute;right:22px;top:22px;color:rgba(251,249,242,.72);font:600 .66rem "IBM Plex Mono",monospace;letter-spacing:.15em}
+.hero .grain{opacity:.055}
+.beam{background:radial-gradient(560px circle at var(--mx) var(--my),rgba(217,244,90,.24),transparent 70%)}
+.hero h1{font-size:clamp(4.1rem,14vw,11.5rem);line-height:.8;letter-spacing:-.095em;margin:30px 0}
+.hero h1 span{color:var(--gold)}
+.role{font-family:"DM Sans",sans-serif;font-weight:700}
+.role small,.hero-about{color:rgba(251,249,242,.76)}
+.hero-pitch{font-family:"DM Sans",sans-serif;font-size:clamp(1.15rem,2.3vw,1.45rem);max-width:650px}
+.availability,.writes b{color:var(--gold)}
+.writes{font-size:.86rem}
+.btn{border-radius:2px;border-width:1px;font-family:"DM Sans",sans-serif;font-weight:700}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:var(--dk)}
+.btn:hover{background:var(--red);border-color:var(--red);color:#111820}
+.sub-bar,.credits{background:var(--dk);border-color:rgba(251,249,242,.18)}
+.sub-bar p{font-family:"Space Grotesk",sans-serif;letter-spacing:-.045em}
+.home-extra{background:var(--paper);color:var(--ink)}
+.home-extra section{padding:clamp(64px,8vw,116px) 0}
+.home-projects{gap:18px}
+.home-project{min-height:350px;border:1px solid var(--line)!important;border-radius:0!important;box-shadow:none!important;background:var(--paper2)!important;transition:transform .25s,border-color .25s}
+.home-project:hover{transform:translateY(-7px)!important;border-color:var(--teal)!important}
+.home-project::before{border-radius:0!important}
+.home-project::after{font-family:"Space Grotesk",sans-serif!important;font-weight:700!important;color:var(--gold)!important;mix-blend-mode:difference}
+.home-project-gold{background:var(--gold)!important;border-color:var(--gold)!important}
+.home-project-gold h3,.home-project-gold p,.home-project-gold a{color:var(--dk)!important}
+.home-project h3{font-family:"Space Grotesk",sans-serif;letter-spacing:-.06em}
+.home-project a{font-family:"IBM Plex Mono",monospace;text-transform:uppercase;font-size:.7rem;letter-spacing:.07em}
+.home-capability-layout>div:first-child{position:sticky}
+.home-capability-copy li{border-color:var(--line)}
+.home-capability-copy li b{font-family:"Space Grotesk",sans-serif}
+.home-room-grid a{border:1px solid var(--line);border-radius:0!important;box-shadow:none!important;background:var(--paper2)!important}
+.home-room-grid a:hover{background:var(--teal)!important;color:var(--cream)!important;transform:translateY(-4px)}
+.home-room-grid a:hover small{color:rgba(251,249,242,.76)}
+.home-end{background:var(--dk)!important;color:var(--paper)!important}
+.home-end h2 em{color:var(--gold)}
+.pz,.fr,.tk,.rd,.ig-test,.essay-feature{border-radius:0;box-shadow:none}
+.pz{background:var(--cream);color:var(--dk);border:1px solid var(--line);transform:none}
+.pz:nth-child(2),.pz:nth-child(3){transform:none}
+.pz:hover{transform:translateY(-5px)}
+.pz::before{display:none}
+.pz .m,.pz a{color:var(--teal)}
+.pz blockquote{border-color:var(--red)}
+.tk{border:1px solid var(--line);border-left:4px solid var(--teal);background:var(--paper2);border-radius:0}
+.cs{border-color:var(--line)}
+.cs button{grid-template-columns:150px 1fr 30px;padding:22px 4px}
+.cs .w,.case-role{color:var(--teal)}
+.cs .t{font-family:"Space Grotesk",sans-serif;letter-spacing:-.04em}
+.cs .x{color:var(--red)}
+.rd{background:var(--dk);border:1px solid #34424A}
+.rd .ch{color:var(--gold)}
+.rd q{font-family:"Space Grotesk",sans-serif;letter-spacing:-.045em}
+.art figure{border-radius:0;box-shadow:8px 8px 0 var(--teal);transform:none}
+.art figure:nth-child(even){transform:none}
+.art figure:hover{transform:translateY(-5px)}
+.art figcaption{font-family:"IBM Plex Mono",monospace}
+.fav li{border-radius:0;border-width:1px;font-family:"Space Grotesk",sans-serif}
+.fav.posters li{border:1px solid var(--line)}
+.fav.posters li small{color:var(--teal)}
+.paper{border:1px solid var(--dk);box-shadow:8px 8px 0 var(--teal);transform:none}
+.paper:focus-within{box-shadow:8px 8px 0 var(--gold)}
+.key{stroke:var(--dk)}
+.key.dn{fill:var(--gold)}
+.fab{border-radius:2px;background:var(--gold);box-shadow:4px 4px 0 var(--teal)}
+.room-indicator{background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(14px)}
+.room-indicator span:last-child{color:var(--teal)}
+.newsletter-section{background:var(--dk);color:var(--paper)}
+.newsletter-section::before{border-color:rgba(217,244,90,.22);box-shadow:0 0 0 38px rgba(217,244,90,.035),0 0 0 82px rgba(217,244,90,.025)}
+.newsletter-copy .slugline,.newsletter-eyebrow{color:var(--gold)}
+.newsletter-copy h2{font-family:"Space Grotesk",sans-serif;letter-spacing:-.075em}
+.newsletter-copy h2 em{color:var(--gold)}
+.newsletter-signup{border-radius:0;box-shadow:8px 8px 0 var(--teal);transform:none}
+.newsletter-archive{color:var(--gold);border-color:var(--gold)}
+.latest-story{background:var(--gold);color:var(--dk);border:0}
+.latest-story-copy .slugline,.latest-story-kicker{color:var(--teal)}
+.latest-story-copy h2{font-family:"Space Grotesk",sans-serif;letter-spacing:-.075em}
+.latest-story-copy h2 em{color:var(--teal)}
+.latest-story-intro{color:#364149}
+.latest-story-themes span{border-radius:0;border-color:rgba(16,24,32,.3);color:#364149}
+.latest-story-link{color:var(--dk);border-color:var(--dk)}
+.latest-story-image{box-shadow:8px 8px 0 var(--teal)}
+.essay-feature{border:1px solid var(--line);border-left:4px solid var(--teal)}
+footer{background:var(--dk);color:#AAB4B8}
+@media(max-width:680px){
+  .hero{padding-top:54px}
+  .hero::before{right:16px;top:14px;font-size:.54rem}
+  .hero h1{font-size:clamp(3.8rem,17vw,6.8rem);line-height:.84;letter-spacing:-.09em;margin:24px 0 18px}
+  .home-project{min-height:0}
+  .cs button{grid-template-columns:1fr 28px}
+  .newsletter-signup{box-shadow:5px 5px 0 var(--teal)}
+  .latest-story-image{box-shadow:5px 5px 0 var(--teal)}
+}
+@media(prefers-reduced-motion:reduce){
+  .home-project,.home-room-grid a,.pz,.art figure{transition:none!important}
+}
