@@ -1338,3 +1338,54 @@ footer a{color:#f0c66b!important}
  header#top.hero.app-view .role small,
  header#top.hero.app-view .hero-about{color:#d7d7d7!important}
 }
+
+
+/* FINAL MOBILE + DESKTOP CONTRAST FIX — deliberately last in cascade. */
+html,body{background:#fff!important;color:#171717!important}
+header#top.hero.app-view{
+ background-color:#171717!important;
+ background-image:none!important;
+ color:#fff!important;
+}
+header#top.hero.app-view *{text-shadow:none}
+header#top.hero.app-view h1,
+header#top.hero.app-view .role,
+header#top.hero.app-view .hero-pitch{color:#fff!important}
+header#top.hero.app-view h1 span{color:#f0c66b!important}
+header#top.hero.app-view .role small,
+header#top.hero.app-view .hero-about{color:#dedede!important}
+header#top.hero.app-view .btn{color:#fff!important}
+header#top.hero.app-view .btn.gold{background:#f0c66b!important;color:#171717!important}
+section.dk.app-view,section#contact.app-view{
+ background-color:#171717!important;
+ background-image:none!important;
+ color:#fff!important;
+}
+section.dk.app-view :is(h2,h3,p,li,figcaption,.sub),
+section#contact.app-view :is(h2,h3,p,li,.sub,.ct){color:#ededed!important}
+section.dk.app-view h2 em,section#contact.app-view h2 em{color:#f0c66b!important}
+section.dk.app-view .slugline,section#contact.app-view .slugline{color:#d6d6d6!important}
+section.app-view:not(.dk):not(#contact){
+ background-color:#fff!important;
+ color:#171717!important;
+}
+section.app-view:not(.dk):not(#contact) :is(h2,h3,p,li,figcaption,.sub,.slugline,.case-part,.case-part p,.m,.a,.n,.w,.t){
+ color:#171717!important;
+}
+section.app-view:not(.dk):not(#contact) h2 em{color:#9f211b!important}
+section.app-view:not(.dk):not(#contact) a{color:#9f211b!important}
+section.app-view:not(.dk):not(#contact) :is(.pz,.tk,.worklist article,.work-groups>div,.art figure){
+ background:#fff!important;color:#171717!important;
+}
+section.app-view:not(.dk):not(#contact) :is(.pz,.tk,.worklist article,.work-groups>div,.art figure) *{color:#171717!important}
+section.app-view:not(.dk):not(#contact) :is(.pz,.tk,.worklist article,.art figure) a{color:#9f211b!important}
+.hero[data-script]::before,.app-view[data-script]::before{background:#fff!important;color:#111!important}
+.pz::before,.tk::before,.essay-feature::before,.worklist article::before,.work-groups>div::before,.art figure::before{color:#111!important}
+#contact .paper,#contact .paper textarea{background:#fff!important;color:#171717!important}
+#contact .paper::before{background:#fff!important;color:#111!important}
+#contact .needs .chip{color:#fff!important}
+#contact .needs .chip[aria-pressed=true]{color:#171717!important}
+#contact .btn{color:#fff!important}
+#contact .btn.gold{background:#f0c66b!important;color:#171717!important}
+footer{background:#111!important;color:#eee!important}
+footer a{color:#f0c66b!important}
