@@ -5,22 +5,10 @@ const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,root=documen
 /* theme */
 try{const t=localStorage.getItem("theme");if(t)root.setAttribute("data-theme",t)}catch(e){}
 $("#theme").onclick=()=>{const a=root.getAttribute("data-theme"),d=a?a==="dark":matchMedia("(prefers-color-scheme: dark)").matches,n=d?"light":"dark";root.setAttribute("data-theme",n);try{localStorage.setItem("theme",n)}catch(e){}};
-/* slugline + typewriter words */
-const slug=$("#slug"),st="INT. A DESK IN SOLAPUR. DAY.";let si=0;
-if(reduce)slug.textContent=st;else(function t(){slug.textContent=st.slice(0,++si);if(si<st.length)setTimeout(t,55)})();
-const words=["slogans","ad scripts","captions","brand voice","film scripts","long-form articles"],tw=$("#tw");let wi=0,ci=0,del=false;
-if(reduce)tw.textContent=words[0];else(function k(){const w=words[wi];ci+=del?-1:1;tw.textContent=w.slice(0,ci);let d=del?45:95;if(!del&&ci===w.length){del=true;d=1500}else if(del&&ci===0){del=false;wi=(wi+1)%words.length;d=320}setTimeout(k,d)})();
+/* Static editorial hero; no rotating headline or typing animation. */
 /* spotlight */
 const hero=$("#top");if(!reduce)hero.addEventListener("pointermove",e=>{const r=hero.getBoundingClientRect();hero.style.setProperty("--mx",(e.clientX-r.left)+"px");hero.style.setProperty("--my",(e.clientY-r.top)+"px")});
-/* subtitles */
-const H=L.filter(x=>x.h),sb=$("#sb");let hi=0,tm,paused=false;
-function paint(){const s=H[hi],q=$("#sq");q.textContent=s.q;q.lang=s.l;$("#sw").textContent=s.w+", "+s.t}
-function go(){if(reduce){hi=(hi+1)%H.length;paint();return}sb.classList.add("out");setTimeout(()=>{hi=(hi+1)%H.length;paint();sb.classList.remove("out")},300)}
-function run(){clearInterval(tm);if(!reduce&&!paused)tm=setInterval(go,5200)}
-paint();run();$("#pz").onclick=function(){paused=!paused;this.textContent=paused?"Play":"Pause";run()};
-/* credits */
-const names=[...new Set(L.filter(x=>!x.p).map(x=>x.w.split(",")[0]).concat(["Lokmangal Foundation","Prabhav Advertising Agency","Samosa Design","MH13BE","Madanlal Agencies","Jay Academy"]))];
-$("#cr").innerHTML=(names.map(n=>`<span>${esc(n)}</span>`).join("")).repeat(2);
+/* Rotating subtitle ticker removed for a quieter, more readable experience. */
 /* film strip */
 let lf="all";const strip=$("#strip"),fc=$("#fc");
 [["all","All"],["en","English"],["mr","Marathi"],["hi","Hindi"]].forEach(([k,t])=>{const b=document.createElement("button");b.className="chip";b.textContent=t;b.dataset.k=k;b.onclick=()=>{lf=k;drawL();strip.scrollTo({left:0})};fc.insertBefore(b,fc.firstChild===null?null:$(".arrows",fc))});
