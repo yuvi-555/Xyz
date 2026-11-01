@@ -1222,170 +1222,29 @@ footer a{color:#f0c66b!important}
 }
 
 
-/* Contrast correction: the generic alternating section rule was overriding the hero's dark title-page surface. */
-.hero.app-view,
-header.hero.app-view,
-#top.hero{
- background:#171717!important;
- color:#fff!important;
-}
+/* Targeted text-contrast fixes only. Preserve the existing V5 backgrounds, palette, spacing and components. */
 #top.hero h1,
 #top.hero .role,
 #top.hero .hero-pitch,
-#top.hero .hero-about{
- color:#fff!important;
-}
-#top.hero .role small{color:#d0d0d0!important}
-#top.hero h1 span{color:#f0c66b!important}
-#top.hero .hero-about{color:#d0d0d0!important}
-#top.hero .wrap::after{color:#f0c66b!important;border-color:rgba(255,255,255,.28)!important}
-#top.hero[data-script]::before{background:#fff!important;color:#111!important}
-@media(max-width:760px){
- #top.hero{background:#171717!important;color:#fff!important}
- #top.hero .role,#top.hero .hero-pitch,#top.hero .hero-about{color:#fff!important}
- #top.hero .role small,#top.hero .hero-about{color:#d0d0d0!important}
-}
+#top.hero .hero-about{color:#171717!important}
+#top.hero .role small{color:#555!important}
+#top.hero h1 span{color:#e7b84b!important}
+#top.hero .wrap::after{color:#171717!important;border-color:#d5d7dc!important}
 
+/* These sections use the existing light surface; correct inherited light text without repainting them. */
+#lines .slugline,#lines h2,#lines .sub{color:#171717!important}
+#lines h2 em{color:#b3261e!important}
+#writing>.wrap>.slugline,
+#writing>.wrap>h2,
+#writing>.wrap>.sub{color:#171717!important}
+#writing h2 em{color:#b3261e!important}
 
-/* Accessibility pass: enforce foreground/background contrast across every viewport. */
-header#top.hero.app-view{
- background:#171717!important;
- color:#fff!important;
-}
-header#top.hero.app-view h1,
-header#top.hero.app-view .role,
-header#top.hero.app-view .hero-pitch{color:#fff!important}
-header#top.hero.app-view h1 span{color:#f0c66b!important}
-header#top.hero.app-view .role small,
-header#top.hero.app-view .hero-about{color:#d7d7d7!important}
-header#top.hero.app-view .btn{color:#fff!important}
-header#top.hero.app-view .btn.gold{color:#171717!important}
-
-/* Dark sections must stay dark; the alternating section rule must not wash them out. */
-section.dk.app-view,
-section#contact.app-view{
- background:#171717!important;
- color:#fff!important;
-}
-section.dk.app-view h2,
-section.dk.app-view h3,
-section#contact.app-view h2,
-section#contact.app-view h3{color:#fff!important}
-section.dk.app-view p,
-section.dk.app-view li,
-section.dk.app-view figcaption,
-section.dk.app-view .sub,
-section#contact.app-view p,
-section#contact.app-view li{color:#e0e0e0}
-section.dk.app-view .slugline,
-section#contact.app-view .slugline{color:#d0d0d0!important}
-section.dk.app-view h2 em{color:#f0c66b!important}
-section#contact.app-view h2 em{color:#f0c66b!important}
-
-/* Light sections use dark readable text, including labels, links and generated content. */
-section.app-view:not(.dk):not(#contact){
- color:#171717!important;
-}
-section.app-view:not(.dk):not(#contact) h2,
-section.app-view:not(.dk):not(#contact) h3,
-section.app-view:not(.dk):not(#contact) p,
-section.app-view:not(.dk):not(#contact) li,
-section.app-view:not(.dk):not(#contact) figcaption,
-section.app-view:not(.dk):not(#contact) .sub,
-section.app-view:not(.dk):not(#contact) .slugline{
- color:#171717!important;
-}
-section.app-view:not(.dk):not(#contact) h2 em{color:#b3261e!important}
-section.app-view:not(.dk):not(#contact) a{color:#9f211b}
-section.app-view:not(.dk):not(#contact) .pz,
-section.app-view:not(.dk):not(#contact) .tk,
-section.app-view:not(.dk):not(#contact) .worklist article,
-section.app-view:not(.dk):not(#contact) .work-groups>div,
-section.app-view:not(.dk):not(#contact) .art figure{
- background:#fff!important;
- color:#171717!important;
-}
-section.app-view:not(.dk):not(#contact) .pz *,
-section.app-view:not(.dk):not(#contact) .tk *,
-section.app-view:not(.dk):not(#contact) .worklist article *,
-section.app-view:not(.dk):not(#contact) .work-groups>div *,
-section.app-view:not(.dk):not(#contact) .art figure *{color:#171717}
-section.app-view:not(.dk):not(#contact) .pz a,
-section.app-view:not(.dk):not(#contact) .tk a,
-section.app-view:not(.dk):not(#contact) .worklist a,
-section.app-view:not(.dk):not(#contact) .art a{color:#9f211b!important}
-
-/* The script annotations are always legible black-on-white, even inside dark scenes. */
-.hero[data-script]::before,
-.app-view[data-script]::before{background:#fff!important;color:#111!important}
-.pz::before,.tk::before,.essay-feature::before,
-.worklist article::before,.work-groups>div::before,.art figure::before{
- color:#111!important;
-}
-#contact .paper::before{background:#fff!important;color:#111!important}
-#contact .paper textarea{background:#fff!important;color:#171717!important}
-#contact .needs .chip{color:#fff!important}
-#contact .needs .chip[aria-pressed=true]{color:#171717!important}
-#contact .btn{color:#fff!important}
-#contact .btn.gold{color:#171717!important}
-footer{color:#e0e0e0!important}
-footer a{color:#f0c66b!important}
-@media(max-width:760px){
- header#top.hero.app-view{background:#171717!important;color:#fff!important}
- header#top.hero.app-view h1,
- header#top.hero.app-view .role,
- header#top.hero.app-view .hero-pitch{color:#fff!important}
- header#top.hero.app-view .role small,
- header#top.hero.app-view .hero-about{color:#d7d7d7!important}
-}
-
-
-/* FINAL MOBILE + DESKTOP CONTRAST FIX — deliberately last in cascade. */
-html,body{background:#fff!important;color:#171717!important}
-header#top.hero.app-view{
- background-color:#171717!important;
- background-image:none!important;
- color:#fff!important;
-}
-header#top.hero.app-view *{text-shadow:none}
-header#top.hero.app-view h1,
-header#top.hero.app-view .role,
-header#top.hero.app-view .hero-pitch{color:#fff!important}
-header#top.hero.app-view h1 span{color:#f0c66b!important}
-header#top.hero.app-view .role small,
-header#top.hero.app-view .hero-about{color:#dedede!important}
-header#top.hero.app-view .btn{color:#fff!important}
-header#top.hero.app-view .btn.gold{background:#f0c66b!important;color:#171717!important}
-section.dk.app-view,section#contact.app-view{
- background-color:#171717!important;
- background-image:none!important;
- color:#fff!important;
-}
-section.dk.app-view :is(h2,h3,p,li,figcaption,.sub),
-section#contact.app-view :is(h2,h3,p,li,.sub,.ct){color:#ededed!important}
-section.dk.app-view h2 em,section#contact.app-view h2 em{color:#f0c66b!important}
-section.dk.app-view .slugline,section#contact.app-view .slugline{color:#d6d6d6!important}
-section.app-view:not(.dk):not(#contact){
- background-color:#fff!important;
- color:#171717!important;
-}
-section.app-view:not(.dk):not(#contact) :is(h2,h3,p,li,figcaption,.sub,.slugline,.case-part,.case-part p,.m,.a,.n,.w,.t){
- color:#171717!important;
-}
-section.app-view:not(.dk):not(#contact) h2 em{color:#9f211b!important}
-section.app-view:not(.dk):not(#contact) a{color:#9f211b!important}
-section.app-view:not(.dk):not(#contact) :is(.pz,.tk,.worklist article,.work-groups>div,.art figure){
- background:#fff!important;color:#171717!important;
-}
-section.app-view:not(.dk):not(#contact) :is(.pz,.tk,.worklist article,.work-groups>div,.art figure) *{color:#171717!important}
-section.app-view:not(.dk):not(#contact) :is(.pz,.tk,.worklist article,.art figure) a{color:#9f211b!important}
-.hero[data-script]::before,.app-view[data-script]::before{background:#fff!important;color:#111!important}
-.pz::before,.tk::before,.essay-feature::before,.worklist article::before,.work-groups>div::before,.art figure::before{color:#111!important}
-#contact .paper,#contact .paper textarea{background:#fff!important;color:#171717!important}
-#contact .paper::before{background:#fff!important;color:#111!important}
-#contact .needs .chip{color:#fff!important}
-#contact .needs .chip[aria-pressed=true]{color:#171717!important}
-#contact .btn{color:#fff!important}
-#contact .btn.gold{background:#f0c66b!important;color:#171717!important}
-footer{background:#111!important;color:#eee!important}
-footer a{color:#f0c66b!important}
+/* Keep the dark featured essay and dark contact area on their existing contrast treatment. */
+#writing .essay-feature,
+#writing .essay-feature h3,
+#writing .essay-feature p,
+#writing .essay-feature span{color:#fff!important}
+#writing .essay-feature a{color:#f0c66b!important}
+#contact{color:#fff!important}
+#contact h2,#contact h3{color:#fff!important}
+#contact .sub,#contact .ct{color:#d0d0d0!important}
