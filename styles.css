@@ -1806,3 +1806,46 @@ nav a.cta:hover{background:#fff!important;border-color:#fff!important;color:#171
   .client-ticker-track{animation:none!important;flex-wrap:wrap;width:auto;white-space:normal}
   .client-ticker-window{mask-image:none}
 }
+
+
+/* Dark mode: retain the site's charcoal / gold identity while adapting paper surfaces. */
+:root[data-theme="dark"]{color-scheme:dark;--paper:#171614;--paper2:#211f1b;--ink:#eee8dc;--muted:#b9b0a2;--line:#39352e;--gold:#efc45f;--red:#df796c;--cream:#e7dece;--dk:#10100f}
+:root[data-theme="dark"] body{background:#171614!important;color:#eee8dc!important}
+:root[data-theme="dark"] nav{background:#10100f!important;color:#f2ecdf!important;border-color:#38342e!important}
+:root[data-theme="dark"] nav a{color:#f2ecdf!important}
+:root[data-theme="dark"] nav a.on,:root[data-theme="dark"] nav a.cta{background:#efc45f!important;color:#171614!important;border-color:#efc45f!important}
+:root[data-theme="dark"] #theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;flex:0 0 auto;padding:6px 11px;border:1px solid #807967;border-radius:999px;background:#26231e;color:#f4eddf;font:600 .82rem/1.2 "Space Grotesk",sans-serif;white-space:nowrap;cursor:pointer}
+#theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;flex:0 0 auto;padding:6px 11px;border:1px solid #82796a;border-radius:999px;background:#26231e;color:#f4eddf;font:600 .82rem/1.2 "Space Grotesk",sans-serif;white-space:nowrap;cursor:pointer}
+#theme-toggle .theme-icon{font-size:1rem;line-height:1}
+#theme-toggle:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+:root[data-theme="dark"] section:not(.dk),:root[data-theme="dark"] .app-view:nth-of-type(even),:root[data-theme="dark"] .app-view:nth-of-type(odd){background:#171614!important;color:#eee8dc!important;border-color:#39352e!important}
+:root[data-theme="dark"] section.dk,:root[data-theme="dark"] .hero{background:#10100f!important;color:#f1eadc!important}
+:root[data-theme="dark"] .app-view h2,:root[data-theme="dark"] .app-view h3,:root[data-theme="dark"] .app-view p,:root[data-theme="dark"] .app-view li,:root[data-theme="dark"] .app-view figcaption{color:inherit}
+:root[data-theme="dark"] .sub,:root[data-theme="dark"] .essay-feature-meta,:root[data-theme="dark"] .cs .t small{color:#b9b0a2!important}
+:root[data-theme="dark"] .fr,:root[data-theme="dark"] .pz,:root[data-theme="dark"] .tk,:root[data-theme="dark"] .art figure,:root[data-theme="dark"] .worklist article{background:#26231e!important;color:#eee8dc!important;border-color:#494238!important}
+:root[data-theme="dark"] .fr blockquote,:root[data-theme="dark"] .pz h3,:root[data-theme="dark"] .tk h3,:root[data-theme="dark"] .worklist h3{color:#f1eadc!important}
+:root[data-theme="dark"] .pz .case-part b,:root[data-theme="dark"] .case-part p,:root[data-theme="dark"] .tk .case-part p{color:#d8d0c3!important}
+:root[data-theme="dark"] .pz blockquote{background:#343029!important;color:#f3ead8!important}
+:root[data-theme="dark"] .chip,:root[data-theme="dark"] .tk .btn{background:#24211d!important;color:#eee8dc!important;border-color:#756d60!important}
+:root[data-theme="dark"] .chip[aria-pressed=true]{background:#efc45f!important;color:#171614!important;border-color:#efc45f!important}
+:root[data-theme="dark"] .work-groups>div{
+  color:#f4ecdc!important;
+  border:1px solid rgba(255,255,255,.12)!important;
+  box-shadow:2px 6px 12px rgba(0,0,0,.35)!important;
+}
+:root[data-theme="dark"] #work .work-groups>div:nth-child(1){background:#66532e!important}
+:root[data-theme="dark"] #work .work-groups>div:nth-child(2){background:#68463c!important}
+:root[data-theme="dark"] #work .work-groups>div:nth-child(3){background:#435440!important}
+:root[data-theme="dark"] #work .work-groups>div:nth-child(4){background:#3f5060!important}
+:root[data-theme="dark"] #work .work-groups h3,:root[data-theme="dark"] #work .work-groups .also{color:#fff4e2!important}
+:root[data-theme="dark"] #work .work-groups .experience-highlight{background:#efc45f!important;color:#211b11!important}
+:root[data-theme="dark"] .cs button,:root[data-theme="dark"] .cs .w,:root[data-theme="dark"] .cs .t,:root[data-theme="dark"] .cs .b{color:#eee8dc!important}
+:root[data-theme="dark"] .cs{border-color:#39352e!important}
+:root[data-theme="dark"] .essay-feature,:root[data-theme="dark"] #contact .paper{background:#26231e!important;color:#eee8dc!important;border-color:#494238!important}
+:root[data-theme="dark"] #contact .paper textarea{background:#1c1a17!important;color:#eee8dc!important;border-color:#625a4e!important}
+:root[data-theme="dark"] .client-ticker{background:#0d0c0b!important}
+:root[data-theme="dark"] .script-highlight,:root[data-theme="dark"] .experience-highlight{color:#211b11!important}
+@media(max-width:640px){
+  #theme-toggle{padding:5px 8px;gap:5px;font-size:.72rem}
+  .nv{gap:5px}
+}
