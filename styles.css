@@ -1722,3 +1722,21 @@ nav a.cta:hover{background:#fff!important;border-color:#fff!important;color:#171
 }
 @media(max-width:390px){#work .work-groups{grid-template-columns:1fr!important}}
 @media(prefers-reduced-motion:reduce){#work .work-groups>div{transition:none}}
+
+
+/* Richer stationery palette: warm ochre, terracotta, sage and slate. */
+#work .work-groups>div{background:#e8c36d!important}
+#work .work-groups>div:nth-child(2){background:#d99b82!important}
+#work .work-groups>div:nth-child(3){background:#b9c9a8!important}
+#work .work-groups>div:nth-child(4){background:#aebfce!important}
+#work .work-groups>div::before{
+  background:rgba(245,239,220,.58)!important;
+  box-shadow:0 1px 2px rgba(40,34,24,.16)!important;
+}
+#work .work-groups h3{color:#24221e!important}
+#work .work-groups .also{color:#37332d!important}
+#work .work-groups .also li::before{color:#8f493f!important}
+#work .work-groups .experience-highlight{
+  background:#f6d36f!important;
+  color:#211d16!important;
+}
