@@ -1740,3 +1740,69 @@ nav a.cta:hover{background:#fff!important;border-color:#fff!important;color:#171
   background:#f6d36f!important;
   color:#211d16!important;
 }
+
+
+/* Client / collaborator ticker — adapted from the original portfolio's credits reel. */
+.client-ticker{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:center;
+  min-height:76px;
+  padding:13px 0;
+  overflow:hidden;
+  background:#171717;
+  color:#f5f0e6;
+  border-top:1px solid #343434;
+  border-bottom:1px solid #343434;
+}
+.client-ticker-inner{
+  width:min(100% - 56px,1200px);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:max-content minmax(0,1fr);
+  align-items:center;
+  gap:28px;
+}
+.client-ticker-label{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#efc765;
+  font:600 .62rem/1.35 "IBM Plex Mono",monospace;
+  letter-spacing:.13em;
+  white-space:nowrap;
+}
+.client-ticker-label i{font-style:normal;color:#b85a4e}
+.client-ticker-window{min-width:0;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent)}
+.client-ticker-track{
+  display:flex;
+  align-items:center;
+  width:max-content;
+  gap:30px;
+  white-space:nowrap;
+  animation:client-reel 48s linear infinite;
+}
+.client-ticker-track span{
+  color:#f4f0e8;
+  font:500 .88rem/1.2 "Space Grotesk",sans-serif;
+  letter-spacing:.015em;
+}
+.client-ticker-track b{
+  color:#e8bd59;
+  font-size:.72rem;
+  font-weight:400;
+}
+.client-ticker:hover .client-ticker-track{animation-play-state:paused}
+@keyframes client-reel{to{transform:translateX(-50%)}}
+@media(max-width:640px){
+  .client-ticker{min-height:72px;padding:11px 0}
+  .client-ticker-inner{width:calc(100% - 32px);grid-template-columns:1fr;gap:8px}
+  .client-ticker-label{font-size:.55rem}
+  .client-ticker-track{gap:22px;animation-duration:42s}
+  .client-ticker-track span{font-size:.82rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .client-ticker-track{animation:none!important;flex-wrap:wrap;width:auto;white-space:normal}
+  .client-ticker-window{mask-image:none}
+}
