@@ -2096,3 +2096,134 @@ nav a.cta:hover{background:#fff!important;border-color:#fff!important;color:#171
 @media(prefers-reduced-motion:reduce){
   :root[data-theme="dark"] *,:root[data-theme="dark"] *::before,:root[data-theme="dark"] *::after{transition:none!important}
 }
+
+
+/* YK finishing pass — persistent theme control and legible screenplay marginalia. */
+/* Keep the appearance control outside the horizontally scrollable link rail. */
+nav .nv{min-width:0}
+nav .nv>.links{min-width:0;flex:1 1 auto}
+nav #theme-toggle{
+  flex:0 0 auto;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  min-height:38px;
+  margin-left:6px;
+  padding:6px 12px;
+  border:1px solid #8b806e;
+  border-radius:999px;
+  background:#f3ebdc;
+  color:#27231d;
+  font:600 .82rem "Mukta",sans-serif;
+  line-height:1;
+  white-space:nowrap;
+  cursor:pointer;
+  box-shadow:0 2px 8px rgba(20,17,15,.12);
+}
+nav #theme-toggle:hover{border-color:var(--gold);background:#fff8e9}
+nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
+@media(max-width:640px){
+  nav .nv{gap:5px}
+  nav .nv>.links{overflow-x:auto}
+  nav #theme-toggle{margin-left:2px;padding:6px 8px;min-width:39px;min-height:38px}
+  nav #theme-toggle .theme-label{display:none}
+}
+@media(max-width:380px){
+  nav #theme-toggle{padding:5px 7px;min-width:35px}
+}
+
+/* The little production labels should feel like set annotations, not white UI chips. */
+.hero[data-script]::before,.app-view[data-script]::before{
+  background:#ead9b6;
+  color:#4d3927;
+  border:1px solid rgba(107,75,42,.22);
+  box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+.slugline::after{
+  color:#a65d43;
+  opacity:1;
+  font-weight:600;
+}
+#contact .slugline::after{color:#b47a45}
+.pz::before,.tk::before,.essay-feature::before,.worklist article::before,.work-groups>div::before,.art figure::before{
+  color:#8c563e;
+}
+#cs .cs button .w::before{color:#a65d43}
+#top .hero-about::after{
+  color:#e7b875;
+  text-shadow:0 1px 8px rgba(0,0,0,.22);
+}
+#campaigns .sub::after,
+#screen .sub::after,
+#writing .sub::after,
+#art .sub::after,
+#work .sub::after{
+  color:#a65d43;
+  text-shadow:0 1px 0 rgba(255,255,255,.28);
+}
+#essay-feature::after,.essay-feature::after{color:#a65d43;opacity:.9}
+#contact .paper::before{
+  background:#ead9b6;
+  color:#4d3927;
+  border-bottom-color:#cbb995;
+}
+:root[data-theme="dark"] nav #theme-toggle{
+  background:#292d35!important;
+  color:#f0c66b!important;
+  border:1px solid #7d8490!important;
+  box-shadow:inset 0 1px rgba(255,255,255,.06),0 2px 8px rgba(0,0,0,.22)!important;
+}
+:root[data-theme="dark"] nav #theme-toggle:hover{
+  background:#353a44!important;border-color:#f0c66b!important;color:#ffe0a0!important;
+}
+/* In the night palette, handwriting uses warm pencil, ochre and coral — never plain white. */
+:root[data-theme="dark"] .hero[data-script]::before,
+:root[data-theme="dark"] .app-view[data-script]::before{
+  background:#34302b!important;
+  color:#f0c98b!important;
+  border:1px solid #66523c!important;
+  box-shadow:0 3px 12px rgba(0,0,0,.22)!important;
+}
+:root[data-theme="dark"] .slugline::after{
+  color:#e7a18e!important;
+  text-shadow:0 1px 8px rgba(0,0,0,.28);
+}
+:root[data-theme="dark"] #contact .slugline::after{color:#f0c66b!important}
+:root[data-theme="dark"] .pz::before,
+:root[data-theme="dark"] .tk::before,
+:root[data-theme="dark"] .essay-feature::before,
+:root[data-theme="dark"] .worklist article::before,
+:root[data-theme="dark"] .art figure::before{
+  color:#f0c66b!important;
+}
+:root[data-theme="dark"] #work .work-groups>div::before{color:#70513a!important}
+:root[data-theme="dark"] #cs .cs button .w::before{
+  color:#e7a18e!important;
+}
+:root[data-theme="dark"] #top .hero-about::after{
+  color:#f0c66b!important;
+  text-shadow:0 2px 10px rgba(0,0,0,.55);
+}
+:root[data-theme="dark"] #campaigns .sub::after,
+:root[data-theme="dark"] #screen .sub::after,
+:root[data-theme="dark"] #writing .sub::after,
+:root[data-theme="dark"] #art .sub::after,
+:root[data-theme="dark"] #work .sub::after{
+  color:#efb08e!important;
+  text-shadow:0 2px 8px rgba(0,0,0,.45);
+}
+:root[data-theme="dark"] .essay-feature::after{
+  color:#f0c66b!important;opacity:1;
+}
+:root[data-theme="dark"] #contact .paper::before{
+  background:#e5cfaa!important;
+  color:#4d3927!important;
+  border-bottom-color:#c6ad82!important;
+}
+:root[data-theme="dark"] #campaigns .pz::before,
+:root[data-theme="dark"] #screen .tk::before,
+:root[data-theme="dark"] #writing .essay-feature::before,
+:root[data-theme="dark"] #writing .worklist article::before{
+  color:#f0c66b!important;
+}
