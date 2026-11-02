@@ -2450,3 +2450,62 @@ nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
     ) bottom 8px left 0/280px 13px repeat-x,
     linear-gradient(180deg,#282d35 0%,#111318 50%,#282d35 100%)!important;
 }
+
+
+/* Mobile 70mm reel: two readable frames in the viewing window, not one poster card. */
+@media(max-width:700px){
+  #lines .strip{
+    --perf-pitch:clamp(34px,calc((100vw - 64px)/10),64px);
+    display:flex!important;
+    align-items:stretch!important;
+    gap:12px!important;
+    padding:34px 16px!important;
+    margin-inline:-22px!important;
+    overflow-x:auto!important;
+    scroll-snap-type:x mandatory!important;
+    background:
+      repeating-linear-gradient(90deg,transparent 0 8px,#c7bca7 8px 22px,transparent 22px var(--perf-pitch)) top 8px left 0/var(--perf-pitch) 12px repeat-x,
+      repeating-linear-gradient(90deg,transparent 0 8px,#c7bca7 8px 22px,transparent 22px var(--perf-pitch)) bottom 8px left 0/var(--perf-pitch) 12px repeat-x,
+      linear-gradient(180deg,#29272a 0%,#111114 50%,#29272a 100%)!important;
+  }
+  #lines .fr{
+    box-sizing:border-box!important;
+    flex:0 0 clamp(168px,calc((100vw - 64px)/2),320px)!important;
+    width:auto!important;
+    min-width:0!important;
+    min-height:218px!important;
+    aspect-ratio:auto!important;
+    padding:13px 13px 11px!important;
+    border-top:6px solid #080809!important;
+    border-bottom:6px solid #080809!important;
+    scroll-snap-align:start!important;
+    display:flex!important;
+    flex-direction:column!important;
+    justify-content:space-between!important;
+    gap:7px!important;
+  }
+  #lines .fr .n{
+    font-size:.53rem!important;
+    letter-spacing:.08em!important;
+    padding-bottom:6px!important;
+    white-space:nowrap!important;
+  }
+  #lines .fr .n::before{width:5px!important;height:5px!important;flex:0 0 5px}
+  #lines .fr blockquote{
+    flex:1 1 auto!important;
+    min-height:0!important;
+    margin:2px 0!important;
+    font-size:clamp(.82rem,3.5vw,.98rem)!important;
+    line-height:1.28!important;
+    display:-webkit-box!important;
+    -webkit-box-orient:vertical!important;
+    -webkit-line-clamp:5!important;
+    overflow:hidden!important;
+  }
+  #lines .fr.e blockquote{-webkit-line-clamp:6!important;font-size:.84rem!important}
+  #lines .fr .w{font-size:.61rem!important;line-height:1.25!important}
+  #lines .fr .w span{font-size:.55rem!important}
+  #lines .fr .w a{font-size:.57rem!important;margin-top:3px!important}
+  #lines .arrows button{width:40px!important;height:40px!important}
+}
+:root[data-theme="dark"] @media(max-width:700px){}
