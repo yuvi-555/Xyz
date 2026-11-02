@@ -2,6 +2,29 @@
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,root=document.documentElement;
+/* Persistent light / dark appearance switch. */
+const themeToggle=$("#theme-toggle");
+let savedTheme="light";
+try{savedTheme=localStorage.getItem("portfolio-theme")||"light"}catch(e){}
+function applyTheme(theme){
+ const dark=theme==="dark";
+ root.setAttribute("data-theme",dark?"dark":"light");
+ if(themeToggle){
+  themeToggle.setAttribute("aria-pressed",String(dark));
+  themeToggle.setAttribute("aria-label",dark?"Switch to light mode":"Switch to dark mode");
+  themeToggle.title=dark?"Switch to light mode":"Switch to dark mode";
+  const icon=themeToggle.querySelector(".theme-icon"),label=themeToggle.querySelector(".theme-label");
+  if(icon)icon.textContent=dark?"☀":"☾";
+  if(label)label.textContent=dark?"Light mode":"Dark mode";
+ }
+}
+applyTheme(savedTheme);
+if(themeToggle)themeToggle.addEventListener("click",()=>{
+ const next=root.getAttribute("data-theme")==="dark"?"light":"dark";
+ applyTheme(next);
+ try{localStorage.setItem("portfolio-theme",next)}catch(e){}
+});
+
 /* Static editorial hero; no rotating headline or typing animation. */
 /* spotlight */
 const hero=$("#top");if(!reduce)hero.addEventListener("pointermove",e=>{const r=hero.getBoundingClientRect();hero.style.setProperty("--mx",(e.clientX-r.left)+"px");hero.style.setProperty("--my",(e.clientY-r.top)+"px")});
