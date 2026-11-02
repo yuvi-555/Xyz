@@ -1578,3 +1578,41 @@ nav a.cta:hover{background:#fff!important;border-color:#fff!important;color:#171
   #lines .strip{scroll-behavior:auto}
   #lines .arrows button{transition:none}
 }
+
+
+/* Classic desktop cursor cue: move onto the primary CTA, then visibly click it. */
+#top.hero .tap-cue{
+  position:absolute;
+  z-index:4;
+  left:54%;
+  top:-43px;
+  right:auto;
+  width:28px;
+  height:36px;
+  color:transparent;
+  pointer-events:none;
+  transform-origin:2px 2px;
+  filter:drop-shadow(1px 2px 1px rgba(0,0,0,.22));
+  animation:desktop-cursor-click 2.8s ease-in-out 1s 2 both;
+}
+#top.hero .tap-cue svg{display:block;width:28px;height:36px;overflow:visible}
+#top.hero .see-work{
+  transform-origin:center;
+  animation:cta-receive-click 2.8s ease-in-out 1s 2 both;
+}
+@keyframes desktop-cursor-click{
+  0%,12%{opacity:0;transform:translate(24px,-16px) scale(1)}
+  22%{opacity:1;transform:translate(18px,-12px) scale(1)}
+  58%{opacity:1;transform:translate(0,0) scale(1)}
+  68%{opacity:1;transform:translate(2px,3px) scale(.88)}
+  76%{opacity:1;transform:translate(0,0) scale(1)}
+  92%,100%{opacity:0;transform:translate(0,0) scale(1)}
+}
+@keyframes cta-receive-click{
+  0%,64%,78%,100%{transform:translateY(0) scale(1);filter:none}
+  69%,73%{transform:translateY(2px) scale(.975);filter:brightness(.94)}
+}
+@media(prefers-reduced-motion:reduce){
+  #top.hero .tap-cue{display:none!important;animation:none!important}
+  #top.hero .see-work{animation:none!important}
+}
