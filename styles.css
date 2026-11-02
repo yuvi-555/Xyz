@@ -2362,3 +2362,69 @@ nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
   #work #cs .cs.experience::before{top:25px}
   #work #cs .cs.experience + .cs.project{margin-top:36px!important}
 }
+
+
+/* 70mm widescreen film stock treatment for the copy reel. */
+#lines .strip{
+  position:relative!important;
+  isolation:isolate;
+  gap:22px!important;
+  padding:48px 26px!important;
+  border:1px solid #77716a!important;
+  border-radius:2px!important;
+  background:
+    repeating-linear-gradient(90deg,transparent 0 10px,rgba(235,228,213,.08) 10px 11px) 0 0/22px 100%,
+    linear-gradient(#17191d,#111216)!important;
+  box-shadow:0 12px 26px rgba(0,0,0,.22),inset 0 0 0 5px #292b30!important;
+}
+#lines .strip::before,
+#lines .strip::after{
+  content:"";position:absolute;left:0;right:0;height:17px;z-index:4;
+  pointer-events:none;
+  background:
+    repeating-linear-gradient(90deg,
+      transparent 0 7px,
+      #d9d5cb 7px 17px,
+      transparent 17px 29px);
+  opacity:.95;
+}
+#lines .strip::before{top:12px}
+#lines .strip::after{bottom:12px}
+#lines .fr{
+  flex-basis:clamp(300px,38vw,410px)!important;
+  min-height:250px!important;
+  border:8px solid #24262b!important;
+  outline:1px solid #77716a;
+  border-radius:1px!important;
+  box-shadow:0 0 0 1px rgba(255,255,255,.14),0 8px 18px rgba(0,0,0,.28)!important;
+}
+#lines .fr .n{
+  position:relative;
+  letter-spacing:.18em!important;
+}
+#lines .fr .n::after{
+  content:"70MM  ·  5 PERF";
+  margin-left:auto;
+  color:#a65d43;
+  font:600 .58rem "IBM Plex Mono",monospace;
+  letter-spacing:.08em;
+}
+#lines .fr blockquote{font-size:clamp(1.25rem,2vw,1.65rem)!important}
+#lines .fr .w span{letter-spacing:.02em}
+@media(max-width:600px){
+  #lines .strip{padding:43px 18px!important;gap:17px!important}
+  #lines .strip::before,#lines .strip::after{height:14px}
+  #lines .fr{flex-basis:84vw!important;min-height:250px!important;border-width:7px!important}
+  #lines .fr .n::after{font-size:.52rem}
+}
+:root[data-theme="dark"] #lines .strip{
+  border-color:#747985!important;
+  background:
+    repeating-linear-gradient(90deg,transparent 0 10px,rgba(235,228,213,.09) 10px 11px) 0 0/22px 100%,
+    linear-gradient(#0d0f13,#171a20)!important;
+  box-shadow:0 12px 28px rgba(0,0,0,.38),inset 0 0 0 5px #30343d!important;
+}
+:root[data-theme="dark"] #lines .strip::before,
+:root[data-theme="dark"] #lines .strip::after{background:repeating-linear-gradient(90deg,transparent 0 7px,#c9c6bd 7px 17px,transparent 17px 29px)}
+:root[data-theme="dark"] #lines .fr{outline-color:#737985}
+:root[data-theme="dark"] #lines .fr .n::after{color:#a64a3d}
