@@ -1466,3 +1466,23 @@ footer a{color:#f0c66b!important}
     background-image:none!important;
   }
 }
+
+
+/* Navigation bar: match the deep charcoal used by the hero/footer treatment. */
+nav{
+  background:#171717!important;
+  color:#fff!important;
+  border-bottom:1px solid #343434!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+}
+nav .lg{color:#fff!important}
+nav a{color:#f1f1f1!important}
+nav a:hover{background:#2b2b2b!important;color:#fff!important}
+nav a.on{background:#f0c66b!important;color:#171717!important}
+nav a.cta{
+  background:#f0c66b!important;
+  color:#171717!important;
+  border:1px solid #f0c66b!important;
+}
+nav a.cta:hover{background:#fff!important;border-color:#fff!important;color:#171717!important}
