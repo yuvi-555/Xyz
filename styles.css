@@ -2256,3 +2256,16 @@ nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
   color:#4d3927!important;
   -webkit-text-fill-color:#4d3927!important;
 }
+
+
+/* Restore the editorial title contrast: ivory base, coloured italic emphasis. */
+:root[data-theme="dark"] .app-view:not(#top)>.wrap>h2 em,
+:root[data-theme="dark"] #lines h2 em,
+:root[data-theme="dark"] #writing h2 em{
+  color:#e38b7d!important;
+  -webkit-text-fill-color:#e38b7d!important;
+}
+:root[data-theme="dark"] #contact h2 em{
+  color:#f0c66b!important;
+  -webkit-text-fill-color:#f0c66b!important;
+}
