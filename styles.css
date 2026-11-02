@@ -2299,3 +2299,41 @@ nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
   -webkit-text-fill-color:#d6d1c8!important;
   opacity:1!important;
 }
+
+
+/* Separate selected projects from employment history without changing the list structure. */
+#work .cs.project{
+  margin:10px 0;
+  padding:4px 12px 4px 14px;
+  border:1px solid #d8c8b8!important;
+  border-left:3px solid #b86b57!important;
+  border-radius:5px;
+  background:rgba(184,107,87,.065);
+}
+#work .cs.project button{padding-top:13px;padding-bottom:13px}
+#work .cs.project .w{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:max-content;
+  padding:3px 7px;
+  border:1px solid #c58a76;
+  border-radius:3px;
+  background:#f4e2d8;
+  color:#8d493b!important;
+  font:700 .62rem "IBM Plex Mono",monospace!important;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+#work .cs.project .x{color:#a95748!important}
+:root[data-theme="dark"] #work .cs.project{
+  background:rgba(227,139,125,.07)!important;
+  border-color:#4b4244!important;
+  border-left-color:#e38b7d!important;
+}
+:root[data-theme="dark"] #work .cs.project .w{
+  background:#3b2c2c!important;
+  border-color:#98675f!important;
+  color:#f0b0a2!important;
+}
+:root[data-theme="dark"] #work .cs.project .x{color:#e9a092!important}
