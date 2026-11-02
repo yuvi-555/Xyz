@@ -44,5 +44,19 @@ addEventListener("popstate",()=>{const target=$(location.hash||"#top");if(target
 const navObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){const id=entry.target.id;links.forEach(a=>{const active=a.dataset.s===id;a.classList.toggle("on",active);if(active)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")})}})},{rootMargin:"-18% 0px -68% 0px",threshold:0});
 rooms.filter(r=>r.id!=="top").forEach(r=>{const el=$("#"+r.id);if(el)navObserver.observe(el)});
 onS();
+/* One-time production stamp impact when the footer enters view. */
+const approvalStamp=$(".production-stamp");
+if(approvalStamp){
+ if(reduce){approvalStamp.classList.add("hit")}
+ else{
+  const stampObserver=new IntersectionObserver(entries=>{
+   if(entries.some(entry=>entry.isIntersecting)){
+    approvalStamp.classList.add("hit");
+    stampObserver.disconnect();
+   }
+  },{threshold:.45});
+  stampObserver.observe(approvalStamp);
+ }
+}
 if(!reduce){root.classList.add("js");const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");ro.unobserve(e.target)}}),{threshold:.05});$$("section .wrap").forEach(x=>{x.classList.add("rv");ro.observe(x)})}
 })();
