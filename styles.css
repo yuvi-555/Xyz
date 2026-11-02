@@ -1512,3 +1512,69 @@ nav a.cta:hover{background:#fff!important;border-color:#fff!important;color:#171
 @media(prefers-reduced-motion:reduce){
   #work .experience-highlight{animation:none;background-image:none}
 }
+
+
+/* Selected copy — 35mm cinema filmstrip treatment */
+#lines .fc{align-items:center;gap:10px}
+#lines .arrows{gap:7px}
+#lines .arrows button{
+  width:42px;height:42px;border-radius:2px!important;
+  background:#171717!important;color:#F7F1E6!important;
+  border:1px solid #171717!important;font:600 1.1rem "IBM Plex Mono",monospace;
+  transition:background .2s ease,transform .2s ease
+}
+#lines .arrows button:hover{background:#B3261E!important;transform:translateY(-2px)}
+#lines .strip{
+  position:relative;isolation:isolate;
+  display:flex;align-items:stretch;gap:16px;
+  overflow-x:auto;overflow-y:hidden;
+  scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  overscroll-behavior-x:contain;
+  padding:42px 24px!important;margin:0 -22px;
+  border:0!important;border-radius:0!important;
+  background:
+    repeating-linear-gradient(90deg,transparent 0 8px,#D8D5CE 8px 19px,transparent 19px 30px) top 13px left 0/100% 12px repeat-x,
+    repeating-linear-gradient(90deg,transparent 0 8px,#D8D5CE 8px 19px,transparent 19px 30px) bottom 13px left 0/100% 12px repeat-x,
+    linear-gradient(180deg,#29272A,#171619 48%,#29272A)!important;
+  box-shadow:0 16px 34px rgba(0,0,0,.18)!important;
+  scrollbar-width:none
+}
+#lines .strip::-webkit-scrollbar{display:none}
+#lines .strip::before,#lines .strip::after{content:"";position:absolute;left:0;right:0;height:12px;pointer-events:none;z-index:3}
+#lines .strip::before{top:13px}
+#lines .strip::after{bottom:13px}
+#lines .fr{
+  position:relative;z-index:1;flex:0 0 clamp(265px,31vw,340px);
+  min-height:268px;display:flex;flex-direction:column;justify-content:space-between;
+  gap:16px;padding:22px 20px 18px!important;margin:0;
+  background:#F4EBDD!important;color:#211D1A!important;
+  border:8px solid #0C0B0D!important;border-radius:1px!important;
+  outline:1px solid rgba(255,255,255,.17);
+  box-shadow:0 5px 16px rgba(0,0,0,.28)!important;
+  scroll-snap-align:start
+}
+#lines .fr .n{
+  display:flex;align-items:center;gap:9px;
+  padding-bottom:10px;border-bottom:1px solid #CFC3B1;
+  color:#8B2924!important;font:600 .64rem "IBM Plex Mono",monospace!important;
+  letter-spacing:.16em;text-transform:uppercase
+}
+#lines .fr .n::before{content:"";width:7px;height:7px;border-radius:50%;background:#B3261E;box-shadow:0 0 0 2px rgba(179,38,30,.15)}
+#lines .fr blockquote{
+  flex:1;margin:4px 0 12px!important;
+  font:700 clamp(1.22rem,2vw,1.55rem)/1.42 "Mukta",sans-serif!important;
+  color:#211D1A!important;letter-spacing:0
+}
+#lines .fr .w{display:block;color:#39332D!important;font:600 .78rem "DM Sans",sans-serif}
+#lines .fr .w span{display:block;margin-top:4px;color:#81766A;font:400 .7rem "DM Sans",sans-serif}
+#lines .fr .w a{display:inline-block;margin-top:8px;color:#A52B25!important;font:600 .72rem "DM Sans",sans-serif;text-decoration:underline;text-underline-offset:3px}
+#lines .fr.e blockquote{font-size:1.15rem!important}
+@media(max-width:600px){
+  #lines .strip{padding:38px 16px!important;gap:12px;margin-inline:-22px}
+  #lines .fr{flex-basis:82vw;min-height:258px;padding:19px 16px 16px!important;border-width:7px!important}
+  #lines .fr blockquote{font-size:1.28rem!important}
+}
+@media(prefers-reduced-motion:reduce){
+  #lines .strip{scroll-behavior:auto}
+  #lines .arrows button{transition:none}
+}
