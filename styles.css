@@ -2227,3 +2227,32 @@ nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
 :root[data-theme="dark"] #writing .worklist article::before{
   color:#f0c66b!important;
 }
+
+
+/* Final heading visibility correction — use ivory consistently for key dark-mode titles. */
+:root[data-theme="dark"] .app-view:not(#top)>.wrap>h2,
+:root[data-theme="dark"] .app-view:not(#top)>.wrap>h2 em,
+:root[data-theme="dark"] #lines h2,
+:root[data-theme="dark"] #lines h2 em,
+:root[data-theme="dark"] #writing h2,
+:root[data-theme="dark"] #writing h2 em,
+:root[data-theme="dark"] #contact h2,
+:root[data-theme="dark"] #contact h2 em{
+  color:#f4f0e8!important;
+  -webkit-text-fill-color:#f4f0e8!important;
+}
+:root[data-theme="dark"] #top .btn:not(.gold),
+:root[data-theme="dark"] #top .btn:not(.gold):visited,
+:root[data-theme="dark"] #top .btn:not(.gold) span{
+  color:#f4f0e8!important;
+  -webkit-text-fill-color:#f4f0e8!important;
+}
+:root[data-theme="dark"] #lines .slugline,
+:root[data-theme="dark"] #writing .slugline,
+:root[data-theme="dark"] #contact .slugline{
+  color:#e9dfcf!important;
+}
+:root[data-theme="dark"] #contact .paper::before{
+  color:#4d3927!important;
+  -webkit-text-fill-color:#4d3927!important;
+}
