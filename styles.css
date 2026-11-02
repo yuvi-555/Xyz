@@ -1580,12 +1580,13 @@ nav a.cta:hover{background:#fff!important;border-color:#fff!important;color:#171
 }
 
 
-/* Classic desktop cursor cue: move onto the primary CTA, then visibly click it. */
+/* Keep the cursor anchored to the CTA; its tip lands on the button itself. */
+#top.hero .see-work{position:relative;transform-origin:center}
 #top.hero .tap-cue{
   position:absolute;
   z-index:4;
-  left:54%;
-  top:-43px;
+  left:50%;
+  top:-42px;
   right:auto;
   width:28px;
   height:36px;
@@ -1596,18 +1597,15 @@ nav a.cta:hover{background:#fff!important;border-color:#fff!important;color:#171
   animation:desktop-cursor-click 2.8s ease-in-out 1s 2 both;
 }
 #top.hero .tap-cue svg{display:block;width:28px;height:36px;overflow:visible}
-#top.hero .see-work{
-  transform-origin:center;
-  animation:cta-receive-click 2.8s ease-in-out 1s 2 both;
-}
 @keyframes desktop-cursor-click{
-  0%,12%{opacity:0;transform:translate(24px,-16px) scale(1)}
-  22%{opacity:1;transform:translate(18px,-12px) scale(1)}
-  58%{opacity:1;transform:translate(0,0) scale(1)}
-  68%{opacity:1;transform:translate(2px,3px) scale(.88)}
-  76%{opacity:1;transform:translate(0,0) scale(1)}
-  92%,100%{opacity:0;transform:translate(0,0) scale(1)}
+  0%,12%{opacity:0;transform:translate(22px,-24px) scale(1)}
+  22%{opacity:1;transform:translate(14px,-18px) scale(1)}
+  58%{opacity:1;transform:translate(-2px,49px) scale(1)}
+  68%{opacity:1;transform:translate(0,52px) scale(.88)}
+  76%{opacity:1;transform:translate(-2px,49px) scale(1)}
+  92%,100%{opacity:0;transform:translate(-2px,49px) scale(1)}
 }
+#top.hero .see-work{animation:cta-receive-click 2.8s ease-in-out 1s 2 both}
 @keyframes cta-receive-click{
   0%,64%,78%,100%{transform:translateY(0) scale(1);filter:none}
   69%,73%{transform:translateY(2px) scale(.975);filter:brightness(.94)}
