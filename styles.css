@@ -2362,3 +2362,12 @@ nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
   #work #cs .cs.experience::before{top:25px}
   #work #cs .cs.experience + .cs.project{margin-top:36px!important}
 }
+
+
+/* Center the contact invitation copy beneath the heading. */
+#contact .wrap>p.sub{
+  width:min(100%,680px)!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  text-align:center!important;
+}
