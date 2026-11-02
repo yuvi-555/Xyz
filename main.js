@@ -4,8 +4,7 @@ const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,root=document.documentElement;
 /* Persistent light / dark appearance switch. */
 const themeToggle=$("#theme-toggle");
-let savedTheme="light";
-try{savedTheme=localStorage.getItem("portfolio-theme")||"light"}catch(e){}
+const savedTheme="light"; // Always start in light mode; the visitor can switch during this visit.
 function applyTheme(theme){
  const dark=theme==="dark";
  root.setAttribute("data-theme",dark?"dark":"light");
