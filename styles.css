@@ -2280,3 +2280,13 @@ nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
 :root[data-theme="dark"] .footer-socials a{color:#f0c66b;background:#252932;border-color:#555b66}
 :root[data-theme="dark"] .footer-socials a:hover{color:#211d16;background:#f0c66b;border-color:#f0c66b}
 @media(max-width:600px){.site-footer{gap:13px}.footer-socials{order:3;flex-basis:100%}}
+
+
+/* Social/profile shortcuts sit directly above the contact details in the final scene. */
+.contact-socials{display:flex;justify-content:center;align-items:center;gap:11px;flex-wrap:wrap;margin:28px auto 17px}
+.contact-socials a{width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #c9bda9;border-radius:50%;background:#f5eee2;color:#594b3a;box-shadow:0 2px 7px rgba(35,27,18,.07);transition:transform .2s ease,background .2s ease,border-color .2s ease}
+.contact-socials a:hover{transform:translateY(-3px);background:#ead9b6;border-color:#a65d43;color:#4d3927}
+.contact-socials svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+:root[data-theme="dark"] .contact-socials a{background:#292d35;color:#f0c66b;border-color:#59606b;box-shadow:0 3px 10px rgba(0,0,0,.2)}
+:root[data-theme="dark"] .contact-socials a:hover{background:#f0c66b;color:#211d16;border-color:#f0c66b}
+@media(max-width:520px){.contact-socials{gap:9px;margin:23px auto 14px}.contact-socials a{width:40px;height:40px}}
