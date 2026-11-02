@@ -1923,3 +1923,99 @@ nav a.cta:hover{background:#fff!important;border-color:#fff!important;color:#171
 :root[data-theme="dark"] .app-view .experience-highlight{color:#211b11!important}
 :root[data-theme="dark"] .app-view .btn{color:#f4eee3!important;border-color:#c9c1b4!important}
 :root[data-theme="dark"] .app-view .btn.gold{background:#f2c96b!important;color:#211d15!important;border-color:#f2c96b!important}
+
+
+/* FINAL DARK THEME — section-specific overrides for components with legacy light-mode colours. */
+:root[data-theme="dark"] #lines,
+:root[data-theme="dark"] #campaigns,
+:root[data-theme="dark"] #screen,
+:root[data-theme="dark"] #writing,
+:root[data-theme="dark"] #art,
+:root[data-theme="dark"] #work{
+  background:#292722!important;
+  color:#f2ede3!important;
+  border-color:#4c473e!important;
+}
+:root[data-theme="dark"] #lines h2,
+:root[data-theme="dark"] #campaigns h2,
+:root[data-theme="dark"] #screen h2,
+:root[data-theme="dark"] #writing h2,
+:root[data-theme="dark"] #art h2,
+:root[data-theme="dark"] #work h2{
+  color:#f7f1e7!important;
+}
+:root[data-theme="dark"] #lines h2 em,
+:root[data-theme="dark"] #campaigns h2 em,
+:root[data-theme="dark"] #screen h2 em,
+:root[data-theme="dark"] #writing h2 em,
+:root[data-theme="dark"] #art h2 em,
+:root[data-theme="dark"] #work h2 em{color:#e58a7e!important}
+:root[data-theme="dark"] #lines .sub,
+:root[data-theme="dark"] #campaigns .sub,
+:root[data-theme="dark"] #screen .sub,
+:root[data-theme="dark"] #writing .sub,
+:root[data-theme="dark"] #art .sub,
+:root[data-theme="dark"] #work .sub{color:#c9c1b4!important}
+:root[data-theme="dark"] #work .cs{border-color:#5b554a!important}
+:root[data-theme="dark"] #work .cs button{
+  color:#f5efe4!important;
+  background:transparent!important;
+}
+:root[data-theme="dark"] #work .cs .w{color:#e9c878!important}
+:root[data-theme="dark"] #work .cs .t,
+:root[data-theme="dark"] #work .cs .t small,
+:root[data-theme="dark"] #work .cs .b,
+:root[data-theme="dark"] #work .cs .b p,
+:root[data-theme="dark"] #work .cs .b li{color:#d9d1c4!important}
+:root[data-theme="dark"] #work .cs .x{color:#e58a7e!important}
+:root[data-theme="dark"] #work .work-groups>div{
+  color:#fff4e2!important;
+  border:1px solid rgba(255,255,255,.16)!important;
+  box-shadow:2px 7px 18px rgba(0,0,0,.32)!important;
+}
+:root[data-theme="dark"] #work .work-groups>div:nth-child(1){background:#66532e!important}
+:root[data-theme="dark"] #work .work-groups>div:nth-child(2){background:#68463c!important}
+:root[data-theme="dark"] #work .work-groups>div:nth-child(3){background:#435440!important}
+:root[data-theme="dark"] #work .work-groups>div:nth-child(4){background:#3f5060!important}
+:root[data-theme="dark"] #work .work-groups h3{color:#fff7e9!important}
+:root[data-theme="dark"] #work .work-groups .also,
+:root[data-theme="dark"] #work .work-groups .also li{color:#f1e9db!important}
+:root[data-theme="dark"] #work .work-groups .also li::before{color:#f0c66b!important}
+:root[data-theme="dark"] #work .work-groups .experience-highlight{
+  background:#f2c96b!important;color:#211b11!important;
+}
+:root[data-theme="dark"] #lines .fr,
+:root[data-theme="dark"] #campaigns .pz,
+:root[data-theme="dark"] #screen .tk,
+:root[data-theme="dark"] #writing .essay-feature,
+:root[data-theme="dark"] #art figure{
+  background:#38352f!important;color:#f4eee3!important;border-color:#5c5549!important;
+}
+:root[data-theme="dark"] #lines .fr blockquote,
+:root[data-theme="dark"] #campaigns .pz h3,
+:root[data-theme="dark"] #screen .tk h3,
+:root[data-theme="dark"] #writing .essay-feature h3{color:#fff7e9!important}
+:root[data-theme="dark"] #campaigns .pz p,
+:root[data-theme="dark"] #campaigns .pz .case-part p,
+:root[data-theme="dark"] #screen .tk p,
+:root[data-theme="dark"] #writing .essay-feature p{color:#d8d0c3!important}
+:root[data-theme="dark"] #campaigns .pz blockquote{background:#292722!important;color:#fff4df!important}
+:root[data-theme="dark"] #writing .essay-feature a,
+:root[data-theme="dark"] #art a{color:#f2c96b!important}
+:root[data-theme="dark"] #contact{
+  background:#1c1b19!important;color:#f7f2e8!important;
+}
+:root[data-theme="dark"] #contact h2{color:#fff7e9!important}
+:root[data-theme="dark"] #contact h2 em{color:#f2c96b!important}
+:root[data-theme="dark"] #contact .sub{color:#d1c9bc!important}
+:root[data-theme="dark"] #contact .paper{
+  background:#38352f!important;border-color:#8c806a!important;
+  box-shadow:0 8px 26px rgba(0,0,0,.4)!important;
+}
+:root[data-theme="dark"] #contact .paper textarea{
+  background:transparent!important;color:#fff4e2!important;caret-color:#f2c96b!important;
+}
+:root[data-theme="dark"] #contact .ct{color:#d2c9ba!important}
+:root[data-theme="dark"] #contact .ct a{color:#f2c96b!important}
+:root[data-theme="dark"] footer{background:#11100f!important;color:#c9c1b4!important}
+:root[data-theme="dark"] .fab{background:#f2c96b!important;color:#211d15!important}
