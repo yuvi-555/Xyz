@@ -2366,22 +2366,87 @@ nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
 }
 
 
-/* Subtle 70mm release-print identification; preserve the original horizontal reel and multi-card carousel. */
-#lines .fr .n::after{
-  content:"70MM  ·  5 PERF";
-  margin-left:auto;
-  color:#8b2924;
-  font:600 .56rem "IBM Plex Mono",monospace;
-  letter-spacing:.08em;
-  white-space:nowrap;
+/* Copy reel: compact contact-sheet rhythm, with a real 5-perf cadence in the film edges. */
+#lines .strip{
+  gap:14px!important;
+  align-items:center!important;
+  padding:31px 20px!important;
+  background:
+    repeating-linear-gradient(90deg,
+      transparent 0 12px,#c7bca7 12px 22px,transparent 22px 56px
+    ) top 8px left 0/280px 13px repeat-x,
+    repeating-linear-gradient(90deg,
+      transparent 0 12px,#c7bca7 12px 22px,transparent 22px 56px
+    ) bottom 8px left 0/280px 13px repeat-x,
+    linear-gradient(180deg,#282629 0%,#111114 50%,#282629 100%)!important;
+  scroll-padding-inline:20px;
+}
+#lines .fr{
+  flex:0 0 clamp(250px,43vw,390px)!important;
+  width:auto!important;
+  min-width:0!important;
+  min-height:188px!important;
+  aspect-ratio:1.72/1!important;
+  padding:13px 15px 11px!important;
+  border:0!important;
+  border-top:5px solid #080809!important;
+  border-bottom:5px solid #080809!important;
+  outline:1px solid rgba(255,255,255,.2)!important;
+  box-shadow:0 4px 12px rgba(0,0,0,.3)!important;
+  scroll-snap-align:start;
+}
+#lines .fr .n{
+  padding-bottom:5px!important;
+  font-size:.52rem!important;
+  letter-spacing:.16em!important;
 }
 #lines .fr .n::before{
-  content:"●  70MM";
-  width:auto;height:auto;border-radius:0;background:none;
-  color:#b3261e;font:600 .54rem "IBM Plex Mono",monospace;
-  letter-spacing:.06em;
+  width:5px!important;height:5px!important;
+  border-radius:0!important;
+  transform:rotate(45deg);
 }
+#lines .fr .n::after{content:none!important}
+#lines .fr blockquote{
+  font-size:clamp(.88rem,1.25vw,1.08rem)!important;
+  line-height:1.22!important;
+  margin:3px 0!important;
+}
+#lines .fr .w{font-size:.64rem!important}
+#lines .fr .w span{font-size:.58rem!important}
+#lines .fr .w a{font-size:.6rem!important;margin-top:2px!important}
 @media(max-width:600px){
-  #lines .fr .n::after{font-size:.48rem}
+  #lines .strip{
+    gap:12px!important;
+    padding:29px 16px!important;
+    margin-inline:-22px!important;
+    background:
+      repeating-linear-gradient(90deg,
+        transparent 0 12px,#c7bca7 12px 22px,transparent 22px 56px
+      ) top 8px left 0/280px 12px repeat-x,
+      repeating-linear-gradient(90deg,
+        transparent 0 12px,#c7bca7 12px 22px,transparent 22px 56px
+      ) bottom 8px left 0/280px 12px repeat-x,
+      linear-gradient(180deg,#282629 0%,#111114 50%,#282629 100%)!important;
+  }
+  #lines .fr{
+    flex:0 0 43vw!important;
+    min-height:174px!important;
+    aspect-ratio:auto!important;
+    padding:11px 12px 9px!important;
+  }
+  #lines .fr .n{font-size:.46rem!important;letter-spacing:.11em!important}
+  #lines .fr blockquote{font-size:.88rem!important;line-height:1.2!important}
+  #lines .fr .w{font-size:.58rem!important}
+  #lines .fr .w span{font-size:.53rem!important}
+  #lines .fr .w a{font-size:.55rem!important}
 }
-:root[data-theme="dark"] #lines .fr .n::after{color:#8b2924}
+:root[data-theme="dark"] #lines .strip{
+  background:
+    repeating-linear-gradient(90deg,
+      transparent 0 12px,#aeb2b9 12px 22px,transparent 22px 56px
+    ) top 8px left 0/280px 13px repeat-x,
+    repeating-linear-gradient(90deg,
+      transparent 0 12px,#aeb2b9 12px 22px,transparent 22px 56px
+    ) bottom 8px left 0/280px 13px repeat-x,
+    linear-gradient(180deg,#282d35 0%,#111318 50%,#282d35 100%)!important;
+}
