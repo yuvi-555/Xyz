@@ -2366,156 +2366,22 @@ nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
 }
 
 
-/* 70mm widescreen film stock treatment for the copy reel. */
-#lines .strip{
-  position:relative!important;
-  isolation:isolate;
-  gap:22px!important;
-  padding:48px 26px!important;
-  border:1px solid #77716a!important;
-  border-radius:2px!important;
-  background:
-    repeating-linear-gradient(90deg,transparent 0 10px,rgba(235,228,213,.08) 10px 11px) 0 0/22px 100%,
-    linear-gradient(#17191d,#111216)!important;
-  box-shadow:0 12px 26px rgba(0,0,0,.22),inset 0 0 0 5px #292b30!important;
-}
-#lines .strip::before,
-#lines .strip::after{
-  content:"";position:absolute;left:0;right:0;height:17px;z-index:4;
-  pointer-events:none;
-  background:
-    repeating-linear-gradient(90deg,
-      transparent 0 7px,
-      #d9d5cb 7px 17px,
-      transparent 17px 29px);
-  opacity:.95;
-}
-#lines .strip::before{top:12px}
-#lines .strip::after{bottom:12px}
-#lines .fr{
-  flex-basis:clamp(300px,38vw,410px)!important;
-  min-height:250px!important;
-  border:8px solid #24262b!important;
-  outline:1px solid #77716a;
-  border-radius:1px!important;
-  box-shadow:0 0 0 1px rgba(255,255,255,.14),0 8px 18px rgba(0,0,0,.28)!important;
-}
-#lines .fr .n{
-  position:relative;
-  letter-spacing:.18em!important;
-}
+/* Subtle 70mm release-print identification; preserve the original horizontal reel and multi-card carousel. */
 #lines .fr .n::after{
   content:"70MM  ·  5 PERF";
   margin-left:auto;
-  color:#a65d43;
-  font:600 .58rem "IBM Plex Mono",monospace;
+  color:#8b2924;
+  font:600 .56rem "IBM Plex Mono",monospace;
   letter-spacing:.08em;
+  white-space:nowrap;
 }
-#lines .fr blockquote{font-size:clamp(1.25rem,2vw,1.65rem)!important}
-#lines .fr .w span{letter-spacing:.02em}
+#lines .fr .n::before{
+  content:"●  70MM";
+  width:auto;height:auto;border-radius:0;background:none;
+  color:#b3261e;font:600 .54rem "IBM Plex Mono",monospace;
+  letter-spacing:.06em;
+}
 @media(max-width:600px){
-  #lines .strip{padding:43px 18px!important;gap:17px!important}
-  #lines .strip::before,#lines .strip::after{height:14px}
-  #lines .fr{flex-basis:84vw!important;min-height:250px!important;border-width:7px!important}
-  #lines .fr .n::after{font-size:.52rem}
+  #lines .fr .n::after{font-size:.48rem}
 }
-:root[data-theme="dark"] #lines .strip{
-  border-color:#747985!important;
-  background:
-    repeating-linear-gradient(90deg,transparent 0 10px,rgba(235,228,213,.09) 10px 11px) 0 0/22px 100%,
-    linear-gradient(#0d0f13,#171a20)!important;
-  box-shadow:0 12px 28px rgba(0,0,0,.38),inset 0 0 0 5px #30343d!important;
-}
-:root[data-theme="dark"] #lines .strip::before,
-:root[data-theme="dark"] #lines .strip::after{background:repeating-linear-gradient(90deg,transparent 0 7px,#c9c6bd 7px 17px,transparent 17px 29px)}
-:root[data-theme="dark"] #lines .fr{outline-color:#737985}
-:root[data-theme="dark"] #lines .fr .n::after{color:#a64a3d}
-
-
-/* Rebuild the copy strip as a vertical-edge 70mm film element.
-   The sprocket rails run along the sides, as on a real motion-picture strip. */
-#lines .strip{
-  display:flex!important;
-  position:relative!important;
-  gap:20px!important;
-  padding:25px 43px!important;
-  overflow-x:auto!important;
-  overflow-y:hidden!important;
-  border:1px solid #8b8174!important;
-  border-radius:2px!important;
-  background:
-    linear-gradient(90deg,#17191d 0,#24262a 12px,#111318 12px, #111318 calc(100% - 12px),#24262a calc(100% - 12px),#17191d 100%)!important;
-  box-shadow:0 12px 26px rgba(0,0,0,.2),inset 0 0 0 3px #303238!important;
-}
-#lines .strip::before,
-#lines .strip::after{
-  content:"";position:absolute;z-index:5;top:0;bottom:0;width:23px;
-  pointer-events:none;
-  background-color:#25282d;
-  background-image:
-    repeating-linear-gradient(to bottom,
-      transparent 0 8px,
-      #d8d3c8 8px 21px,
-      transparent 21px 31px);
-  background-size:13px 31px;
-  background-repeat:repeat-y;
-  background-position:center 4px;
-  border-left:1px solid #77736b;
-  border-right:1px solid #77736b;
-}
-#lines .strip::before{left:9px}
-#lines .strip::after{right:9px}
-#lines .fr{
-  position:relative!important;
-  flex:0 0 clamp(330px,54vw,510px)!important;
-  min-height:260px!important;
-  margin:0!important;
-  padding:22px 25px!important;
-  border:2px solid #b7aa96!important;
-  outline:1px solid #050607;
-  border-radius:0!important;
-  background:#f5eddf!important;
-  box-shadow:0 0 0 5px #1b1e23,0 7px 15px rgba(0,0,0,.28)!important;
-}
-#lines .fr::before,
-#lines .fr::after{
-  content:"";position:absolute;width:10px;height:10px;
-  border:1px solid #9c8c76;opacity:.65;
-}
-#lines .fr::before{left:7px;top:7px;border-right:0;border-bottom:0}
-#lines .fr::after{right:7px;bottom:7px;border-left:0;border-top:0}
-#lines .fr .n{
-  display:flex!important;align-items:center;gap:8px;
-  padding-bottom:9px;border-bottom:1px solid #d8cbb7;
-  color:#7c382d!important;letter-spacing:.12em!important;
-}
-#lines .fr .n::after{
-  content:"65mm NEG · 70mm PROJECTION";
-  margin-left:auto;color:#806b53;
-  font:600 .52rem "IBM Plex Mono",monospace;letter-spacing:.04em;
-}
-#lines .fr blockquote{margin:16px 0!important}
-#lines .fr .w{font-size:.78rem!important}
-@media(max-width:600px){
-  #lines .strip{padding:20px 34px!important;gap:16px!important}
-  #lines .strip::before,#lines .strip::after{width:18px;background-size:11px 29px}
-  #lines .strip::before{left:7px}
-  #lines .strip::after{right:7px}
-  #lines .fr{flex-basis:78vw!important;min-height:255px!important;padding:19px 17px!important}
-  #lines .fr .n::after{content:"70MM · 5 PERF";font-size:.49rem}
-}
-:root[data-theme="dark"] #lines .strip{
-  border-color:#777d88!important;
-  background:linear-gradient(90deg,#101217 0,#292d35 12px,#11141a 12px, #11141a calc(100% - 12px),#292d35 calc(100% - 12px),#101217 100%)!important;
-  box-shadow:0 12px 28px rgba(0,0,0,.42),inset 0 0 0 3px #343943!important;
-}
-:root[data-theme="dark"] #lines .strip::before,
-:root[data-theme="dark"] #lines .strip::after{
-  background-color:#282d35;
-  background-image:repeating-linear-gradient(to bottom,transparent 0 8px,#c8c6bf 8px 21px,transparent 21px 31px);
-  border-color:#747985;
-}
-:root[data-theme="dark"] #lines .fr{
-  border-color:#7c7569!important;
-  background:#eee5d6!important;
-}
+:root[data-theme="dark"] #lines .fr .n::after{color:#8b2924}
