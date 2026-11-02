@@ -1781,7 +1781,7 @@ nav a.cta:hover{background:#fff!important;border-color:#fff!important;color:#171
   width:max-content;
   gap:30px;
   white-space:nowrap;
-  animation:client-reel 32s linear infinite;
+  animation:client-reel 18.82s linear infinite;
 }
 .client-ticker-track span{
   color:#f4f0e8;
@@ -1799,7 +1799,7 @@ nav a.cta:hover{background:#fff!important;border-color:#fff!important;color:#171
   .client-ticker{min-height:72px;padding:11px 0}
   .client-ticker-inner{width:calc(100% - 32px);grid-template-columns:1fr;gap:8px}
   .client-ticker-label{font-size:.55rem}
-  .client-ticker-track{gap:22px;animation-duration:28s}
+  .client-ticker-track{gap:22px;animation-duration:16.47s}
   .client-ticker-track span{font-size:.82rem}
 }
 @media(prefers-reduced-motion:reduce){
