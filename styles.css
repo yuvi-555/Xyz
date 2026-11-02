@@ -2337,3 +2337,76 @@ nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
   color:#f0b0a2!important;
 }
 :root[data-theme="dark"] #work .cs.project .x{color:#e9a092!important}
+
+
+/* Work section: a clear visual split between employment history and selected projects.
+   Styling only — the existing content, titles, order and accordion behaviour stay intact. */
+#work #cs .cs.experience{
+  margin:0;
+  padding:0 12px;
+  border:0!important;
+  border-bottom:1px solid #d8d0c3!important;
+  border-left:3px solid #c7a45f!important;
+  border-radius:0;
+  background:rgba(255,255,255,.34);
+}
+#work #cs .cs.experience:first-child{
+  border-top:1px solid #d8d0c3!important;
+}
+#work #cs .cs.experience button{padding:19px 4px}
+#work #cs .cs.experience .w,
+#work #cs .cs.project .w{
+  display:inline-flex!important;
+  align-items:center;
+  width:max-content;
+  padding:4px 8px;
+  border-radius:3px;
+  font:700 .62rem "IBM Plex Mono",monospace!important;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+#work #cs .cs.experience .w{
+  color:#66502a!important;
+  background:#f2e7c9;
+  border:1px solid #d9c58f;
+}
+#work #cs .cs.project{
+  margin:12px 0!important;
+  padding:4px 12px 4px 14px!important;
+  border:1px solid #d8a99b!important;
+  border-left:4px solid #b86b57!important;
+  border-radius:5px!important;
+  background:#f8eee9!important;
+  box-shadow:0 4px 12px rgba(80,48,36,.055);
+}
+#work #cs .cs.project button{padding:14px 4px!important}
+#work #cs .cs.project .w{
+  color:#8d493b!important;
+  background:#f4dfd7!important;
+  border:1px solid #d8a99b!important;
+}
+#work #cs .cs.project .x{color:#a95748!important}
+#work #cs .cs button .w::before{content:none!important}
+#work #cs .cs.experience .b{padding-bottom:18px}
+:root[data-theme="dark"] #work #cs .cs.experience{
+  background:rgba(240,198,107,.055)!important;
+  border-bottom-color:#41434a!important;
+  border-left-color:#d8b76d!important;
+}
+:root[data-theme="dark"] #work #cs .cs.experience:first-child{border-top-color:#41434a!important}
+:root[data-theme="dark"] #work #cs .cs.experience .w{
+  color:#f1d99f!important;background:#383326!important;border-color:#796744!important;
+}
+:root[data-theme="dark"] #work #cs .cs.project{
+  background:rgba(227,139,125,.09)!important;
+  border-color:#594448!important;
+  border-left-color:#e38b7d!important;
+  box-shadow:0 4px 14px rgba(0,0,0,.14)!important;
+}
+:root[data-theme="dark"] #work #cs .cs.project .w{
+  color:#f0b0a2!important;background:#3b2c2c!important;border-color:#98675f!important;
+}
+@media(max-width:640px){
+  #work #cs .cs.experience{padding-inline:10px}
+  #work #cs .cs.project{margin:10px 0!important;padding-inline:11px!important}
+}
