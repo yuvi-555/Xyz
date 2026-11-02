@@ -2290,3 +2290,12 @@ nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
 :root[data-theme="dark"] .contact-socials a{background:#292d35;color:#f0c66b;border-color:#59606b;box-shadow:0 3px 10px rgba(0,0,0,.2)}
 :root[data-theme="dark"] .contact-socials a:hover{background:#f0c66b;color:#211d16;border-color:#f0c66b}
 @media(max-width:520px){.contact-socials{gap:9px;margin:23px auto 14px}.contact-socials a{width:40px;height:40px}}
+
+
+/* Explicit contrast for the two section introductions in dark mode. */
+:root[data-theme="dark"] #lines>.wrap>p.sub,
+:root[data-theme="dark"] #writing>.wrap>p.sub{
+  color:#d6d1c8!important;
+  -webkit-text-fill-color:#d6d1c8!important;
+  opacity:1!important;
+}
