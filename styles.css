@@ -1514,7 +1514,7 @@ nav a.cta:hover{background:#fff!important;border-color:#fff!important;color:#171
 }
 
 
-/* Copywriting reel — grounded in a real 5/70 cinema release print */
+/* Selected copy — 35mm cinema filmstrip treatment */
 #lines .fc{align-items:center;gap:10px}
 #lines .arrows{gap:7px}
 #lines .arrows button{
@@ -1526,55 +1526,53 @@ nav a.cta:hover{background:#fff!important;border-color:#fff!important;color:#171
 #lines .arrows button:hover{background:#B3261E!important;transform:translateY(-2px)}
 #lines .strip{
   position:relative;isolation:isolate;
-  display:flex;align-items:stretch;gap:18px;
-  overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;
-  scroll-behavior:smooth;overscroll-behavior-x:contain;
-  padding:36px 24px!important;margin:0 -22px;
+  display:flex;align-items:stretch;gap:16px;
+  overflow-x:auto;overflow-y:hidden;
+  scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  overscroll-behavior-x:contain;
+  padding:42px 24px!important;margin:0 -22px;
   border:0!important;border-radius:0!important;
   background:
-    repeating-linear-gradient(90deg,#c7bca7 0 15px,transparent 15px 38px) top 9px left 0/38px 13px repeat-x,
-    repeating-linear-gradient(90deg,#c7bca7 0 15px,transparent 15px 38px) bottom 9px left 0/38px 13px repeat-x,
-    linear-gradient(180deg,#282629 0%,#111114 50%,#282629 100%)!important;
-  box-shadow:0 16px 34px rgba(0,0,0,.2)!important;scrollbar-width:none
+    repeating-linear-gradient(90deg,transparent 0 8px,#D8D5CE 8px 19px,transparent 19px 30px) top 13px left 0/100% 12px repeat-x,
+    repeating-linear-gradient(90deg,transparent 0 8px,#D8D5CE 8px 19px,transparent 19px 30px) bottom 13px left 0/100% 12px repeat-x,
+    linear-gradient(180deg,#29272A,#171619 48%,#29272A)!important;
+  box-shadow:0 16px 34px rgba(0,0,0,.18)!important;
+  scrollbar-width:none
 }
 #lines .strip::-webkit-scrollbar{display:none}
-#lines .strip::before,#lines .strip::after{
-  content:"";position:absolute;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,#9c8458,#e0c58c,#9c8458);
-  opacity:.8;pointer-events:none;z-index:4
-}
-#lines .strip::before{top:5px}
-#lines .strip::after{bottom:5px}
+#lines .strip::before,#lines .strip::after{content:"";position:absolute;left:0;right:0;height:12px;pointer-events:none;z-index:3}
+#lines .strip::before{top:13px}
+#lines .strip::after{bottom:13px}
 #lines .fr{
-  position:relative;z-index:1;flex:0 0 clamp(340px,42vw,520px);
-  aspect-ratio:2.2/1;min-height:190px;display:flex;flex-direction:column;
-  justify-content:space-between;gap:8px;padding:15px 20px 12px!important;margin:0;
-  background:#eee4d2!important;color:#211d1a!important;
-  border:0!important;border-top:7px solid #080809!important;
-  border-bottom:7px solid #080809!important;border-radius:0!important;
-  outline:1px solid rgba(255,255,255,.22);
-  box-shadow:0 5px 16px rgba(0,0,0,.35)!important;scroll-snap-align:start
+  position:relative;z-index:1;flex:0 0 clamp(265px,31vw,340px);
+  min-height:268px;display:flex;flex-direction:column;justify-content:space-between;
+  gap:16px;padding:22px 20px 18px!important;margin:0;
+  background:#F4EBDD!important;color:#211D1A!important;
+  border:8px solid #0C0B0D!important;border-radius:1px!important;
+  outline:1px solid rgba(255,255,255,.17);
+  box-shadow:0 5px 16px rgba(0,0,0,.28)!important;
+  scroll-snap-align:start
 }
 #lines .fr .n{
-  display:flex;align-items:center;gap:8px;padding-bottom:6px;
-  border-bottom:1px solid #c8b99f;color:#8b2924!important;
-  font:600 .6rem "IBM Plex Mono",monospace!important;letter-spacing:.13em;
-  text-transform:uppercase
+  display:flex;align-items:center;gap:9px;
+  padding-bottom:10px;border-bottom:1px solid #CFC3B1;
+  color:#8B2924!important;font:600 .64rem "IBM Plex Mono",monospace!important;
+  letter-spacing:.16em;text-transform:uppercase
 }
-#lines .fr .n::before{content:"";width:6px;height:6px;border-radius:50%;background:#b3261e}
+#lines .fr .n::before{content:"";width:7px;height:7px;border-radius:50%;background:#B3261E;box-shadow:0 0 0 2px rgba(179,38,30,.15)}
 #lines .fr blockquote{
-  flex:1;margin:2px 0 4px!important;overflow:hidden;
-  font:700 clamp(1rem,1.7vw,1.35rem)/1.28 "Mukta",sans-serif!important;
-  color:#211d1a!important;letter-spacing:0
+  flex:1;margin:4px 0 12px!important;
+  font:700 clamp(1.22rem,2vw,1.55rem)/1.42 "Mukta",sans-serif!important;
+  color:#211D1A!important;letter-spacing:0
 }
-#lines .fr .w{display:block;color:#39332d!important;font:600 .7rem "DM Sans",sans-serif}
-#lines .fr .w span{display:block;margin-top:2px;color:#81766a;font:400 .64rem "DM Sans",sans-serif}
-#lines .fr .w a{display:inline-block;margin-top:4px;color:#a52b25!important;font:600 .66rem "DM Sans",sans-serif;text-decoration:underline;text-underline-offset:3px}
-#lines .fr.e blockquote{font-size:1rem!important}
+#lines .fr .w{display:block;color:#39332D!important;font:600 .78rem "DM Sans",sans-serif}
+#lines .fr .w span{display:block;margin-top:4px;color:#81766A;font:400 .7rem "DM Sans",sans-serif}
+#lines .fr .w a{display:inline-block;margin-top:8px;color:#A52B25!important;font:600 .72rem "DM Sans",sans-serif;text-decoration:underline;text-underline-offset:3px}
+#lines .fr.e blockquote{font-size:1.15rem!important}
 @media(max-width:600px){
-  #lines .strip{padding:30px 15px!important;gap:12px;margin-inline:-22px}
-  #lines .fr{flex-basis:88vw;min-height:180px;padding:12px 14px 10px!important;border-top-width:6px!important;border-bottom-width:6px!important}
-  #lines .fr blockquote{font-size:1.12rem!important}
+  #lines .strip{padding:38px 16px!important;gap:12px;margin-inline:-22px}
+  #lines .fr{flex-basis:82vw;min-height:258px;padding:19px 16px 16px!important;border-width:7px!important}
+  #lines .fr blockquote{font-size:1.28rem!important}
 }
 @media(prefers-reduced-motion:reduce){
   #lines .strip{scroll-behavior:auto}
@@ -1582,7 +1580,7 @@ nav a.cta:hover{background:#fff!important;border-color:#fff!important;color:#171
 }
 
 
-/*/* Keep the cursor anchored to the CTA; its tip lands on the button itself. */
+/* Keep the cursor anchored to the CTA; its tip lands on the button itself. */
 #top.hero .see-work{position:relative;transform-origin:center}
 #top.hero .tap-cue{
   position:absolute;
@@ -2363,148 +2361,4 @@ nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
   #work #cs .cs.experience{padding-left:15px!important}
   #work #cs .cs.experience::before{top:25px}
   #work #cs .cs.experience + .cs.project{margin-top:36px!important}
-}
-
-
-/* Copy reel: compact contact-sheet rhythm, with a real 5-perf cadence in the film edges. */
-#lines .strip{
-  gap:14px!important;
-  align-items:center!important;
-  padding:31px 20px!important;
-  background:
-    repeating-linear-gradient(90deg,
-      transparent 0 12px,#c7bca7 12px 22px,transparent 22px 56px
-    ) top 8px left 0/280px 13px repeat-x,
-    repeating-linear-gradient(90deg,
-      transparent 0 12px,#c7bca7 12px 22px,transparent 22px 56px
-    ) bottom 8px left 0/280px 13px repeat-x,
-    linear-gradient(180deg,#282629 0%,#111114 50%,#282629 100%)!important;
-  scroll-padding-inline:20px;
-}
-#lines .fr{
-  flex:0 0 clamp(250px,43vw,390px)!important;
-  width:auto!important;
-  min-width:0!important;
-  min-height:188px!important;
-  aspect-ratio:1.72/1!important;
-  padding:13px 15px 11px!important;
-  border:0!important;
-  border-top:5px solid #080809!important;
-  border-bottom:5px solid #080809!important;
-  outline:1px solid rgba(255,255,255,.2)!important;
-  box-shadow:0 4px 12px rgba(0,0,0,.3)!important;
-  scroll-snap-align:start;
-}
-#lines .fr .n{
-  padding-bottom:5px!important;
-  font-size:.52rem!important;
-  letter-spacing:.16em!important;
-}
-#lines .fr .n::before{
-  width:5px!important;height:5px!important;
-  border-radius:0!important;
-  transform:rotate(45deg);
-}
-#lines .fr .n::after{content:none!important}
-#lines .fr blockquote{
-  font-size:clamp(.88rem,1.25vw,1.08rem)!important;
-  line-height:1.22!important;
-  margin:3px 0!important;
-}
-#lines .fr .w{font-size:.64rem!important}
-#lines .fr .w span{font-size:.58rem!important}
-#lines .fr .w a{font-size:.6rem!important;margin-top:2px!important}
-@media(max-width:600px){
-  #lines .strip{
-    gap:12px!important;
-    padding:29px 16px!important;
-    margin-inline:-22px!important;
-    background:
-      repeating-linear-gradient(90deg,
-        transparent 0 12px,#c7bca7 12px 22px,transparent 22px 56px
-      ) top 8px left 0/280px 12px repeat-x,
-      repeating-linear-gradient(90deg,
-        transparent 0 12px,#c7bca7 12px 22px,transparent 22px 56px
-      ) bottom 8px left 0/280px 12px repeat-x,
-      linear-gradient(180deg,#282629 0%,#111114 50%,#282629 100%)!important;
-  }
-  #lines .fr{
-    flex:0 0 43vw!important;
-    min-height:174px!important;
-    aspect-ratio:auto!important;
-    padding:11px 12px 9px!important;
-  }
-  #lines .fr .n{font-size:.46rem!important;letter-spacing:.11em!important}
-  #lines .fr blockquote{font-size:.88rem!important;line-height:1.2!important}
-  #lines .fr .w{font-size:.58rem!important}
-  #lines .fr .w span{font-size:.53rem!important}
-  #lines .fr .w a{font-size:.55rem!important}
-}
-:root[data-theme="dark"] #lines .strip{
-  background:
-    repeating-linear-gradient(90deg,
-      transparent 0 12px,#aeb2b9 12px 22px,transparent 22px 56px
-    ) top 8px left 0/280px 13px repeat-x,
-    repeating-linear-gradient(90deg,
-      transparent 0 12px,#aeb2b9 12px 22px,transparent 22px 56px
-    ) bottom 8px left 0/280px 13px repeat-x,
-    linear-gradient(180deg,#282d35 0%,#111318 50%,#282d35 100%)!important;
-}
-
-
-/* Mobile 70mm reel: two readable frames in the viewing window, not one poster card. */
-@media(max-width:700px){
-  #lines .strip{
-    --perf-pitch:clamp(34px,calc((100vw - 64px)/10),64px);
-    display:flex!important;
-    align-items:stretch!important;
-    gap:12px!important;
-    padding:34px 16px!important;
-    margin-inline:-22px!important;
-    overflow-x:auto!important;
-    scroll-snap-type:x mandatory!important;
-    background:
-      repeating-linear-gradient(90deg,transparent 0 8px,#c7bca7 8px 22px,transparent 22px var(--perf-pitch)) top 8px left 0/var(--perf-pitch) 12px repeat-x,
-      repeating-linear-gradient(90deg,transparent 0 8px,#c7bca7 8px 22px,transparent 22px var(--perf-pitch)) bottom 8px left 0/var(--perf-pitch) 12px repeat-x,
-      linear-gradient(180deg,#29272a 0%,#111114 50%,#29272a 100%)!important;
-  }
-  #lines .fr{
-    box-sizing:border-box!important;
-    flex:0 0 clamp(168px,calc((100vw - 64px)/2),320px)!important;
-    width:auto!important;
-    min-width:0!important;
-    min-height:218px!important;
-    aspect-ratio:auto!important;
-    padding:13px 13px 11px!important;
-    border-top:6px solid #080809!important;
-    border-bottom:6px solid #080809!important;
-    scroll-snap-align:start!important;
-    display:flex!important;
-    flex-direction:column!important;
-    justify-content:space-between!important;
-    gap:7px!important;
-  }
-  #lines .fr .n{
-    font-size:.53rem!important;
-    letter-spacing:.08em!important;
-    padding-bottom:6px!important;
-    white-space:nowrap!important;
-  }
-  #lines .fr .n::before{width:5px!important;height:5px!important;flex:0 0 5px}
-  #lines .fr blockquote{
-    flex:1 1 auto!important;
-    min-height:0!important;
-    margin:2px 0!important;
-    font-size:clamp(.82rem,3.5vw,.98rem)!important;
-    line-height:1.28!important;
-    display:-webkit-box!important;
-    -webkit-box-orient:vertical!important;
-    -webkit-line-clamp:5!important;
-    overflow:hidden!important;
-  }
-  #lines .fr.e blockquote{-webkit-line-clamp:6!important;font-size:.84rem!important}
-  #lines .fr .w{font-size:.61rem!important;line-height:1.25!important}
-  #lines .fr .w span{font-size:.55rem!important}
-  #lines .fr .w a{font-size:.57rem!important;margin-top:3px!important}
-  #lines .arrows button{width:40px!important;height:40px!important}
 }
