@@ -2371,3 +2371,17 @@ nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
   margin-right:auto!important;
   text-align:center!important;
 }
+
+
+/* Latest addition in Beyond the Brief; the career-detour essay remains the hero. */
+#writing .worklist .essay-latest{
+  position:relative;
+  border-top:3px solid var(--gold);
+}
+#writing .essay-latest .essay-kicker{
+  margin:0 0 12px;
+  color:var(--red);
+  font:700 .62rem "IBM Plex Mono",monospace;
+  letter-spacing:.12em;
+}
+:root[data-theme="dark"] #writing .essay-latest .essay-kicker{color:#f0c66b}
