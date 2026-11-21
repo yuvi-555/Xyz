@@ -2438,3 +2438,19 @@ nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
   #work .work-groups{grid-template-columns:1fr;gap:18px}
   #work .work-groups>div{padding:22px}
 }
+
+
+/* Contact social icons: centered brand-colour row above the contact links */
+#contact .contact-socials{display:flex;justify-content:center;align-items:center;gap:13px;flex-wrap:wrap;margin:26px auto 18px}
+#contact .contact-socials a{width:46px;height:46px;border:0;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 3px 10px rgba(0,0,0,.14);transition:transform .2s ease,filter .2s ease}
+#contact .contact-socials a:hover{transform:translateY(-3px);filter:brightness(1.08)}
+#contact .contact-socials svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#contact .contact-socials a[aria-label="Email"]{background:#D94A3A}
+#contact .contact-socials a[aria-label="Substack"]{background:#FF6719}
+#contact .contact-socials a[aria-label="Instagram"]{background:linear-gradient(135deg,#7F37C8 0%,#D62976 48%,#F58529 100%)}
+#contact .contact-socials a[aria-label="LinkedIn"]{background:#0A66C2}
+#contact .contact-socials a[aria-label="WhatsApp"]{background:#25D366;color:#fff}
+#contact .contact-socials a[aria-label="Letterboxd"]{background:#1F7A4D}
+#contact .contact-socials a[aria-label="WordPress blog"]{background:#21759B}
+#contact .contact-socials a[aria-label="Notion portfolio"]{background:#252525}
+@media(max-width:520px){#contact .contact-socials{gap:11px;margin:23px auto 16px}#contact .contact-socials a{width:43px;height:43px}}
