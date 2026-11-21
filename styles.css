@@ -2387,96 +2387,7 @@ nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
 :root[data-theme="dark"] #writing .essay-latest .essay-kicker{color:#f0c66b}
 
 
-/* Proof row: clear credentials and a readable, static client list. */
-.proof-section{
-  padding:46px 0 58px;
-  background:var(--paper2);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-}
-.proof-stats{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:24px;
-  align-items:start;
-  text-align:center;
-  padding:0 0 38px;
-  border-bottom:1px solid var(--line);
-}
-.proof-stat{display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0}
-.proof-stat strong{
-  font:500 clamp(1.7rem,4.4vw,3rem)/1.08 "Fraunces",Georgia,serif;
-  letter-spacing:-.025em;
-  color:var(--ink);
-}
-.proof-stat span,.client-proof-label{
-  color:var(--muted);
-  font:600 12px/1.5 "DM Sans",sans-serif;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-}
-.client-proof{padding-top:28px}
-.client-proof-label{text-align:center;margin:0 0 18px}
-.client-proof-grid{
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:16px;
-  text-align:center;
-}
-.client-proof-grid span{
-  color:var(--muted);
-  font:500 .9rem/1.4 "DM Sans",sans-serif;
-}
-
-/* Visual practice as a quiet gallery wall. */
-#art.app-view{padding-block:120px}
-#art .art{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:24px;
-  margin:22px 0 30px;
-}
-#art .art figure{
-  min-width:0;
-  margin:0;
-  padding:0;
-  background:transparent;
-  box-shadow:none;
-  border-radius:14px;
-  transform:none;
-  transition:transform .25s ease;
-}
-#art .art figure:hover{transform:translateY(-4px)}
-#art .art-image-link{
-  display:block;
-  overflow:hidden;
-  border-radius:14px;
-  background:var(--paper2);
-}
-#art .art img{
-  display:block;
-  width:100%;
-  aspect-ratio:4/5;
-  object-fit:cover;
-  border-radius:14px;
-  transition:transform .35s ease;
-}
-#art .art figure:hover img{transform:scale(1.015)}
-#art .art figcaption{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:8px;
-  margin-top:8px;
-  color:var(--muted);
-  font:400 13px/1.5 "DM Sans",sans-serif;
-  opacity:.35;
-  transition:opacity .2s ease;
-}
-#art .art figure:hover figcaption,
-#art .art figure:focus-within figcaption{opacity:1}
-
-/* Experience groups: numbered cards with one restrained accent. */
+/* Retain the numbered experience cards while reverting the other experiments. */
 #work .work-groups{
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:24px;
@@ -2523,21 +2434,7 @@ nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
   border-top-color:var(--gold);
 }
 :root[data-theme="dark"] #work .work-groups h3{color:var(--ink)}
-@media(max-width:760px){
-  .client-proof-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 12px}
-}
 @media(max-width:640px){
-  .proof-section{padding:34px 0 42px}
-  .proof-stats{gap:12px;padding-bottom:28px}
-  .proof-stat strong{font-size:clamp(1.25rem,5.3vw,1.8rem)}
-  .proof-stat span{font-size:10px;letter-spacing:.05em}
-  .client-proof{padding-top:22px}
-  #art.app-view{padding-block:120px}
-  #art .art{grid-template-columns:1fr;gap:24px}
-  #art .art figcaption{opacity:1}
   #work .work-groups{grid-template-columns:1fr;gap:18px}
   #work .work-groups>div{padding:22px}
-}
-@media(prefers-reduced-motion:reduce){
-  #art .art figure,#art .art img,#art .art figcaption{transition:none}
 }
