@@ -914,6 +914,7 @@ body.room-mode .app-view.active .wrap{padding-bottom:0}
 #lines,#campaigns,#screen,#writing,#art,#work,#contact{scroll-margin-top:92px}
 #lines,#writing{background:var(--dk);color:#F7F3EB}
 #lines .sub,#writing .sub{color:#C3BDC4}
+#lines .copy-details{margin-top:44px}
 #lines h2 em,#writing h2 em{color:#F3D66B}
 #campaigns,#art{background:var(--paper)}
 #screen,#work{background:#EEE8DC!important}
