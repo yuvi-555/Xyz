@@ -2531,3 +2531,68 @@ nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
   .cs .b{font-size:1rem;line-height:1.68}
   #work .work-groups>div{padding:22px}
 }
+
+
+/* Storyboard paper: subtle frame-grid, registration marks and pencil grain.
+   It should read as a filmmaker's working page, not generic graph paper. */
+:root[data-theme="light"] body{
+  background-color:var(--paper);
+  background-image:
+    radial-gradient(circle at 1px 1px,rgba(86,68,47,.10) .65px,transparent .8px),
+    linear-gradient(rgba(113,91,62,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(113,91,62,.035) 1px,transparent 1px);
+  background-size:7px 7px,40px 40px,40px 40px;
+}
+:root[data-theme="light"] section:not(.dk){
+  background-color:transparent;
+  background-image:
+    linear-gradient(rgba(113,91,62,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(113,91,62,.03) 1px,transparent 1px);
+  background-size:40px 40px;
+}
+:root[data-theme="dark"] body{
+  background-color:var(--paper);
+  background-image:
+    radial-gradient(circle at 1px 1px,rgba(226,208,176,.055) .6px,transparent .8px),
+    linear-gradient(rgba(226,208,176,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(226,208,176,.018) 1px,transparent 1px);
+  background-size:8px 8px,44px 44px,44px 44px;
+}
+/* Small frame-edge cues: restrained registration ticks at section boundaries. */
+section:not(.dk)::before{
+  content:"";
+  display:block;
+  width:100%;
+  height:7px;
+  margin:-60px 0 34px;
+  opacity:.45;
+  pointer-events:none;
+  background:repeating-linear-gradient(90deg,var(--line) 0 18px,transparent 18px 24px);
+}
+@media(max-width:640px){
+  section:not(.dk)::before{margin-top:-60px;margin-bottom:28px}
+}
+/* Hand-marked circles, like a pencil annotation on a script page.
+   Applied only to phrases already marked as important in the content. */
+.script-highlight,
+.experience-highlight{
+  position:relative;
+  display:inline;
+  padding:.02em .16em .06em;
+  color:inherit;
+  background-color:transparent!important;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 54' preserveAspectRatio='none'%3E%3Cpath d='M9 28 C12 8 48 4 91 7 C135 5 169 12 171 27 C172 43 139 48 91 46 C45 49 10 43 9 28Z' fill='none' stroke='%23a65d43' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round' opacity='.82'/%3E%3Cpath d='M13 25 C19 11 54 9 94 10 C135 8 164 15 166 28' fill='none' stroke='%23a65d43' stroke-width='.9' stroke-linecap='round' opacity='.48'/%3E%3C/svg%3E")!important;
+  background-repeat:no-repeat!important;
+  background-size:100% 100%!important;
+  box-decoration-break:clone;
+  -webkit-box-decoration-break:clone;
+  text-decoration:none!important;
+}
+:root[data-theme="dark"] .script-highlight,
+:root[data-theme="dark"] .experience-highlight{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 54' preserveAspectRatio='none'%3E%3Cpath d='M9 28 C12 8 48 4 91 7 C135 5 169 12 171 27 C172 43 139 48 91 46 C45 49 10 43 9 28Z' fill='none' stroke='%23e6ad72' stroke-width='2.1' stroke-linecap='round' stroke-linejoin='round' opacity='.9'/%3E%3Cpath d='M13 25 C19 11 54 9 94 10 C135 8 164 15 166 28' fill='none' stroke='%23e6ad72' stroke-width='.9' stroke-linecap='round' opacity='.55'/%3E%3C/svg%3E")!important;
+}
+/* Avoid overly tight rings around short phrases on small screens. */
+@media(max-width:640px){
+  .script-highlight,.experience-highlight{padding-inline:.2em}
+}
