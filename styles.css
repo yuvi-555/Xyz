@@ -2596,3 +2596,60 @@ section:not(.dk)::before{
 @media(max-width:640px){
   .script-highlight,.experience-highlight{padding-inline:.2em}
 }
+
+
+/* FILMMAKER'S WORKING PAPER
+   A quiet script-page surface: warm stock, fine paper grain, ruled writing
+   guides and occasional frame-registration marks — not a copied graph grid. */
+:root[data-theme="light"] body{
+  background-color:#F3EBDC;
+  background-image:
+    radial-gradient(circle at 17% 23%,rgba(79,61,39,.075) .45px,transparent .9px),
+    radial-gradient(circle at 71% 68%,rgba(79,61,39,.055) .5px,transparent 1px),
+    repeating-linear-gradient(to bottom,transparent 0 33px,rgba(119,91,58,.045) 33px 34px),
+    linear-gradient(to right,transparent 0 27px,rgba(176,89,66,.07) 27px 28px,transparent 28px);
+  background-size:9px 9px,13px 13px,100% 34px,100% 100%;
+}
+:root[data-theme="light"] section:not(.dk){
+  background-color:var(--paper2);
+  background-image:
+    radial-gradient(circle at 17% 23%,rgba(79,61,39,.055) .45px,transparent .9px),
+    repeating-linear-gradient(to bottom,transparent 0 33px,rgba(119,91,58,.035) 33px 34px),
+    linear-gradient(to right,transparent 0 27px,rgba(176,89,66,.055) 27px 28px,transparent 28px)!important;
+  background-size:9px 9px,100% 34px,100% 100%;
+}
+:root[data-theme="dark"] body{
+  background-color:#12100E;
+  background-image:
+    radial-gradient(circle at 17% 23%,rgba(226,208,176,.045) .45px,transparent .9px),
+    repeating-linear-gradient(to bottom,transparent 0 35px,rgba(226,208,176,.018) 35px 36px);
+  background-size:11px 11px,100% 36px;
+}
+:root[data-theme="dark"] section:not(.dk){
+  background-image:
+    radial-gradient(circle at 17% 23%,rgba(226,208,176,.035) .45px,transparent .9px),
+    repeating-linear-gradient(to bottom,transparent 0 35px,rgba(226,208,176,.016) 35px 36px)!important;
+  background-size:11px 11px,100% 36px;
+}
+/* Subtle registration ticks evoke a storyboard / edit decision sheet. */
+section:not(.dk)::before{
+  height:6px;
+  background:repeating-linear-gradient(90deg,
+    rgba(166,93,67,.24) 0 13px,
+    transparent 13px 18px,
+    rgba(90,80,67,.13) 18px 31px,
+    transparent 31px 38px);
+}
+/* Hand-drawn pencil loops around already-emphasised phrases.
+   The second imperfect stroke keeps the mark organic, not like a UI pill. */
+.script-highlight,
+.experience-highlight{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 54' preserveAspectRatio='none'%3E%3Cpath d='M8 29 C8 13 38 5 88 7 C133 5 171 12 172 27 C174 42 140 49 91 47 C43 49 11 43 8 29Z' fill='none' stroke='%23a65d43' stroke-width='1.8' stroke-linecap='round' opacity='.84'/%3E%3Cpath d='M13 24 C22 8 59 10 96 10 C139 9 164 16 166 29 C163 40 130 44 91 44' fill='none' stroke='%23a65d43' stroke-width='.85' stroke-linecap='round' opacity='.48'/%3E%3C/svg%3E")!important;
+  background-repeat:no-repeat!important;
+  background-size:100% 100%!important;
+  text-decoration:none!important;
+}
+:root[data-theme="dark"] .script-highlight,
+:root[data-theme="dark"] .experience-highlight{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 54' preserveAspectRatio='none'%3E%3Cpath d='M8 29 C8 13 38 5 88 7 C133 5 171 12 172 27 C174 42 140 49 91 47 C43 49 11 43 8 29Z' fill='none' stroke='%23e6ad72' stroke-width='1.8' stroke-linecap='round' opacity='.9'/%3E%3Cpath d='M13 24 C22 8 59 10 96 10 C139 9 164 16 166 29 C163 40 130 44 91 44' fill='none' stroke='%23e6ad72' stroke-width='.85' stroke-linecap='round' opacity='.52'/%3E%3C/svg%3E")!important;
+}
