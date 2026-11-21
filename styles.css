@@ -914,8 +914,8 @@ body.room-mode .app-view.active .wrap{padding-bottom:0}
 #lines,#campaigns,#screen,#writing,#art,#work,#contact{scroll-margin-top:92px}
 #lines,#writing{background:var(--dk);color:#F7F3EB}
 #lines .sub,#writing .sub{color:#C3BDC4}
-#lines .copy-details{margin-top:68px!important;padding-top:8px}
-#campaigns .campaign-details{margin-top:68px!important;padding-top:8px}
+#lines .copy-details{margin-top:53px!important;padding-top:0}
+#campaigns .campaign-details{margin-top:53px!important;padding-top:0}
 #lines h2 em,#writing h2 em{color:#F3D66B}
 #campaigns,#art{background:var(--paper)}
 #screen,#work{background:#EEE8DC!important}
@@ -1303,16 +1303,8 @@ footer a{color:#f0c66b!important}
 #art .slugline::before{content:"✳"}
 #work .slugline::before{content:"※"}
 #contact .slugline::before{content:"✉"}
-/* Pencil-like side comments, deliberately tiny and used as marginalia rather than UI labels. */
+/* Keep campaign heading and tagline clean; no appended marginal note. */
 #campaigns .wrap::marker{content:""}
-#campaigns .sub::after{
- content:"(hold for emphasis)";
- display:inline-block;
- margin-left:10px;
- color:#171717;
- font:600 1.05rem "Caveat",cursive;
- transform:rotate(-3deg);
-}
 #screen .sub::after{
  content:"one frame at a time";
  display:inline-block;
@@ -2156,7 +2148,6 @@ nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
   color:#e7b875;
   text-shadow:0 1px 8px rgba(0,0,0,.22);
 }
-#campaigns .sub::after,
 #screen .sub::after,
 #writing .sub::after,
 #art .sub::after,
@@ -2207,7 +2198,6 @@ nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
   color:#f0c66b!important;
   text-shadow:0 2px 10px rgba(0,0,0,.55);
 }
-:root[data-theme="dark"] #campaigns .sub::after,
 :root[data-theme="dark"] #screen .sub::after,
 :root[data-theme="dark"] #writing .sub::after,
 :root[data-theme="dark"] #art .sub::after,
