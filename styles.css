@@ -2459,3 +2459,26 @@ nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
 :root[data-theme="dark"] .contact-socials a{box-shadow:0 3px 10px rgba(0,0,0,.22)}
 :root[data-theme="dark"] .contact-primary{border-bottom-color:rgba(240,198,107,.32)}
 @media(max-width:520px){.contact-socials{gap:14px;margin:23px auto 14px}.contact-primary,.contact-more{gap:10px}.contact-socials a{width:42px;height:42px}}
+
+
+/* Content clarity pass: distinguish employment from project credits. */
+.timeline-label{
+  margin:26px 0 8px;
+  padding:0 4px 8px;
+  border-bottom:1px solid var(--line);
+  color:var(--red);
+  font:700 .76rem "Courier Prime",monospace;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.timeline-label:first-child{margin-top:18px}
+.timeline-label.project-label{margin-top:42px}
+.cs.project .w{color:var(--gold)}
+.screen-note{
+  margin:8px 0 12px;
+  padding-left:12px;
+  border-left:2px solid var(--gold);
+  color:var(--muted);
+  font-size:.94rem;
+  line-height:1.6;
+}
