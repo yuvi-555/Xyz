@@ -2283,13 +2283,24 @@ nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
 
 
 /* Social/profile shortcuts sit directly above the contact details in the final scene. */
-.contact-socials{display:flex;justify-content:center;align-items:center;gap:11px;flex-wrap:wrap;margin:28px auto 17px}
-.contact-socials a{width:42px;height:42px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #c9bda9;border-radius:50%;background:#f5eee2;color:#594b3a;box-shadow:0 2px 7px rgba(35,27,18,.07);transition:transform .2s ease,background .2s ease,border-color .2s ease}
-.contact-socials a:hover{transform:translateY(-3px);background:#ead9b6;border-color:#a65d43;color:#4d3927}
-.contact-socials svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-:root[data-theme="dark"] .contact-socials a{background:#292d35;color:#f0c66b;border-color:#59606b;box-shadow:0 3px 10px rgba(0,0,0,.2)}
-:root[data-theme="dark"] .contact-socials a:hover{background:#f0c66b;color:#211d16;border-color:#f0c66b}
-@media(max-width:520px){.contact-socials{gap:9px;margin:23px auto 14px}.contact-socials a{width:40px;height:40px}}
+.contact-socials{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:17px;margin:28px auto 17px}
+.contact-primary,.contact-more{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:13px}
+.contact-primary{padding-bottom:15px;border-bottom:1px solid rgba(190,160,112,.35)}
+.contact-more{gap:11px}
+.contact-socials a{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border:1px solid transparent;border-radius:50%;background:#f5eee2;color:#594b3a;box-shadow:0 2px 7px rgba(35,27,18,.07);transition:transform .2s ease,filter .2s ease,box-shadow .2s ease}
+.contact-socials a:hover{transform:translateY(-3px);filter:brightness(1.06);box-shadow:0 5px 13px rgba(35,27,18,.15)}
+.contact-socials svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.contact-socials .social-mail{background:#fce8e6;color:#c5221f;border-color:#f3c4c0}
+.contact-socials .social-whatsapp{background:#e2f5e9;color:#168b4b;border-color:#b8e5c9}
+.contact-socials .social-instagram{background:linear-gradient(135deg,#feda75 0%,#fa7e1e 30%,#d62976 62%,#962fbf 82%,#4f5bd5 100%);color:#fff;border-color:#d75b88}
+.contact-socials .social-substack{background:#fff0e8;color:#e65b24;border-color:#f5c9b6}
+.contact-socials .social-linkedin{background:#e6f1fa;color:#0a66c2;border-color:#c4dced}
+.contact-socials .social-letterboxd{background:#eaf4e5;color:#24733c;border-color:#c9dfc1}
+.contact-socials .social-wordpress{background:#e8f1f8;color:#21759b;border-color:#c6dce9}
+.contact-socials .social-notion{background:#eeeeee;color:#171717;border-color:#d4d4d4}
+:root[data-theme="dark"] .contact-socials a{box-shadow:0 3px 10px rgba(0,0,0,.22)}
+:root[data-theme="dark"] .contact-primary{border-bottom-color:rgba(240,198,107,.32)}
+@media(max-width:520px){.contact-socials{gap:14px;margin:23px auto 14px}.contact-primary,.contact-more{gap:10px}.contact-socials a{width:42px;height:42px}}
 
 
 /* Explicit contrast for the two section introductions in dark mode. */
