@@ -2465,3 +2465,69 @@ nav #theme-toggle .theme-icon{font-size:1.05rem;line-height:1}
 #contact .contact-socials a[aria-label="WordPress blog"]{background:#21759B}
 #contact .contact-socials a[aria-label="Notion portfolio"]{background:#252525}
 @media(max-width:520px){#contact .contact-socials{gap:11px;margin:23px auto 16px}#contact .contact-socials a{width:43px;height:43px}}
+
+
+/* Editorial clarity pass — borrowed paper texture and readable hierarchy,
+   while preserving the portfolio's screenplay-inspired layout and palette. */
+@media (prefers-color-scheme: light){
+  body{
+    background-color:var(--paper);
+    background-image:
+      linear-gradient(rgba(110,94,69,.045) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(110,94,69,.045) 1px,transparent 1px);
+    background-size:32px 32px;
+  }
+}
+:root[data-theme="light"] body{
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(rgba(110,94,69,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(110,94,69,.045) 1px,transparent 1px);
+  background-size:32px 32px;
+}
+:root[data-theme="dark"] body{
+  background-image:
+    linear-gradient(rgba(220,205,180,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(220,205,180,.018) 1px,transparent 1px);
+  background-size:36px 36px;
+}
+/* Keep existing section colours; add a faint paper grain/grid only to light scenes. */
+:root[data-theme="light"] section:not(.dk){
+  background-image:
+    linear-gradient(rgba(110,94,69,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(110,94,69,.035) 1px,transparent 1px);
+  background-size:32px 32px;
+}
+:root[data-theme="dark"] section:not(.dk){
+  background-image:
+    linear-gradient(rgba(220,205,180,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(220,205,180,.018) 1px,transparent 1px);
+  background-size:36px 36px;
+}
+/* Slightly stronger reading hierarchy without changing the typeface system. */
+.sub{
+  font-size:clamp(1.08rem,2.2vw,1.22rem);
+  line-height:1.65;
+  max-width:40em;
+}
+.slugline{
+  font-size:.82rem;
+  letter-spacing:.16em;
+  line-height:1.5;
+}
+.cs .t{font-size:clamp(1.2rem,2.5vw,1.4rem);line-height:1.25}
+.cs .t small{line-height:1.5}
+.cs .b{font-size:1.02rem;line-height:1.7}
+#work .work-groups>div{
+  box-shadow:0 5px 16px rgba(38,30,20,.045);
+}
+#work .work-groups h3{line-height:1.2}
+#work .work-groups .also{line-height:1.65}
+@media(max-width:640px){
+  section{padding:60px 0}
+  h2{line-height:1.06}
+  .sub{font-size:1.1rem;line-height:1.62;margin-bottom:24px}
+  .cs .t{font-size:1.22rem}
+  .cs .b{font-size:1rem;line-height:1.68}
+  #work .work-groups>div{padding:22px}
+}
