@@ -481,3 +481,13 @@ section.app-view.in h2 em:after{
   #contact .circ path{stroke-dashoffset:0!important;animation:none!important}
   .client-ticker-track{animation:none!important}
 }
+
+
+/* Higher-specificity hero entrance overrides the retired prototype reset above. */
+@media(prefers-reduced-motion:no-preference){
+  #top.hero .wrap .hero-enter{
+    animation:yk-hero-enter .85s cubic-bezier(.2,.72,.2,1) both!important;
+    animation-delay:calc(var(--hero-order,0)*110ms + 80ms)!important;
+  }
+  section.app-view.in .slugline:before{animation:ms-stamp .7s .12s both!important}
+}
