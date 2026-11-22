@@ -132,7 +132,7 @@ body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opac
  #pw .pz,#tg .video-card,#art .art-image-link,#work .cs{transition:transform .28s cubic-bezier(.2,.7,.2,1),box-shadow .28s,border-color .2s}
  #pw .pz:hover,#work .cs:hover{transform:translateY(-4px) rotate(-.25deg);box-shadow:7px 8px 0 var(--accent)}
  #art .art-image-link:hover{transform:translateY(-6px) rotate(0) scale(1.015)}
- .video-card{animation:ms-enter .7s both;animation-delay:calc(var(--card-index)*90ms)}
+ .video-card{animation:none}
  .video-card:hover{transform:translateY(-5px) rotate(-.25deg);box-shadow:7px 8px 0 var(--accent)!important}
  .video-thumb:hover .playtag{transform:translate(-50%,-50%) rotate(-3deg) scale(1.08)}
  .video-thumb .playtag{animation:ms-play-pulse 2.8s ease-in-out infinite}
@@ -177,3 +177,5 @@ body.video-playing{overflow:hidden}
 @media(max-width:760px){#tg.tg{grid-template-columns:1fr;gap:18px}#tg .video-card{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}#tg .video-thumb{height:100%;min-height:210px;aspect-ratio:auto;border-bottom:0;border-right:1.5px solid var(--ink)}#tg .video-card-copy{padding:17px}#tg .video-card-copy h3{font-size:20px}.video-modal-panel{grid-template-columns:1fr;max-height:calc(100dvh - 24px);overflow:auto}.video-modal-player iframe{min-height:0;height:100%;aspect-ratio:16/9}.video-modal-info{border-left:0;border-top:1px solid var(--line);padding:18px 22px 22px;gap:9px}.video-modal-info h2{font-size:28px}.video-modal-note{font-size:18px}}
 @media(max-width:460px){#tg .video-card{display:flex}#tg .video-thumb{height:auto;min-height:0;aspect-ratio:16/9;border-right:0;border-bottom:1.5px solid var(--ink)}#tg .video-card-copy{padding:18px}.video-modal{padding:8px}.video-modal-panel{max-height:calc(100dvh - 16px);box-shadow:5px 6px 0 var(--accent)}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+@media(prefers-reduced-motion:no-preference){.js .motion-reveal{opacity:0;transform:translateY(20px)}.js .motion-reveal.motion-in{opacity:1;transform:translateY(0);transition:opacity .72s cubic-bezier(.2,.7,.2,1),transform .72s cubic-bezier(.2,.7,.2,1)}.js .video-card.motion-in{animation:ms-enter .7s both;animation-delay:calc(var(--card-index)*75ms)}}
