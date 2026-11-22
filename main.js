@@ -91,7 +91,8 @@ if(approvalStamp){
 /* Motion system: one observer per section, with staggered child choreography. */
 root.classList.add("js");
 root.classList.add("js");
-const revealSections=$("header.app-view,section.app-view");
+root.classList.add("js");
+const revealSections=$$("header.app-view,section.app-view");
 const motionSelector=".slugline,h2,.sub,.essay-feature,.essay-latest,.worklist article,.pz,.video-card,.art-image-link,.cs,.fav li,.contact-socials,.ct";
 revealSections.forEach(section=>{
  section.setAttribute("data-rv","");
