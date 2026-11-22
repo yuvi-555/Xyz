@@ -906,8 +906,9 @@ nav.site-nav #theme-toggle{min-height:40px;padding-inline:12px!important}
 
 
 /* Dark-theme specificity fix: keep the hero portrait in the same grid cell as light mode. */
-:root[data-theme="dark"] #top.hero::before{
+ :root[data-theme="dark"] #top.hero::before{
   position:relative!important;inset:auto!important;z-index:3!important;
+  background-image:none!important;background-color:var(--accent)!important;color:#25231f!important;
   grid-column:2!important;grid-row:1!important;align-self:end!important;justify-self:end!important;
   margin:0 -12px 18px 0!important;
 }
@@ -917,6 +918,7 @@ nav.site-nav #theme-toggle{min-height:40px;padding-inline:12px!important}
   width:100%!important;max-height:470px!important;aspect-ratio:4/5!important;
   border-radius:3px!important;transform:rotate(2deg)!important;
   background-image:url("hand-drawing.jpg")!important;background-size:cover!important;background-position:center 42%!important;
+  border:2px solid var(--ink)!important;box-shadow:9px 10px 0 var(--accent),12px 13px 0 #08090b!important;
 }
 @media(max-width:700px){
   :root[data-theme="dark"] #top.hero::before{
