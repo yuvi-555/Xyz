@@ -931,3 +931,36 @@ nav.site-nav #theme-toggle{min-height:40px;padding-inline:12px!important}
     transform:rotate(1.2deg)!important;
   }
 }
+
+
+/* Final hero-name lock: reproduce the Yuvi555 two-tone word treatment on Yogesh Writes. */
+#top.hero h1{
+  font-family:var(--f-head)!important;
+  font-size:clamp(66px,8.6vw,112px)!important;
+  line-height:.88!important;
+  letter-spacing:-.075em!important;
+  font-weight:800!important;
+  margin:8px 0 22px!important;
+}
+#top.hero h1 .hero-first-name{
+  color:#aaa9a2!important;-webkit-text-fill-color:#aaa9a2!important;
+  font-weight:500!important;letter-spacing:-.07em!important;font-style:normal!important;
+}
+#top.hero h1 .hero-last-name{
+  color:#292a28!important;-webkit-text-fill-color:#292a28!important;
+  font-weight:800!important;letter-spacing:-.075em!important;font-style:normal!important;
+}
+#top.hero h1 .hero-first-name::after{content:none!important;display:none!important}
+#top.hero h1 .hero-last-name::after{
+  content:""!important;display:block!important;position:absolute;left:0;right:-3%;bottom:-7px;height:10px;
+  background:var(--accent);z-index:-1;transform:rotate(-1.5deg);border-radius:50%;
+}
+:root[data-theme="dark"] #top.hero h1 .hero-first-name{
+  color:#aaa9a2!important;-webkit-text-fill-color:#aaa9a2!important;
+}
+:root[data-theme="dark"] #top.hero h1 .hero-last-name{
+  color:#f0eee7!important;-webkit-text-fill-color:#f0eee7!important;
+}
+@media(max-width:700px){
+  #top.hero h1{font-size:clamp(58px,14vw,84px)!important}
+}
