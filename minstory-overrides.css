@@ -964,3 +964,13 @@ nav.site-nav #theme-toggle{min-height:40px;padding-inline:12px!important}
 @media(max-width:700px){
   #top.hero h1{font-size:clamp(58px,14vw,84px)!important}
 }
+
+/* Ideas in Action — give every case-study card a clear Min Story Lab-style black outline. */
+#campaigns .pz{
+  border:2px solid #171717!important;
+  border-top:2px solid #171717!important;
+}
+:root[data-theme="dark"] #campaigns .pz{
+  border:2px solid #171717!important;
+  border-top:2px solid #171717!important;
+}
