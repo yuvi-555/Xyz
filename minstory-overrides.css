@@ -360,3 +360,14 @@ nav .lg.home-link small{
     transition:opacity .85s ease,transform .85s cubic-bezier(.2,.7,.2,1);
   }
 }
+
+
+/* Keep the three requested motion cues explicit and reliable on the hero/contact path. */
+section.app-view.in h2 em::after{
+  animation:yk-underline-reveal .95s cubic-bezier(.6,0,.3,1) .12s both!important;
+}
+@media(prefers-reduced-motion:reduce){
+  #top.hero .tap-cue{animation:yk-arrow-bob 1.15s ease-in-out infinite!important}
+  section.app-view.in h2 em::after{animation:yk-underline-reveal .95s ease .12s both!important}
+  #contact.in .circ path{animation:yk-circle-draw 2.35s ease .25s both!important}
+}
