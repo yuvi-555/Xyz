@@ -87,20 +87,58 @@ if(approvalStamp){
   stampObserver.observe(approvalStamp);
  }
 }
-const revealSections=$("section.app-view,header.app-view") ? $("section.app-view,header.app-view") : [];
+
+/* Motion system: one observer per section, with staggered child choreography. */
+const revealSections=$$("header.app-view,section.app-view");
+const motionSelector=".slugline,h2,.sub,.essay-feature,.essay-latest,.worklist article,.pz,.video-card,.art-image-link,.cs,.fav li,.contact-socials,.ct";
 revealSections.forEach(section=>{
  section.setAttribute("data-rv","");
- if(!reduce){
-  section.querySelectorAll(".slugline,h2,.sub,.essay-feature,.essay-latest,.worklist article,.pz,.video-card,.art-image-link,.cs,.fav li,.contact-socials,.ct").forEach(el=>el.classList.add("up"));
-  section.querySelectorAll("h2 em").forEach(el=>el.classList.add("sk"));
-  section.querySelectorAll("img").forEach(el=>el.classList.add("dev"));
- }
+ const targets=$$(motionSelector,section);
+ targets.forEach((el,i)=>{
+  el.classList.add("up");
+  el.style.setProperty("--motion-order",String(Math.min(i,8)));
+ });
+ $$(".dev",section).forEach(el=>el.classList.add("dev"));
+ $$("img",section).forEach(el=>el.classList.add("dev"));
+ $$("h2 em",section).forEach(el=>el.classList.add("sk"));
 });
-if(!reduce){
- root.classList.add("js");
- const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
-  if(entry.isIntersecting){entry.target.classList.add("in");revealObserver.unobserve(entry.target)}
- }),{threshold:.08,rootMargin:"0px 0px -8% 0px"});
- revealSections.forEach(section=>revealObserver.observe(section));
-}else{revealSections.forEach(section=>section.classList.add("in"))}
+/* The hero enters on load; the rest enter as the reader reaches each scene. */
+const heroSection=$("#top");
+if(heroSection){
+ $$("#top .wrap > *").forEach((el,i)=>{
+  el.classList.add("hero-enter");
+  el.style.setProperty("--hero-order",String(i));
+ });
+ heroSection.classList.add("in");
+}
+if(reduce){
+ revealSections.forEach(section=>section.classList.add("in"));
+}else if("IntersectionObserver" in window){
+ const revealObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+   if(entry.isIntersecting){
+    entry.target.classList.add("in");
+    revealObserver.unobserve(entry.target);
+   }
+  });
+ },{threshold:.12,rootMargin:"0px 0px -10% 0px"});
+ revealSections.filter(section=>section!==heroSection).forEach(section=>revealObserver.observe(section));
+}else{
+ revealSections.forEach(section=>section.classList.add("in"));
+}
+/* Measure the real SVG path, so the contact loop draws completely at any size. */
+const contactLoop=$("#contact .circ path");
+if(contactLoop){
+ const length=contactLoop.getTotalLength();
+ contactLoop.style.setProperty("--loop-length",String(length));
+ contactLoop.style.strokeDasharray=String(length);
+ contactLoop.style.strokeDashoffset=reduce?"0":String(length);
+}
+/* Ensure the marquee begins from a clean animation state after layout. */
+const tickerTrack=$(".client-ticker-track");
+if(tickerTrack){
+ tickerTrack.style.willChange="transform";
+ tickerTrack.setAttribute("aria-label","Selected clients and collaborations");
+}
+
 })();
