@@ -87,5 +87,20 @@ if(approvalStamp){
   stampObserver.observe(approvalStamp);
  }
 }
-if(!reduce){root.classList.add("js");const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");ro.unobserve(e.target)}}),{threshold:.05});$("section .wrap").forEach(x=>{x.classList.add("rv");ro.observe(x)});const cardObserver=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("motion-in");cardObserver.unobserve(e.target)}}),{threshold:.12,rootMargin:"0px 0px -5% 0px"});$(".pz,.video-card,.art-image-link,.cs,#work .work-groups>div").forEach(x=>{x.classList.add("motion-reveal");cardObserver.observe(x)})}
+const revealSections=$("section.app-view,header.app-view");
+revealSections.forEach(section=>{
+ section.setAttribute("data-rv","");
+ if(!reduce){
+  section.querySelectorAll(".slugline,h2,.sub,.essay-feature,.essay-latest,.worklist article,.pz,.video-card,.art-image-link,.cs,.fav li,.contact-socials,.ct").forEach(el=>el.classList.add("up"));
+  section.querySelectorAll("h2 em").forEach(el=>el.classList.add("sk"));
+  section.querySelectorAll("img").forEach(el=>el.classList.add("dev"));
+ }
+});
+if(!reduce){
+ root.classList.add("js");
+ const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
+  if(entry.isIntersecting){entry.target.classList.add("in");revealObserver.unobserve(entry.target)}
+ }),{threshold:.08,rootMargin:"0px 0px -8% 0px"});
+ revealSections.forEach(section=>revealObserver.observe(section));
+}else{revealSections.forEach(section=>section.classList.add("in"))}
 })();
