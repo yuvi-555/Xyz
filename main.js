@@ -87,7 +87,7 @@ if(approvalStamp){
   stampObserver.observe(approvalStamp);
  }
 }
-const revealSections=$("section.app-view,header.app-view");
+const revealSections=$("section.app-view,header.app-view") ? $("section.app-view,header.app-view") : [];
 revealSections.forEach(section=>{
  section.setAttribute("data-rv","");
  if(!reduce){
