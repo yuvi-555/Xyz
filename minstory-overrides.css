@@ -976,7 +976,5 @@ nav.site-nav #theme-toggle{min-height:40px;padding-inline:12px!important}
 }
 
 
-/* Make the floating hero arrow an independent, keyboard-accessible link to the work section. */
-#top.hero .hero-scroll-arrow{color:inherit;text-decoration:none;cursor:pointer;pointer-events:auto;position:relative;z-index:2;min-width:36px;min-height:44px;padding:4px;}
-#top.hero .hero-scroll-arrow svg{pointer-events:none;}
-#top.hero .hero-scroll-arrow:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:6px;}
+/* Make the arrow cue part of the See the work hit area, not a separate floating control. */
+#top.hero .see-work .tap-cue{pointer-events:none;}
