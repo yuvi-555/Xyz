@@ -976,5 +976,43 @@ nav.site-nav #theme-toggle{min-height:40px;padding-inline:12px!important}
 }
 
 
-/* Make the arrow cue part of the See the work hit area, not a separate floating control. */
-#top.hero .see-work .tap-cue{pointer-events:none;}
+
+/* Hero cursor choreography: approach the CTA, click its centre, vanish, and loop. */
+#top.hero .see-work{
+  position:relative!important;
+  transform-origin:center!important;
+  animation:yk-cta-receive-click 3.4s ease-in-out 1s infinite!important;
+}
+#top.hero .see-work .tap-cue{
+  position:absolute!important;
+  z-index:4!important;
+  left:50%!important;
+  top:-42px!important;
+  right:auto!important;
+  width:28px!important;
+  height:36px!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  pointer-events:none!important;
+  transform-origin:2px 2px!important;
+  filter:drop-shadow(1px 2px 1px rgba(0,0,0,.22));
+  animation:yk-cursor-approach-click 3.4s ease-in-out 1s infinite both!important;
+}
+#top.hero .tap-cue svg{display:block!important;width:28px!important;height:36px!important;overflow:visible}
+@keyframes yk-cursor-approach-click{
+  0%,10%{opacity:0;transform:translate(22px,-24px) scale(1)}
+  18%{opacity:1;transform:translate(14px,-18px) scale(1)}
+  58%{opacity:1;transform:translate(-2px,58px) scale(1)}
+  64%{opacity:1;transform:translate(-2px,61px) scale(.86)}
+  70%{opacity:1;transform:translate(-2px,58px) scale(1)}
+  82%,100%{opacity:0;transform:translate(-2px,58px) scale(1)}
+}
+@keyframes yk-cta-receive-click{
+  0%,58%,74%,100%{transform:translateY(0) scale(1);filter:none}
+  64%,70%{transform:translateY(2px) scale(.975);filter:brightness(.94)}
+}
+@media(prefers-reduced-motion:reduce){
+  #top.hero .tap-cue{display:none!important;animation:none!important}
+  #top.hero .see-work{animation:none!important}
+}
