@@ -243,3 +243,45 @@ section.app-view.dk .wrap .video-meta{color:var(--ink-2)!important}
  #contact .circ{padding:25px 28px}
  #contact .circ svg{inset:-8px -18px;width:calc(100% + 36px);height:calc(100% + 16px)}
 }
+
+/* Final high-specificity contrast audit: neutralise legacy white-on-light text rules. */
+#top.hero{background:var(--paper)!important;color:var(--ink)!important}
+#top.hero h1,#top.hero .role,#top.hero .hero-pitch,#top.hero .hero-about{color:var(--ink)!important;-webkit-text-fill-color:var(--ink)!important}
+#top.hero h1 span{color:var(--ink)!important;-webkit-text-fill-color:var(--ink)!important}
+#top.hero .role small{color:var(--ink-2)!important;-webkit-text-fill-color:var(--ink-2)!important}
+#top.hero .wrap::before,#top .hero-about::after{color:var(--ink-2)!important;-webkit-text-fill-color:var(--ink-2)!important}
+:root[data-theme="dark"] #top.hero{background:var(--paper)!important;color:var(--ink)!important}
+:root[data-theme="dark"] #top.hero h1,
+:root[data-theme="dark"] #top.hero .role,
+:root[data-theme="dark"] #top.hero .hero-pitch,
+:root[data-theme="dark"] #top.hero .hero-about,
+:root[data-theme="dark"] #top.hero h1 span{color:var(--ink)!important;-webkit-text-fill-color:var(--ink)!important}
+:root[data-theme="dark"] #top.hero .role small,
+:root[data-theme="dark"] #top.hero .wrap::before,
+:root[data-theme="dark"] #top .hero-about::after{color:var(--ink-2)!important;-webkit-text-fill-color:var(--ink-2)!important}
+
+/* The ticker's individual spans had a legacy ivory colour that overrode the new palette. */
+.client-ticker-track span{color:var(--ink)!important;font:inherit!important}
+.client-ticker-track b{color:#885800!important}
+:root[data-theme="dark"] .client-ticker-track span{color:var(--ink)!important}
+:root[data-theme="dark"] .client-ticker-track b{color:var(--accent)!important}
+
+/* Contact card is light in the editorial layout: override the old dark-scene text declarations. */
+:root:not([data-theme="dark"]) #contact{color:var(--ink)!important}
+:root:not([data-theme="dark"]) #contact h2,
+:root:not([data-theme="dark"]) #contact h3,
+:root:not([data-theme="dark"]) #contact h2 em{color:var(--ink)!important;-webkit-text-fill-color:var(--ink)!important}
+:root:not([data-theme="dark"]) #contact .sub,
+:root:not([data-theme="dark"]) #contact .ct,
+:root:not([data-theme="dark"]) #contact .ct a{color:var(--ink-2)!important;-webkit-text-fill-color:var(--ink-2)!important;opacity:1!important}
+:root:not([data-theme="dark"]) #contact .needs .chip{color:var(--ink)!important;border-color:var(--ink)!important;background:var(--card)!important}
+:root:not([data-theme="dark"]) #contact .needs .chip[aria-pressed="true"]{background:var(--accent)!important;color:#171717!important;border-color:var(--ink)!important}
+:root:not([data-theme="dark"]) #contact .btn{color:var(--ink)!important;border-color:var(--ink)!important;background:var(--card)!important}
+:root:not([data-theme="dark"]) #contact .btn.gold{background:var(--accent)!important;color:#171717!important;border-color:var(--ink)!important}
+:root:not([data-theme="dark"]) #contact .paper{background:var(--card)!important;color:var(--ink)!important}
+:root:not([data-theme="dark"]) #contact .paper textarea{background:transparent!important;color:var(--ink)!important;-webkit-text-fill-color:var(--ink)!important}
+:root:not([data-theme="dark"]) #contact .paper textarea::placeholder{color:var(--ink-2)!important;opacity:1!important}
+
+/* Keep the original motion cues only where they support the reference's quieter movement. */
+#top.hero .script-highlight{animation:none!important;background-image:none!important;background-color:var(--accent)!important}
+#top.hero .tap-cue{animation:none!important}
