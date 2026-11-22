@@ -285,3 +285,78 @@ section.app-view.dk .wrap .video-meta{color:var(--ink-2)!important}
 /* Keep the original motion cues only where they support the reference's quieter movement. */
 #top.hero .script-highlight{animation:none!important;background-image:none!important;background-color:var(--accent)!important}
 #top.hero .tap-cue{animation:none!important}
+
+
+/* Functional motion repair — the reveal script now observes every page section. */
+nav .lg.home-link{
+  width:auto!important;min-width:112px;height:42px;padding:0 12px!important;
+  display:flex!important;align-items:center;justify-content:center;gap:8px;
+  border-radius:24px!important;font-family:var(--f-body)!important;
+  font-size:17px!important;font-weight:800!important;letter-spacing:-.02em!important;
+  line-height:1!important;color:var(--ink)!important;text-decoration:none!important;
+  background:var(--card)!important;box-shadow:2px 3px 0 var(--ink)!important;
+}
+nav .lg.home-link small{
+  display:inline-block;padding-left:8px;border-left:1px solid var(--line);
+  font:700 9px/1 var(--f-body);letter-spacing:.1em;color:var(--ink-2);
+}
+@media(max-width:600px){
+  nav .lg.home-link{width:auto!important;min-width:100px;height:36px;padding:0 9px!important;font-size:15px!important}
+  nav .lg.home-link small{font-size:8px}
+}
+
+/* Restore the original oversized, editorial hero name treatment. */
+#top.hero h1{
+  font-family:var(--f-head)!important;font-weight:800!important;
+  font-size:clamp(64px,8.2vw,108px)!important;line-height:.88!important;
+  letter-spacing:-.065em!important;margin:8px 0 20px!important;
+  color:var(--ink)!important;-webkit-text-fill-color:var(--ink)!important;
+}
+#top.hero h1 span{
+  display:inline-block!important;position:relative!important;
+  color:var(--ink)!important;-webkit-text-fill-color:var(--ink)!important;
+}
+#top.hero h1 span::after{
+  content:"";position:absolute;left:0;right:-3%;bottom:-7px;height:10px;
+  background:var(--accent);z-index:-1;transform:rotate(-1.5deg);border-radius:50%;
+}
+
+/* These cues are intentional and remain animated even if a browser has disabled
+   the older, unrelated decorative effects. */
+@keyframes yk-arrow-bob{
+  0%,100%{transform:translateY(0) rotate(0)}
+  50%{transform:translateY(6px) rotate(3deg)}
+}
+#top.hero .tap-cue{
+  display:inline-flex;align-items:center;justify-content:center;
+  animation:yk-arrow-bob 1.15s ease-in-out infinite!important;
+  transform-origin:50% 50%;
+}
+#top.hero .tap-cue svg{display:block;overflow:visible}
+
+@keyframes yk-underline-reveal{
+  from{clip-path:inset(0 100% 0 0)}
+  to{clip-path:inset(-10px)}
+}
+@media(prefers-reduced-motion:no-preference){
+  section.app-view.in h2 em::after{
+    animation:yk-underline-reveal .95s cubic-bezier(.6,0,.3,1) .12s both!important;
+  }
+}
+@keyframes yk-circle-draw{
+  from{stroke-dasharray:2200;stroke-dashoffset:2200}
+  to{stroke-dasharray:2200;stroke-dashoffset:0}
+}
+#contact.in .circ path{
+  animation:yk-circle-draw 2.35s cubic-bezier(.6,0,.3,1) .25s both!important;
+}
+#contact .circ path{stroke-linecap:round;fill:none}
+
+/* Section reveal choreography: visible by default, then gently enters as it scrolls in. */
+@media(prefers-reduced-motion:no-preference){
+  html.js section.app-view .up{opacity:0;transform:translateY(16px)}
+  html.js section.app-view.in .up{
+    opacity:1;transform:translateY(0);
+    transition:opacity .85s ease,transform .85s cubic-bezier(.2,.7,.2,1);
+  }
+}
