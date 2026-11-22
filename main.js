@@ -4,7 +4,7 @@ const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches,root=document.documentElement;
 /* Persistent light / dark appearance switch. */
 const themeToggle=$("#theme-toggle");
-const savedTheme="light"; // Always start in light mode; the visitor can switch during this visit.
+let savedTheme="light";try{const storedTheme=localStorage.getItem("portfolio-theme");if(storedTheme==="dark"||storedTheme==="light")savedTheme=storedTheme}catch(e){}
 function applyTheme(theme){
  const dark=theme==="dark";
  root.setAttribute("data-theme",dark?"dark":"light");
@@ -45,8 +45,10 @@ $("#tg").innerHTML=F.map((f,i)=>{const id=videoId(f[3]);return `<article class="
 const videoModal=document.createElement("div");videoModal.className="video-modal";videoModal.hidden=true;videoModal.innerHTML=`<div class="video-modal-backdrop" data-video-close></div><section class="video-modal-panel" role="dialog" aria-modal="true" aria-labelledby="video-modal-title"><button class="video-modal-close" type="button" aria-label="Close video">×</button><div class="video-modal-player"><iframe title="Selected film" src="about:blank" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div><aside class="video-modal-info"><span class="a">NOW PLAYING / SCREEN WORK</span><h2 id="video-modal-title"></h2><p>Selected screen work and creative credits.</p><span class="video-modal-rule"></span><span class="video-modal-note">A film by the people who made it. A contribution by Yogesh.</span></aside></section>`;
 document.body.appendChild(videoModal);
 const videoFrame=$("iframe",videoModal),videoTitle=$("#video-modal-title",videoModal),videoClose=$(".video-modal-close",videoModal);
-function closeVideo(){videoModal.hidden=true;videoModal.classList.remove("is-open");videoFrame.src="about:blank";document.body.classList.remove("video-playing")}
-function openVideo(id,title){if(!id)return;videoTitle.textContent=title||"Selected film";videoFrame.src="https://www.youtube-nocookie.com/embed/"+id+"?autoplay=1&rel=0";videoModal.hidden=false;document.body.classList.add("video-playing");requestAnimationFrame(()=>videoModal.classList.add("is-open"));videoClose.focus()}
+let lastVideoTrigger=null;
+function closeVideo(){videoModal.hidden=true;videoModal.classList.remove("is-open");videoFrame.src="about:blank";document.body.classList.remove("video-playing");if(lastVideoTrigger&&document.contains(lastVideoTrigger))lastVideoTrigger.focus();lastVideoTrigger=null}
+function openVideo(id,title){if(!id)return;lastVideoTrigger=document.activeElement;videoTitle.textContent=title||"Selected film";videoFrame.src="https://www.youtube-nocookie.com/embed/"+id+"?autoplay=1&rel=0";videoModal.hidden=false;document.body.classList.add("video-playing");requestAnimationFrame(()=>videoModal.classList.add("is-open"));videoClose.focus()}
+videoModal.addEventListener("keydown",e=>{if(e.key!=="Tab")return;const items=$("button:not([disabled]),iframe",videoModal).filter(el=>el.offsetParent!==null);if(!items.length)return;const first=items[0],last=items[items.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}});
 $("#tg").addEventListener("click",e=>{const trigger=e.target.closest("[data-video]");if(trigger)openVideo(trigger.dataset.video,trigger.dataset.title)});
 videoClose.addEventListener("click",closeVideo);videoModal.addEventListener("click",e=>{if(e.target.hasAttribute("data-video-close"))closeVideo()});document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!videoModal.hidden)closeVideo()});
 /* Long-form writing is linked directly from the Writing section. */
@@ -58,7 +60,7 @@ const ta=$("#ta");
 const picked={},needs=["Slogan","Ad script","Brand voice","Website copy","Film script","Social captions"];
 needs.forEach(n=>{const b=document.createElement("button");b.className="chip";b.textContent=n;b.setAttribute("aria-pressed","false");b.onclick=()=>{picked[n]=!picked[n];b.setAttribute("aria-pressed",String(!!picked[n]));build()};$("#needs").appendChild(b)});
 function build(){const list=needs.filter(n=>picked[n]).join(", ")||"(not chosen)";const body="Hi Yogesh,\n\nI'd like help with: "+list+"\n\n"+(ta.value||"(add a few lines)")+"\n\nThanks!";$("#send").href="mailto:yogeshkokane14@gmail.com?subject="+encodeURIComponent("Writing project: "+list)+"&body="+encodeURIComponent(body);return body}
-build();$("#copy").onclick=function(){const b=this;try{navigator.clipboard.writeText(build()).then(()=>{b.textContent="Copied";setTimeout(()=>{b.textContent="Copy"},1500)},()=>{})}catch(e){}};
+build();ta.addEventListener("input",build);$("#copy").onclick=function(){const b=this;try{navigator.clipboard.writeText(build()).then(()=>{b.textContent="Copied";setTimeout(()=>{b.textContent="Copy"},1500)},()=>{})}catch(e){}};
 /* scroll: progress, nav, fab, reveal */
 const bar=$("#bar"),links=$$("nav a[data-s]"),fab=$("#fab"),ids=["lines","campaigns","screen","writing","art","work","contact"];
 function onS(){const h=root;bar.style.width=(h.scrollTop/Math.max(1,h.scrollHeight-h.clientHeight)*100)+"%";const sections=ids.map(id=>$("#"+id)).filter(Boolean);let cur="top";for(const s of sections){if(s.getBoundingClientRect().top<=150)cur=s.id}links.forEach(a=>{const active=a.dataset.s===cur;a.classList.toggle("on",active);if(active)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});fab.classList.toggle("show",cur!=="contact"&&h.scrollTop>420)}
@@ -67,11 +69,14 @@ addEventListener("scroll",onS,{passive:true});
 const rooms=[{id:"top",name:"Home"},{id:"lines",name:"Lines"},{id:"campaigns",name:"Campaigns"},{id:"screen",name:"Screen"},{id:"writing",name:"Writing"},{id:"art",name:"Art"},{id:"work",name:"Work"},{id:"contact",name:"Brief me"}];
 $$(".app-view").forEach(v=>v.classList.add("active"));
 const roomIndicator=$(".room-indicator");if(roomIndicator)roomIndicator.remove();
-document.addEventListener("click",e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const id=a.getAttribute("href").slice(1);const target=$("#"+CSS.escape(id));if(target){e.preventDefault();history.pushState({room:id},"","#"+id);target.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"})}});
-addEventListener("hashchange",()=>{const target=$(location.hash);if(target)target.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"})});
-addEventListener("popstate",()=>{const target=$(location.hash||"#top");if(target)target.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"})});
-const navObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){const id=entry.target.id;links.forEach(a=>{const active=a.dataset.s===id;a.classList.toggle("on",active);if(active)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")})}})},{rootMargin:"-18% 0px -68% 0px",threshold:0});
-rooms.filter(r=>r.id!=="top").forEach(r=>{const el=$("#"+r.id);if(el)navObserver.observe(el)});
+document.addEventListener("click",e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const id=a.getAttribute("href").slice(1);if(!id)return;const target=document.getElementById(id);if(target){e.preventDefault();history.pushState({room:id},"","#"+id);target.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"})}});
+function scrollToHash(){const id=decodeURIComponent(location.hash.slice(1));const target=document.getElementById(id);if(target)target.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"})}
+addEventListener("hashchange",scrollToHash);
+addEventListener("popstate",scrollToHash);
+if("IntersectionObserver" in window){
+ const navObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){const id=entry.target.id;links.forEach(a=>{const active=a.dataset.s===id;a.classList.toggle("on",active);if(active)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")})}})},{rootMargin:"-18% 0px -68% 0px",threshold:0});
+ rooms.filter(r=>r.id!=="top").forEach(r=>{const el=$("#"+r.id);if(el)navObserver.observe(el)});
+}
 onS();
 /* One-time production stamp impact when the footer enters view. */
 const approvalStamp=$(".production-stamp");
@@ -89,8 +94,6 @@ if(approvalStamp){
 }
 
 /* Motion system: one observer per section, with staggered child choreography. */
-root.classList.add("js");
-root.classList.add("js");
 root.classList.add("js");
 const revealSections=$$("header.app-view,section.app-view");
 const motionSelector=".slugline,h2,.sub,.essay-feature,.essay-latest,.worklist article,.pz,.video-card,.art-image-link,.cs,.fav li,.contact-socials,.ct";
