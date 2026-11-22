@@ -87,5 +87,5 @@ if(approvalStamp){
   stampObserver.observe(approvalStamp);
  }
 }
-if(!reduce){root.classList.add("js");const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");ro.unobserve(e.target)}}),{threshold:.05});$$("section .wrap").forEach(x=>{x.classList.add("rv");ro.observe(x)})}
+if(!reduce){root.classList.add("js");const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");ro.unobserve(e.target)}}),{threshold:.05});$("section .wrap").forEach(x=>{x.classList.add("rv");ro.observe(x)});const cardObserver=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("motion-in");cardObserver.unobserve(e.target)}}),{threshold:.12,rootMargin:"0px 0px -5% 0px"});$(".pz,.video-card,.art-image-link,.cs,#work .work-groups>div").forEach(x=>{x.classList.add("motion-reveal");cardObserver.observe(x)})}
 })();
