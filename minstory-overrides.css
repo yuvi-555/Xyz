@@ -1383,3 +1383,35 @@ nav.site-nav #theme-toggle{min-height:40px;padding-inline:12px!important}
   #art .art figure,
   #contact .paper{transition:none!important}
 }
+
+
+/* Award pin for the recognised Saap Shidi short film. */
+#screen .tg .tk.award-winning-film{position:relative}
+#screen .tg .tk .film-award-pin{
+  position:absolute;
+  z-index:5;
+  top:14px;
+  right:14px;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:8px 11px 7px;
+  color:#21190d;
+  background:#f3c967;
+  border:1.5px solid #21190d;
+  box-shadow:3px 3px 0 #21190d,0 6px 12px rgba(0,0,0,.14);
+  font:800 10px/1 "Be Vietnam Pro",sans-serif;
+  letter-spacing:.11em;
+  transform:rotate(3deg);
+  pointer-events:none;
+}
+#screen .tg .tk .film-award-pin span{white-space:nowrap}
+:root[data-theme="dark"] #screen .tg .tk .film-award-pin{
+  color:#21190d;
+  background:#f3c967;
+  border-color:#21190d;
+  box-shadow:3px 3px 0 #d6a63d,0 7px 14px rgba(0,0,0,.35);
+}
+@media(max-width:700px){
+  #screen .tg .tk .film-award-pin{top:12px;right:12px;padding:7px 9px;font-size:9px}
+}
