@@ -1587,3 +1587,70 @@ nav.site-nav #theme-toggle{min-height:40px;padding-inline:12px!important}
   }
   #writing .essay-latest .essay-kicker{padding-right:116px}
 }
+
+
+/* Corner-pin redesign: illustrated award rosette and reader's seal. */
+#screen .tg .tk.award-winning-film .video-thumb{position:relative;overflow:hidden;isolation:isolate}
+#screen .tg .tk .film-award-pin{
+  position:absolute;z-index:5;top:-5px;right:8px;
+  display:flex;flex-direction:column;align-items:center;gap:0;
+  width:94px;min-width:0;min-height:0;padding:0;
+  color:#35230c;background:transparent;border:0;border-radius:0;
+  box-shadow:none;transform:rotate(5deg);pointer-events:none;
+}
+#screen .tg .tk .award-rosette{
+  display:block;width:66px;height:78px;overflow:visible;
+  filter:drop-shadow(2px 4px 2px rgba(0,0,0,.34));
+}
+#screen .tg .tk .award-copy{
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+  margin-top:-9px;padding:4px 8px 5px;
+  color:#fff7df;background:#8e302b;border:1px solid #55201c;
+  box-shadow:2px 3px 0 rgba(39,24,12,.8);
+  font-family:"Be Vietnam Pro",sans-serif;text-align:center;
+  transform:rotate(-1deg);
+}
+#screen .tg .tk .award-copy strong{font-size:9px;line-height:1;letter-spacing:.14em;font-weight:900}
+#screen .tg .tk .award-copy small{font-size:7px;line-height:1;letter-spacing:.15em;font-weight:700}
+#writing .essay-latest{position:relative}
+#writing .essay-latest .must-read-pin{
+  position:absolute;z-index:4;top:-8px;right:12px;
+  display:flex;align-items:center;gap:5px;
+  width:112px;min-height:58px;box-sizing:border-box;padding:4px 7px 5px 4px;
+  color:#7e2828;background:#e8c36e;border:1.5px solid #7e2828;
+  border-radius:2px 2px 8px 2px;
+  box-shadow:2px 3px 0 #7e2828,0 5px 10px rgba(32,22,15,.2);
+  transform:rotate(3deg);pointer-events:none;
+}
+#writing .essay-latest .must-read-pin:after{
+  content:"";position:absolute;top:-5px;right:13px;width:8px;height:8px;
+  border-radius:50%;background:#7e2828;border:1px solid #f7e8c9;
+  box-shadow:0 1px 2px rgba(0,0,0,.3);
+}
+#writing .essay-latest .must-read-pin svg{
+  display:block;flex:0 0 43px;width:43px;height:43px;
+  filter:drop-shadow(0 1px 1px rgba(60,30,20,.15));
+}
+#writing .essay-latest .must-read-copy{
+  display:flex;flex-direction:column;gap:2px;align-items:flex-start;
+  font-family:"Be Vietnam Pro",sans-serif;
+}
+#writing .essay-latest .must-read-copy strong{font-size:11px;line-height:1;font-weight:900;letter-spacing:.1em}
+#writing .essay-latest .must-read-copy small{font-size:10px;line-height:1;font-weight:800;letter-spacing:.2em}
+#writing .essay-latest .essay-kicker{padding-right:116px;padding-top:16px}
+:root[data-theme="dark"] #writing .essay-latest .must-read-pin{
+  color:#7e2828;background:#e8c36e;border-color:#7e2828;
+  box-shadow:2px 3px 0 #7e2828,0 5px 12px rgba(0,0,0,.4);
+}
+@media(max-width:700px){
+  #screen .tg .tk .film-award-pin{top:-4px;right:5px;width:84px}
+  #screen .tg .tk .award-rosette{width:58px;height:70px}
+  #screen .tg .tk .award-copy{padding:4px 7px}
+  #screen .tg .tk .award-copy strong{font-size:8px}
+  #screen .tg .tk .award-copy small{font-size:6px}
+  #writing .essay-latest .must-read-pin{top:-7px;right:8px;width:104px;min-height:53px}
+  #writing .essay-latest .must-read-pin svg{width:39px;height:39px;flex-basis:39px}
+  #writing .essay-latest .must-read-copy strong{font-size:10px}
+  #writing .essay-latest .must-read-copy small{font-size:9px}
+  #writing .essay-latest .essay-kicker{padding-right:108px;padding-top:15px}
+}
