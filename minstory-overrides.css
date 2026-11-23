@@ -1489,3 +1489,101 @@ nav.site-nav #theme-toggle{min-height:40px;padding-inline:12px!important}
   #writing .essay-latest .must-read-pin{top:10px;right:10px}
   #writing .essay-latest .essay-kicker{padding-right:86px}
 }
+
+
+/* Stronger editorial badges — intentionally larger, clearer and more composed. */
+#screen .tg .tk.award-winning-film .video-thumb{overflow:hidden}
+#screen .tg .tk .film-award-pin{
+  top:18px;
+  right:18px;
+  min-width:154px;
+  min-height:66px;
+  box-sizing:border-box;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:10px;
+  padding:8px 13px 8px 9px;
+  color:#24190b;
+  background:linear-gradient(135deg,#ffe7a1 0%,#f2c45c 48%,#d99d35 100%);
+  border:2px solid #3a2811;
+  border-radius:4px 4px 2px 2px;
+  box-shadow:3px 4px 0 #24190b,0 8px 18px rgba(0,0,0,.3),inset 0 0 0 2px rgba(255,255,255,.42);
+  transform:rotate(2deg);
+}
+#screen .tg .tk .film-award-pin:after{
+  content:"";
+  position:absolute;
+  left:12px;
+  bottom:-11px;
+  width:18px;
+  height:18px;
+  background:#d99d35;
+  border-right:2px solid #3a2811;
+  border-bottom:2px solid #3a2811;
+  transform:rotate(45deg);
+  z-index:-1;
+}
+#screen .tg .tk .award-medal{
+  width:42px;
+  height:42px;
+  flex:0 0 42px;
+  font-size:23px;
+  border:1.5px solid #5b3a12;
+  background:radial-gradient(circle at 32% 25%,#fff8d9 0 12%,#f5d47d 38%,#c98928 100%);
+  box-shadow:inset 0 0 0 3px rgba(255,255,255,.48),0 2px 3px rgba(62,39,8,.22);
+}
+#screen .tg .tk .award-copy{display:flex;flex-direction:column;gap:4px;white-space:nowrap}
+#screen .tg .tk .award-copy strong{
+  font:900 10px/1 "Be Vietnam Pro",sans-serif;
+  letter-spacing:.09em;
+}
+#screen .tg .tk .award-copy small{
+  font:700 8px/1 "Be Vietnam Pro",sans-serif;
+  letter-spacing:.2em;
+  opacity:.78;
+}
+#writing .essay-latest .must-read-pin{
+  top:15px;
+  right:15px;
+  min-height:34px;
+  box-sizing:border-box;
+  padding:8px 12px 7px;
+  gap:7px;
+  color:#fff8e9;
+  background:linear-gradient(115deg,#7e2828 0%,#a9443d 58%,#842e2b 100%);
+  border:1.5px solid #5c211f;
+  border-radius:2px;
+  box-shadow:3px 3px 0 #d7b65f,0 6px 13px rgba(40,20,16,.2),inset 0 1px 0 rgba(255,255,255,.2);
+  font:900 10px/1 "Be Vietnam Pro",sans-serif;
+  letter-spacing:.16em;
+  transform:rotate(1.5deg);
+}
+#writing .essay-latest .must-read-pin:before{
+  content:"✦";
+  font-size:14px;
+  line-height:1;
+  color:#f4cf79;
+}
+#writing .essay-latest .essay-kicker{padding-right:122px}
+:root[data-theme="dark"] #screen .tg .tk .film-award-pin{
+  color:#24190b;background:linear-gradient(135deg,#ffe7a1 0%,#f2c45c 48%,#d99d35 100%);
+  border-color:#3a2811;box-shadow:3px 4px 0 #d99d35,0 8px 18px rgba(0,0,0,.4),inset 0 0 0 2px rgba(255,255,255,.42);
+}
+:root[data-theme="dark"] #writing .essay-latest .must-read-pin{
+  color:#fff8e9;background:linear-gradient(115deg,#7e2828 0%,#a9443d 58%,#842e2b 100%);
+  border-color:#5c211f;box-shadow:3px 3px 0 #d7b65f,0 6px 13px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.2);
+}
+@media(max-width:700px){
+  #screen .tg .tk .film-award-pin{
+    top:12px;right:12px;min-width:136px;min-height:58px;
+    gap:8px;padding:6px 9px 6px 7px;
+  }
+  #screen .tg .tk .award-medal{width:36px;height:36px;flex-basis:36px;font-size:20px}
+  #screen .tg .tk .award-copy strong{font-size:9px}
+  #screen .tg .tk .award-copy small{font-size:7px}
+  #writing .essay-latest .must-read-pin{
+    top:11px;right:11px;min-height:33px;padding:8px 10px;font-size:9px;
+  }
+  #writing .essay-latest .essay-kicker{padding-right:116px}
+}
