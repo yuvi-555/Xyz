@@ -1654,3 +1654,57 @@ nav.site-nav #theme-toggle{min-height:40px;padding-inline:12px!important}
   #writing .essay-latest .must-read-copy small{font-size:9px}
   #writing .essay-latest .essay-kicker{padding-right:108px;padding-top:15px}
 }
+
+
+/* Final placement pass: pins visibly overlap the card edge, like applied paper stickers. */
+#screen .tg .tk.award-winning-film,
+#screen .tg .tk.award-winning-film .video-thumb,
+#writing .essay-latest{overflow:visible!important}
+#screen .tg .tk.award-winning-film .video-thumb{isolation:isolate}
+#screen .tg .tk .film-award-pin{
+  top:-30px!important;
+  right:-23px!important;
+  z-index:12!important;
+  transform:rotate(8deg)!important;
+  transform-origin:72% 24%!important;
+  filter:drop-shadow(2px 5px 3px rgba(20,14,8,.28));
+  animation:yk-award-sticker-settle 650ms cubic-bezier(.2,.85,.25,1.25) both,yk-award-sticker-shine 4.6s ease-in-out 1.1s infinite;
+}
+#screen .tg .tk .award-rosette{filter:drop-shadow(0 2px 1px rgba(0,0,0,.18))}
+#writing .essay-latest .must-read-pin{
+  top:-23px!important;
+  right:-17px!important;
+  z-index:8!important;
+  transform:rotate(7deg)!important;
+  transform-origin:78% 18%!important;
+  animation:yk-mustread-sticker-settle 650ms cubic-bezier(.2,.85,.25,1.25) both,yk-mustread-sticker-shine 4.9s ease-in-out 1.35s infinite;
+}
+@keyframes yk-award-sticker-settle{
+  0%{opacity:0;transform:translate(12px,-12px) rotate(18deg) scale(.78)}
+  72%{opacity:1;transform:translate(-2px,2px) rotate(5deg) scale(1.04)}
+  100%{opacity:1;transform:translate(0,0) rotate(8deg) scale(1)}
+}
+@keyframes yk-mustread-sticker-settle{
+  0%{opacity:0;transform:translate(12px,-12px) rotate(18deg) scale(.78)}
+  72%{opacity:1;transform:translate(-2px,2px) rotate(4deg) scale(1.04)}
+  100%{opacity:1;transform:translate(0,0) rotate(7deg) scale(1)}
+}
+@keyframes yk-award-sticker-shine{
+  0%,58%,100%{filter:drop-shadow(2px 5px 3px rgba(20,14,8,.28)) brightness(1)}
+  68%{filter:drop-shadow(2px 5px 3px rgba(20,14,8,.28)) brightness(1.16)}
+  78%{filter:drop-shadow(2px 5px 3px rgba(20,14,8,.28)) brightness(1)}
+}
+@keyframes yk-mustread-sticker-shine{
+  0%,58%,100%{filter:drop-shadow(2px 4px 3px rgba(20,14,8,.22)) brightness(1)}
+  68%{filter:drop-shadow(2px 4px 3px rgba(20,14,8,.22)) brightness(1.2)}
+  78%{filter:drop-shadow(2px 4px 3px rgba(20,14,8,.22)) brightness(1)}
+}
+@media(max-width:700px){
+  #screen .tg .tk .film-award-pin{top:-25px!important;right:-17px!important;width:84px}
+  #screen .tg .tk .award-rosette{width:58px;height:70px}
+  #writing .essay-latest .must-read-pin{top:-19px!important;right:-13px!important;width:104px}
+}
+@media(prefers-reduced-motion:reduce){
+  #screen .tg .tk .film-award-pin,
+  #writing .essay-latest .must-read-pin{animation:none!important}
+}
