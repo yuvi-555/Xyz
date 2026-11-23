@@ -1016,3 +1016,168 @@ nav.site-nav #theme-toggle{min-height:40px;padding-inline:12px!important}
   #top.hero .tap-cue{display:none!important;animation:none!important}
   #top.hero .see-work{animation:none!important}
 }
+
+
+/* Min Story Lab-inspired depth pass: physical elevation, layered contact shadows, and weighted feedback. */
+:root{
+  --yk-shadow-ink:color-mix(in srgb,var(--ink) 18%,transparent);
+  --yk-shadow-soft:color-mix(in srgb,var(--ink) 10%,transparent);
+  --yk-shadow-accent:color-mix(in srgb,var(--accent) 72%,transparent);
+}
+:root[data-theme="dark"]{
+  --yk-shadow-ink:rgba(0,0,0,.42);
+  --yk-shadow-soft:rgba(0,0,0,.24);
+  --yk-shadow-accent:color-mix(in srgb,var(--accent) 48%,transparent);
+}
+@media(prefers-reduced-motion:no-preference){
+  /* One consistent easing curve makes the page feel like one designed system. */
+  #campaigns .pz,
+  #screen .video-card,
+  #writing .essay-feature,
+  #writing .essay-latest,
+  #art .art-image-link,
+  #work .work-groups>div,
+  #work .cs,
+  #lines .strip,
+  #lines .fc,
+  #contact .paper{
+    transition:
+      transform .34s cubic-bezier(.2,.75,.25,1),
+      box-shadow .34s cubic-bezier(.2,.75,.25,1),
+      border-color .28s ease,
+      background-color .28s ease;
+    transform-style:preserve-3d;
+  }
+
+  /* Resting cards sit just above the paper; hover separates them from the page. */
+  #campaigns .pz,
+  #screen .video-card,
+  #writing .essay-feature,
+  #writing .essay-latest,
+  #work .work-groups>div,
+  #work .cs,
+  #lines .strip,
+  #lines .fc{
+    box-shadow:
+      0 1px 0 rgba(255,255,255,.42) inset,
+      3px 4px 0 var(--yk-shadow-accent),
+      6px 9px 18px -12px var(--yk-shadow-ink);
+  }
+
+  #campaigns .pz:hover,
+  #campaigns .pz:focus-within,
+  #screen .video-card:hover,
+  #screen .video-card:focus-within,
+  #writing .essay-feature:hover,
+  #writing .essay-feature:focus-within,
+  #writing .essay-latest:hover,
+  #writing .essay-latest:focus-within,
+  #work .work-groups>div:hover,
+  #work .work-groups>div:focus-within,
+  #work .cs:hover,
+  #work .cs:focus-within,
+  #lines .strip:hover,
+  #lines .strip:focus-within,
+  #lines .fc:hover,
+  #lines .fc:focus-within{
+    transform:translate3d(0,-6px,0);
+    box-shadow:
+      0 1px 0 rgba(255,255,255,.58) inset,
+      2px 3px 0 var(--yk-shadow-accent),
+      0 15px 25px -16px var(--yk-shadow-ink),
+      0 24px 38px -28px var(--yk-shadow-ink);
+  }
+
+  /* Artwork keeps its editorial tilt at rest, then straightens and rises. */
+  #art .art-image-link{
+    box-shadow:3px 4px 0 var(--yk-shadow-accent),0 8px 18px -15px var(--yk-shadow-ink);
+  }
+  #art .art-image-link:hover,
+  #art .art-image-link:focus-visible{
+    transform:translateY(-7px) rotate(0) scale(1.018)!important;
+    box-shadow:5px 7px 0 var(--yk-shadow-accent),0 18px 26px -17px var(--yk-shadow-ink);
+  }
+
+  /* Images move inside their frames, not the frame itself. */
+  #screen .video-thumb img,
+  #art .art-image-link img{
+    transition:transform .65s cubic-bezier(.2,.75,.25,1),filter .45s ease;
+  }
+  #screen .video-card:hover .video-thumb img,
+  #screen .video-card:focus-within .video-thumb img{
+    transform:scale(1.055);
+  }
+  #art .art-image-link:hover img,
+  #art .art-image-link:focus-visible img{
+    transform:scale(1.035);
+  }
+
+  /* Buttons rise on approach and settle with a tactile press. */
+  header.hero .btn,
+  section.app-view .btn,
+  section.app-view a.button,
+  #theme-toggle,
+  nav .lg.home-link,
+  #contact .contact-socials a,
+  #contact .needs .chip{
+    transition:
+      transform .22s cubic-bezier(.2,.75,.25,1),
+      box-shadow .22s cubic-bezier(.2,.75,.25,1),
+      background-color .22s ease,
+      border-color .22s ease;
+  }
+  header.hero .btn:hover,
+  section.app-view .btn:hover,
+  section.app-view a.button:hover,
+  #theme-toggle:hover,
+  nav .lg.home-link:hover,
+  #contact .contact-socials a:hover{
+    transform:translateY(-3px);
+    box-shadow:0 2px 0 var(--ink),0 8px 15px -10px var(--yk-shadow-ink);
+  }
+  header.hero .btn:active,
+  section.app-view .btn:active,
+  section.app-view a.button:active,
+  #theme-toggle:active,
+  nav .lg.home-link:active,
+  #contact .contact-socials a:active{
+    transform:translateY(1px) scale(.985);
+    box-shadow:0 0 0 var(--ink);
+  }
+
+  /* Navigation links respond with a small rise, not a large jump. */
+  nav .links a{transition:background-size .28s cubic-bezier(.2,.75,.25,1),transform .22s cubic-bezier(.2,.75,.25,1),color .2s ease}
+  nav .links a:hover{transform:translateY(-2px)}
+
+  /* Small directional cues travel a few pixels when their parent is approached. */
+  #work .cs button .x,
+  #contact .contact-primary a svg,
+  #contact .contact-more a svg{
+    transition:transform .24s cubic-bezier(.2,.75,.25,1);
+  }
+  #work .cs:hover button .x{transform:translateX(4px)}
+  #contact .contact-socials a:hover svg{transform:translateY(-1px) scale(1.06)}
+}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  #campaigns .pz,
+  #screen .video-card,
+  #writing .essay-feature,
+  #writing .essay-latest,
+  #art .art-image-link,
+  #work .work-groups>div,
+  #work .cs,
+  #lines .strip,
+  #lines .fc{will-change:transform}
+}
+@media(max-width:700px){
+  /* Touch devices should not keep a card visually elevated after a tap. */
+  #campaigns .pz:hover,
+  #screen .video-card:hover,
+  #writing .essay-feature:hover,
+  #writing .essay-latest:hover,
+  #art .art-image-link:hover,
+  #work .work-groups>div:hover,
+  #work .cs:hover,
+  #lines .strip:hover,
+  #lines .fc:hover{transform:none}
+}
