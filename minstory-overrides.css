@@ -1222,3 +1222,164 @@ nav.site-nav #theme-toggle{min-height:40px;padding-inline:12px!important}
   #top.hero .tap-cue{display:none!important;animation:none!important}
   #top.hero .see-work{animation:none!important}
 }
+
+
+/* Refined tactile elevation pass — target the actual rendered portfolio components. */
+@media(prefers-reduced-motion:no-preference){
+  :root{
+    --yk-edge-shadow:color-mix(in srgb,var(--ink) 78%,transparent);
+    --yk-float-shadow:color-mix(in srgb,var(--ink) 22%,transparent);
+  }
+  :root[data-theme="dark"]{
+    --yk-edge-shadow:rgba(0,0,0,.72);
+    --yk-float-shadow:rgba(0,0,0,.52);
+  }
+
+  /* Printed cards: a crisp ink edge, a visible warm offset, then a soft cast shadow. */
+  #campaigns .pw .pz,
+  #lines .strip .fr,
+  #screen .tg .tk,
+  #writing .essay-feature,
+  #writing .essay-latest,
+  #writing .worklist>article,
+  #work .work-groups>div{
+    transition:
+      transform .42s cubic-bezier(.18,.72,.22,1),
+      box-shadow .42s cubic-bezier(.18,.72,.22,1),
+      border-color .3s ease,
+      background-color .3s ease;
+    box-shadow:
+      0 0 0 1px var(--yk-edge-shadow),
+      4px 5px 0 var(--yk-shadow-accent),
+      7px 10px 18px -10px var(--yk-float-shadow);
+  }
+
+  #campaigns .pw .pz:hover,
+  #campaigns .pw .pz:focus-within,
+  #lines .strip .fr:hover,
+  #lines .strip .fr:focus-within,
+  #screen .tg .tk:hover,
+  #screen .tg .tk:focus-within,
+  #writing .essay-feature:hover,
+  #writing .essay-feature:focus-within,
+  #writing .essay-latest:hover,
+  #writing .essay-latest:focus-within,
+  #writing .worklist>article:hover,
+  #writing .worklist>article:focus-within,
+  #work .work-groups>div:hover,
+  #work .work-groups>div:focus-within{
+    transform:translate3d(0,-7px,0) rotate(0deg);
+    box-shadow:
+      0 0 0 1px var(--yk-edge-shadow),
+      6px 8px 0 var(--yk-shadow-accent),
+      0 18px 24px -12px var(--yk-float-shadow),
+      0 30px 42px -25px var(--yk-float-shadow);
+  }
+
+  /* The film-strip cards are separate paper objects, not just one hovering strip. */
+  #lines .strip .fr{
+    border:1px solid color-mix(in srgb,#14110f 78%,transparent);
+    transform:translateY(0);
+  }
+  #lines .strip .fr:hover,
+  #lines .strip .fr:focus-within{
+    transform:translateY(-8px) rotate(-.35deg);
+  }
+
+  /* Campaign cards keep their slight hand-placed angle until interaction. */
+  #campaigns .pw .pz{transform:rotate(-1.2deg)}
+  #campaigns .pw .pz:nth-child(2){transform:rotate(1deg)}
+  #campaigns .pw .pz:nth-child(3){transform:rotate(-.6deg)}
+  #campaigns .pw .pz:hover,
+  #campaigns .pw .pz:focus-within{transform:translateY(-8px) rotate(0deg)}
+
+  /* Film tickets lift as complete cards; the dotted ticket edge remains intact. */
+  #screen .tg .tk:hover,
+  #screen .tg .tk:focus-within{transform:translateY(-6px) rotate(-.35deg)}
+
+  /* Accordion rows have a compact resting edge and a deeper open state. */
+  #work .cs{
+    transition:transform .28s cubic-bezier(.18,.72,.22,1),box-shadow .28s ease,border-color .28s ease;
+    box-shadow:2px 3px 0 var(--yk-shadow-accent),0 7px 15px -13px var(--yk-float-shadow);
+  }
+  #work .cs:hover,
+  #work .cs:focus-within{
+    transform:translateY(-2px);
+    box-shadow:3px 4px 0 var(--yk-shadow-accent),0 12px 20px -14px var(--yk-float-shadow);
+  }
+  #work .cs.open{
+    box-shadow:4px 5px 0 var(--yk-shadow-accent),0 15px 24px -17px var(--yk-float-shadow);
+  }
+
+  /* Art prints and their frames move as one object; retain the hand-made tilt. */
+  #art .art figure{
+    transition:transform .42s cubic-bezier(.18,.72,.22,1),box-shadow .42s cubic-bezier(.18,.72,.22,1);
+    box-shadow:0 0 0 1px var(--yk-edge-shadow),4px 5px 0 var(--yk-shadow-accent),8px 12px 20px -12px var(--yk-float-shadow);
+  }
+  #art .art figure:hover,
+  #art .art figure:focus-within{
+    transform:translateY(-7px) rotate(0deg) scale(1.015);
+    box-shadow:0 0 0 1px var(--yk-edge-shadow),6px 8px 0 var(--yk-shadow-accent),0 18px 28px -14px var(--yk-float-shadow);
+  }
+  #art .art-image-link{transform:none!important;box-shadow:none!important}
+  #art .art-image-link:hover{transform:none!important;box-shadow:none!important}
+
+  /* The contact paper responds to focus like a sheet being lifted from the desk. */
+  #contact .paper{
+    transition:transform .3s cubic-bezier(.18,.72,.22,1),box-shadow .3s ease;
+    box-shadow:0 0 0 2px var(--yk-edge-shadow),5px 7px 0 var(--yk-shadow-accent),0 16px 28px -16px var(--yk-float-shadow);
+  }
+  #contact .paper:focus-within{
+    transform:translateY(-3px) rotate(-.4deg);
+    box-shadow:0 0 0 2px var(--yk-edge-shadow),7px 9px 0 var(--yk-shadow-accent),0 22px 34px -15px var(--yk-float-shadow);
+  }
+
+  /* Keep controls tactile: hover raises, press collapses the offset shadow. */
+  #contact .contact-socials a,
+  #work .cs button,
+  #screen .tg .tk .btn{
+    transition:transform .22s cubic-bezier(.18,.72,.22,1),box-shadow .22s ease,background-color .22s ease;
+  }
+  #contact .contact-socials a:hover,
+  #screen .tg .tk .btn:hover{
+    transform:translateY(-3px);
+    box-shadow:3px 4px 0 var(--yk-shadow-accent),0 9px 15px -11px var(--yk-float-shadow);
+  }
+  #contact .contact-socials a:active,
+  #screen .tg .tk .btn:active{
+    transform:translateY(1px) scale(.985);
+    box-shadow:0 0 0 transparent;
+  }
+}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  #campaigns .pw .pz,
+  #lines .strip .fr,
+  #screen .tg .tk,
+  #writing .essay-feature,
+  #writing .essay-latest,
+  #writing .worklist>article,
+  #work .work-groups>div,
+  #art .art figure{will-change:transform}
+}
+@media(max-width:700px){
+  #campaigns .pw .pz:hover,
+  #lines .strip .fr:hover,
+  #screen .tg .tk:hover,
+  #writing .essay-feature:hover,
+  #writing .essay-latest:hover,
+  #writing .worklist>article:hover,
+  #work .work-groups>div:hover,
+  #art .art figure:hover{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+  #campaigns .pw .pz,
+  #lines .strip .fr,
+  #screen .tg .tk,
+  #writing .essay-feature,
+  #writing .essay-latest,
+  #writing .worklist>article,
+  #work .cs,
+  #work .work-groups>div,
+  #art .art figure,
+  #contact .paper{transition:none!important}
+}
