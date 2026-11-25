@@ -1811,3 +1811,22 @@ nav.site-nav .links>a:not(.cta):focus-visible{
   -webkit-text-fill-color:var(--ink)!important;
   background-color:transparent!important;
 }
+
+
+/* Android/mobile tap feedback: stop the browser's default dark tap flash
+   on the individual section tabs. Keep the editorial gold underline. */
+nav.site-nav .links>a:not(.cta){
+  -webkit-tap-highlight-color:rgba(240,198,107,0.22)!important;
+  -webkit-touch-callout:none;
+}
+nav.site-nav .links>a:not(.cta):active{
+  background-color:transparent!important;
+  color:var(--ink)!important;
+  -webkit-text-fill-color:var(--ink)!important;
+  box-shadow:none!important;
+  filter:none!important;
+}
+nav.site-nav .links>a:not(.cta):focus:not(:focus-visible){
+  outline:none!important;
+  background-color:transparent!important;
+}
