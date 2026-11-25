@@ -1762,3 +1762,52 @@ nav.site-nav .links>a.on{
   -webkit-text-fill-color:#171717!important;
   border-color:#f0c66b!important;
 }
+
+
+/* Definitive nav interaction reset: non-CTA section links never become filled pills. */
+nav.site-nav .links>a:not(.cta),
+nav.site-nav .links>a:not(.cta):link,
+nav.site-nav .links>a:not(.cta):visited,
+nav.site-nav .links>a:not(.cta):hover,
+nav.site-nav .links>a:not(.cta):focus,
+nav.site-nav .links>a:not(.cta):focus-visible,
+nav.site-nav .links>a:not(.cta):active,
+nav.site-nav .links>a:not(.cta).on,
+nav.site-nav .links>a:not(.cta).on:hover,
+nav.site-nav .links>a:not(.cta).on:focus,
+nav.site-nav .links>a:not(.cta).on:active,
+nav.site-nav .links>a:not(.cta)[aria-current="page"]{
+  color:var(--ink)!important;
+  -webkit-text-fill-color:var(--ink)!important;
+  background-color:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  text-shadow:none!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+nav.site-nav .links>a:not(.cta){
+  background-image:linear-gradient(var(--accent),var(--accent))!important;
+  background-repeat:no-repeat!important;
+  background-position:0 88%!important;
+  background-size:0 7px!important;
+}
+nav.site-nav .links>a:not(.cta):hover,
+nav.site-nav .links>a:not(.cta):focus-visible,
+nav.site-nav .links>a:not(.cta).on,
+nav.site-nav .links>a:not(.cta)[aria-current="page"]{
+  background-size:100% 7px!important;
+}
+nav.site-nav .links>a:not(.cta):focus-visible{
+  outline:2px solid var(--accent)!important;
+  outline-offset:4px!important;
+}
+:root[data-theme="dark"] nav.site-nav .links>a:not(.cta),
+:root[data-theme="dark"] nav.site-nav .links>a:not(.cta):hover,
+:root[data-theme="dark"] nav.site-nav .links>a:not(.cta).on,
+:root[data-theme="dark"] nav.site-nav .links>a:not(.cta)[aria-current="page"]{
+  color:var(--ink)!important;
+  -webkit-text-fill-color:var(--ink)!important;
+  background-color:transparent!important;
+}
