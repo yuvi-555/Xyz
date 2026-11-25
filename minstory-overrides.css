@@ -1708,3 +1708,26 @@ nav.site-nav #theme-toggle{min-height:40px;padding-inline:12px!important}
   #screen .tg .tk .film-award-pin,
   #writing .essay-latest .must-read-pin{animation:none!important}
 }
+
+
+/* Contact heading: keep the animated gold hand-drawn loop, remove the inner black oval. */
+#contact .circ h2:before{display:none!important;content:none!important}
+#contact .circ{padding:26px 34px!important}
+#contact .circ svg{
+  inset:-4px -9px!important;
+  width:calc(100% + 18px)!important;
+  height:calc(100% + 8px)!important;
+}
+#contact .circ path{
+  stroke:var(--accent)!important;
+  stroke-width:4!important;
+  fill:none!important;
+}
+@media(max-width:560px){
+  #contact .circ{padding:22px 25px!important}
+  #contact .circ svg{
+    inset:-3px -7px!important;
+    width:calc(100% + 14px)!important;
+    height:calc(100% + 6px)!important;
+  }
+}
