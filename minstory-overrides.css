@@ -1731,3 +1731,34 @@ nav.site-nav #theme-toggle{min-height:40px;padding-inline:12px!important}
     height:calc(100% + 6px)!important;
   }
 }
+
+
+/* Navigation active-state repair: the legacy ink-on-ink rule made the selected tab a blank black capsule. */
+nav.site-nav .links>a.on,
+nav.site-nav .links>a.on:hover,
+nav.site-nav .links>a.on:focus,
+nav.site-nav .links>a.on:active{
+  background:#f0c66b!important;
+  background-color:#f0c66b!important;
+  color:#171717!important;
+  -webkit-text-fill-color:#171717!important;
+  opacity:1!important;
+  visibility:visible!important;
+  border-color:#f0c66b!important;
+  text-shadow:none!important;
+  box-shadow:0 2px 0 rgba(23,23,23,.82),0 4px 9px rgba(23,23,23,.12)!important;
+}
+nav.site-nav .links>a.on{
+  border-radius:999px!important;
+  font-weight:700!important;
+}
+:root[data-theme="dark"] nav.site-nav .links>a.on,
+:root[data-theme="dark"] nav.site-nav .links>a.on:hover,
+:root[data-theme="dark"] nav.site-nav .links>a.on:focus,
+:root[data-theme="dark"] nav.site-nav .links>a.on:active{
+  background:#f0c66b!important;
+  background-color:#f0c66b!important;
+  color:#171717!important;
+  -webkit-text-fill-color:#171717!important;
+  border-color:#f0c66b!important;
+}
